@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -204,6 +208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -272,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 251209526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -340,6 +348,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -478,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 33
@@ -548,6 +564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -617,6 +637,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -777,6 +801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -847,6 +875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -916,6 +948,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -1076,6 +1112,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 35
@@ -1207,6 +1247,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -1566,6 +1610,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -1817,6 +1865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1908,7 +1960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58d8d1c20cc0c4163901f0112dd87475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
+  walkSpeed: 1.2
   office: {fileID: 2072452943}
 --- !u!212 &1025479800
 SpriteRenderer:
@@ -2025,6 +2077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -2094,6 +2150,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -2165,6 +2225,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -2234,6 +2298,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (31)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -2305,6 +2373,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -2375,6 +2447,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -2444,6 +2520,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (27)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -2753,6 +2833,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2822,6 +2906,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -2893,6 +2981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -2962,6 +3054,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -3148,6 +3244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -3280,6 +3380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 34
@@ -3355,6 +3459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -3424,6 +3532,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -3495,6 +3607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 31
@@ -3564,6 +3680,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (29)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -3635,6 +3755,8 @@ GameObject:
   - component: {fileID: 1842295089}
   - component: {fileID: 1842295088}
   - component: {fileID: 1842295090}
+  - component: {fileID: 1842295091}
+  - component: {fileID: 1842295092}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3723,6 +3845,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 1
   office: {fileID: 2072452943}
+  nextWaypointDistance: 0.1
+--- !u!114 &1842295091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842295086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &1842295092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842295086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb6a34d769a1e4ac7b0b30e433aa443c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  smoothType: 3
+  subdivisions: 2
+  iterations: 2
+  strength: 0.5
+  uniformLength: 1
+  maxSegmentLength: 2
+  bezierTangentLength: 0.4
+  offset: 0.2
+  factor: 0.1
 --- !u!1001 &1857356584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3733,6 +3906,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -3928,6 +4105,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3997,6 +4178,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -4068,6 +4253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Static Sprite (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -4137,6 +4326,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
@@ -4252,7 +4445,6 @@ MonoBehaviour:
   manager: {fileID: 1842295086}
   floorPlan: {fileID: 782592811}
   roomLookupTexture: {fileID: 2800000, guid: 7b33afdc611934ab8a6dd0e54fbaf283, type: 3}
-  doorLocations: []
 --- !u!114 &2072452944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4267,7 +4459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIey7m3QeWQIAABYFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3GQNLg3lqHkB6SMKGdXHxZ7DXWIEsefQRIhv/elfxZOj0h3nvaffshfzIuTY2ZVXqlef6kcmTfJsyf2ZfJQD7iEXZKbvgHdpo3ntvSiyBoXsFyRfjUXzOqQqt59l3uhBdHBDrJC6WrZb7DRBlrCC5AGCRKK+tvS4I+J+xIP1exv3Ki0+zOnz7oFEeTMx0zlBb1IO2EnaxROZkJqGrMveVBPJ216jioJNXSCqJrT2VKCG5aK8ye6lBqArVxVAgJcg5UWsg/vb4loES+K23/tw/wUhQGbetLw+mea+pSE5n9UE3rKjD7xtw7CIe9+ybo0z/s1TTQhVbVY5838hlsybP9K5wyMHbU2TF8P7IeOnQAsYetwLcS5bNaaeVkTqTVzl91Bmf3o1B9ZUmJ2X7QNV4vQFf/f0C+iHMo/pgIXm1D828aYCNUaHkYP2oaz09yHJbDtCEI9S5+G/wFu/EWtcQD18YS1ZYpvb2tctpL2TI0zVfjbKK0xAC3pmuUIOxpTWHs5QQvuFHaC+YB/Htpk7dc9wwurgR40EfRBbVWh35aplSHJzTli7OCSxxMe+KZ+pQoKZsFG/eku7ZxuoBsdG3neP73brEt3EY32/j26yxbLOZzvIoxXszvcL6YxRDBLGJh+bikOkGsG6Nte2hqcgguadG6z8hkpaEOy55rOKz4R6VGLeeyUJtMI8qXJkJvHDUloaeZL3NODdqgtVyGebPPlAmV7TFP+0BpqHR5tBrSIUrKav6urEdSloTvRso83O/yWuM7x4NP3gU7s/MfUEsDBBQAAAgIAAAIIeyNX9SpbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSUqKpgUmSpamZUbKFhbFxqq5lqqWFsXmqsYWRZaJBopGBUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIey7m3QeWQIAABYFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIeyNX9SpbQAAAHgAAAAJACQAAAAAAAAAAAAAAKYCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAXgMAAAAA
+    dataString: UEsDBBQAAAgIAAAIIewVTvsTXwIAABUFAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMziVjPpLg3lpDSA9JmNBOLr4s9hprkCWPPgIkw3/vSrYxodOT5feedt9+2J+MS1NjZpVeap4/qRzZ9wHzZ/Zt0JOPeICtkmv+gZ3mjee29CIImlewXBE+8teMqtBqnv2QW+HFEYFO8kLpapFvMVHGGoILEAaJ0sr625KgzwE70GMY+ytHOo3v/emDTnE0ONExQ2lR99JO2MkalZOZgKrG3FvuxaNxq46DSlItrSC68VSmhOCmtcLssQ6lJlAbR4WQIOdApYX80c0tASXybWnPr+cAL0Vh0La+NBznXFOXmsjsp2paV4HZNebeQTif624ajDVRn/6hh6NAF1pVj13iUeRT2JJnu1c4ZmDsRWsv4XnvfRRatAexg43AtxLls1pq5WROpNXOX3UGx/P+9VxZUmK26/HG6hXo6v8PyNdwCsUfEsGrTejdtAHWQoWWh/GjpvH8IsNhOUwbglDv4o/B37C93KKWeODaWKLaKqW3t1FOeylbhJ75apxNlJYY4NZ0jRKEPa4ojL2e4BV3kfaKeQD/vbTJW677DK6uBLjXR9EVtVL787BMqfZPaMoXZwWX2Jv2xDP1KVFSNgtmvpL+1trpArKLW1vH86+bxTZwG0038e3dOJvNJhMcxhjPJvc4mY1jiGAcsbB6XFKZIFaNz7Y7NDTZB5e0Zt1fZLDUUIddzzXsl/yjUhf+uCzUOtOI8qWJ0HXIoKYk9GXmi5xTf9ZoLZdh3OwzZUJlO8zTc6A0VLo4WA1pHyVlNX9X1iMpS8JvI2UePq/ySuM7x71P3gU7sdNfUEsDBBQAAAgIAAAIIeyNX9SpbQAAAHgAAAAJACQAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0Bq1YqSy0qzszPU7JSMNEz0jM011FQSi9KLMgoBooYgjilmSkgdrRSUqKpgUmSpamZUbKFhbFxqq5lqqWFsXmqsYWRZaJBopGBUixQfUllQapfYm4qRE9AYklGWmZeSmZeup57UWaKO8hopdhaAFBLAQItABQAAAgIAAAIIewVTvsTXwIAABUFAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIeyNX9SpbQAAAHgAAAAJACQAAAAAAAAAAAAAAKwCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAZAMAAAAA
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4375,6 +4567,10 @@ PrefabInstance:
     - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_Name
       value: Static Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426162122484008774, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
       propertyPath: m_RootOrder
