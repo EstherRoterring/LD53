@@ -13,17 +13,6 @@ public class OfficeController : MonoBehaviour
     public GameObject floorPlan;
     public Texture2D roomLookupTexture;
 
-    // public Transform[] doorLocations;
-
-    private Dictionary<Room, Dictionary<Room, Transform>> roomNeighbors;
-
-    void Start()
-    {
-        // Assert.IsTrue(doorLocations.Length == 17);
-        
-        
-    }
-
     private Color LookupRoomColor(Vector2 pos)
     {
         var floorPlanSize = 4 * floorPlan.transform.localScale * new Vector2(1, (float) roomLookupTexture.height / roomLookupTexture.width);

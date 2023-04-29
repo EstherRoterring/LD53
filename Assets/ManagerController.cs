@@ -6,24 +6,54 @@ using Pathfinding;
 using UnityEditor.UI;
 using Random = UnityEngine.Random;
 
+/**
+ * states:
+ *
+ * - intro sequence: * spieler bisschen zeit geben damit er nicht gleich gefangen wird. dann chase mode
+ *                   * kontext erklären
+ *
+ * [loop]
+ * - manager sucht spieler: geht direkt zu deinem büro, findet dich nicht
+ *
+ * - manager geht auf die jagdt
+ *
+ * - manager arbeitet in eigenem büro:  kriegt erst anruf, geht dann zu eigenem büro, 5 sek idle
+ *   ggf. auslösbar mittels anruf durch spieler
+ * - manager trinkt kaffee, 5 sek idle
+ *
+ * - manager schlendert durch die gänge, bewegt sich langsamer oder eiert so rum
+ * [/loop]
+ *
+ * spieler kann aktiv beeinflussen:
+ *  - prank call
+ *  - kaffee kochen
+ *
+ * andere sachen die manager beeinflussen:
+ *  - toni
+ *
+ * - outro sequence: gewonnen oder nicht
+ */
+
 public class ManagerController : MonoBehaviour
 {
     public float walkSpeed;
     public OfficeController office;
+    public RoomController room;
 
-    private Path followPath = null;
+    public Path followPath = null;
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
+    
+    IState currentState;
 
     private void Start()
     {
-        Seeker seeker = GetComponent<Seeker>();
-        seeker.StartPath(transform.position, office.player.transform.position, OnPathComplete);
+        ChangeState(new ChasePlayerState(5f, office.player.transform.position));
     }
 
     void Update()
     {
-        transform.localPosition += Time.deltaTime * walkSpeed * (Vector3) Random.insideUnitCircle;
+        currentState.UpdateState(this);
 
         if (followPath != null)
         {
@@ -63,17 +93,115 @@ public class ManagerController : MonoBehaviour
                 currentWaypoint = 0;
             }
         }
-
-        if (followPath == null)
-        {
-            Seeker seeker = GetComponent<Seeker>();
-            seeker.StartPath(transform.position, office.player.transform.position, OnPathComplete);
-        }
     }
 
-    void OnPathComplete(Path p)
+    public void SetFollowPath(Path p)
     {
         followPath = p;
         currentWaypoint = 0;
+    }
+    
+    public void ChangeState(IState newState)
+    {
+        if (currentState != null)
+        {
+            currentState.OnExit(this);
+        }
+        currentState = newState;
+        currentState.OnEnter(this);
+    }
+
+    public void FindNewState()
+    {
+        if (currentState is ChasePlayerState)
+        {
+            ChangeState(new ReturnToOfficeState(5f, room));
+        }
+        else
+        {
+            ChangeState(new ChasePlayerState(5f, office.player.transform.position));
+        }
+    }
+}
+
+public interface IState
+{
+    public void OnEnter(ManagerController manager);
+    public void UpdateState(ManagerController manager);
+    public void OnExit(ManagerController manager);
+}
+
+public class ChasePlayerState : IState
+{
+    private float timeLeft;
+    private Vector3 targetPosition;
+
+    public ChasePlayerState(float totalTime, Vector3 targetPosition)
+    {
+        timeLeft = totalTime;
+        this.targetPosition = targetPosition;
+    }
+
+    public void OnEnter(ManagerController manager)
+    {
+        Seeker seeker = manager.GetComponent<Seeker>();
+        seeker.StartPath(manager.transform.position, targetPosition, manager.SetFollowPath);
+    }
+
+    public void UpdateState(ManagerController manager)
+    {
+        bool arrived = manager.followPath == null;
+        if (arrived)
+        {
+            timeLeft -= Time.deltaTime;
+        }
+
+        if (timeLeft <= 0)
+        {
+            manager.FindNewState();
+        }
+    }
+
+    public void OnExit(ManagerController manager)
+    {
+        
+    }
+}
+
+
+public class ReturnToOfficeState : IState
+{
+    private float timeLeft;
+    private RoomController targetRoom;
+
+    public ReturnToOfficeState(float totalTime, RoomController room)
+    {
+        timeLeft = totalTime;
+        this.targetRoom = room;
+    }
+
+    public void OnEnter(ManagerController manager)
+    {
+        Seeker seeker = manager.GetComponent<Seeker>();
+        seeker.StartPath(manager.transform.position, targetRoom.transform.position, manager.SetFollowPath);
+    }
+
+    public void UpdateState(ManagerController manager)
+    {
+        bool arrived = manager.followPath == null;
+        if (arrived)
+        {
+            timeLeft -= Time.deltaTime;
+        }
+
+        if (timeLeft <= 0)
+        {
+            manager.FindNewState();
+        }
+    }
+
+    public void OnExit(ManagerController manager)
+    {
+        
     }
 }
