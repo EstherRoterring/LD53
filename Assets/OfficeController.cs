@@ -17,7 +17,7 @@ public class OfficeController : MonoBehaviour
         var floorPlanSize = 4 * floorPlan.transform.localScale * new Vector2(1, (float)texture.height / texture.width);
         Vector2 leftBottom = (Vector2) floorPlan.transform.localPosition - 0.5f * floorPlanSize;
         var discrete = (pos - leftBottom) / floorPlanSize;
-        var pixel = new Vector2Int((int) (texture.width * discrete.x + 1), (int) (texture.height * discrete.y + 1));
+        var pixel = new Vector2Int((int) (texture.width * discrete.x + 0.5f), (int) (texture.height * discrete.y + 0.5f));
         if (pixel.x < 0 || pixel.x >= texture.width || pixel.y < 0 || pixel.y >= texture.height)
         {
             return Color.black;
