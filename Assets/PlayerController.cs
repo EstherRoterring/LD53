@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour
             horizontalWalkDir = UnityEngine.Vector2.zero;
         }
 
-        if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * horizontalWalkDir)))
-        {
-            horizontalWalkDir = UnityEngine.Vector2.zero;
-        }
+        // if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * horizontalWalkDir)))
+        // {
+        //     horizontalWalkDir = UnityEngine.Vector2.zero;
+        // }
         
         UnityEngine.Vector2 verticalWalkDir;
         if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
@@ -46,17 +46,17 @@ public class PlayerController : MonoBehaviour
             verticalWalkDir = UnityEngine.Vector2.zero;
         }
         
-        if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * verticalWalkDir)))
-        {
-            verticalWalkDir = UnityEngine.Vector2.zero;
-        }
+        // if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * verticalWalkDir)))
+        // {
+        //     verticalWalkDir = UnityEngine.Vector2.zero;
+        // }
         
         // check if we would hit a wall
         var newPos = oldPos + (Vector3) (Time.deltaTime * walkSpeed * (horizontalWalkDir + verticalWalkDir));
-        if (this.office.CanWalkTo(newPos))
-        {
+        // if (this.office.CanWalkTo(newPos))
+        // {
             //  && this.office.CanWalkTo(newPos + (Vector3) (this.transform.localScale * walkDir))
             this.transform.localPosition = newPos;
-        }
+        // }
     }
 }
