@@ -1,35 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
+using UnityEditor.UI;
 using UnityEngine;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
+    public OfficeController office;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        var oldPos = transform.localPosition;
+        var walkDir = UnityEngine.Vector2.zero;
         if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
-            this.transform.localPosition += walkSpeed * new Vector3(-1f, 0f, 0f);
+            walkDir += UnityEngine.Vector2.left;
         }
-        else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
-            this.transform.localPosition += walkSpeed * new Vector3(1f, 0f, 0f);
+            walkDir += UnityEngine.Vector2.right;
         }
         if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
         {
-            this.transform.localPosition += walkSpeed * new Vector3(0f, 1f, 0f);
+            walkDir += UnityEngine.Vector2.up;
         }
-        else if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
         {
-            this.transform.localPosition += walkSpeed * new Vector3(0f, -1f, 0f);
+            walkDir += UnityEngine.Vector2.down;
+        }
+        
+        // check if we would hit a wall
+        var newPos = oldPos + (Vector3) (Time.deltaTime * walkSpeed * walkDir);
+        if (this.office.CanWalkTo(newPos) && this.office.CanWalkTo(newPos + (Vector3) (this.transform.localScale * walkDir)))
+        {
+            this.transform.localPosition = newPos;
         }
     }
 }
