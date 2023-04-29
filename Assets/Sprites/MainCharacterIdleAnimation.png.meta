@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 075bff366f414514087076e0b1ebb666
+guid: 4745dbcdebf34b1428fb7396897c48f6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainCharacterWalkTowards_0
+      name: MainCharacterIdleAnimation_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,14 +143,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc28bb4a418d1ec449acb57de409dce1
-      internalID: -418620761
+      spriteID: 3cc8996f7e0646148b03d0e5fdc2ba32
+      internalID: -791453177
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacterWalkTowards_1
+      name: MainCharacterIdleAnimation_1
       rect:
         serializedVersion: 2
         x: 48
@@ -164,14 +164,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ac798dc1610a56459ce369b1ac98e97
-      internalID: -915160449
+      spriteID: 7a936109948e52c40a9db414984c74cf
+      internalID: 1589279019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacterWalkTowards_2
+      name: MainCharacterIdleAnimation_2
       rect:
         serializedVersion: 2
         x: 96
@@ -185,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5c90abad25ade4da64647400edf8dc
-      internalID: -1234754628
+      spriteID: e99ed1b121fbc2242b089817c792ed18
+      internalID: -83868862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacterWalkTowards_3
+      name: MainCharacterIdleAnimation_3
       rect:
         serializedVersion: 2
         x: 144
@@ -206,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e77a85898fa7024d9e811bcbb388069
-      internalID: -1470747371
+      spriteID: fbff06f7a63f670469ffd5ac3b0cb934
+      internalID: -91788220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacterWalkTowards_4
+      name: MainCharacterIdleAnimation_4
       rect:
         serializedVersion: 2
         x: 192
@@ -227,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3b892df2f501547bd2439ec3fbde03
-      internalID: 513370558
+      spriteID: b82ab7907b5e9ed48833903e833dba8f
+      internalID: 1672880680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacterWalkTowards_5
+      name: MainCharacterIdleAnimation_5
       rect:
         serializedVersion: 2
         x: 240
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3db6dfeb555c7034cbf052b37badf72c
-      internalID: -2069101767
+      spriteID: 34f19b6ae03b9d14ea5c73367f7fbdf3
+      internalID: -1856711736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MainCharacterWalkTowards_6
+      name: MainCharacterIdleAnimation_6
       rect:
         serializedVersion: 2
         x: 288
@@ -269,29 +269,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cacae59e65ea414e884fd9eb5f81162
-      internalID: -1985474569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MainCharacterWalkTowards_7
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81f8a6848d6d5ec4f8f29e6672e1bd5d
-      internalID: 20600452
+      spriteID: 07a59ffc5091eab42896c86d05aad1de
+      internalID: 839833671
       vertices: []
       indices: 
       edges: []
@@ -307,14 +286,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MainCharacterWalkTowards_0: -418620761
-      MainCharacterWalkTowards_1: -915160449
-      MainCharacterWalkTowards_2: -1234754628
-      MainCharacterWalkTowards_3: -1470747371
-      MainCharacterWalkTowards_4: 513370558
-      MainCharacterWalkTowards_5: -2069101767
-      MainCharacterWalkTowards_6: -1985474569
-      MainCharacterWalkTowards_7: 20600452
+      MainCharacterIdleAnimation_0: -791453177
+      MainCharacterIdleAnimation_1: 1589279019
+      MainCharacterIdleAnimation_2: -83868862
+      MainCharacterIdleAnimation_3: -91788220
+      MainCharacterIdleAnimation_4: 1672880680
+      MainCharacterIdleAnimation_5: -1856711736
+      MainCharacterIdleAnimation_6: 839833671
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

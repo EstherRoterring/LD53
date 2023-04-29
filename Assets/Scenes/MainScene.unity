@@ -1889,6 +1889,7 @@ GameObject:
   - component: {fileID: 1025479799}
   - component: {fileID: 1025479803}
   - component: {fileID: 1025479804}
+  - component: {fileID: 1025479805}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1951,12 +1952,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.24852888, g: 0.3018868, b: 0.092559636, a: 1}
+  m_Sprite: {fileID: -418620761, guid: 075bff366f414514087076e0b1ebb666, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.48, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1971,7 +1972,7 @@ Transform:
   m_GameObject: {fileID: 1025479798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.64, y: -3.72, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
@@ -2014,6 +2015,27 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &1025479805
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025479798}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5d52195e98383c1429890641c2679e4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1052745298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4252,7 +4274,6 @@ MonoBehaviour:
   manager: {fileID: 1842295086}
   floorPlan: {fileID: 782592811}
   roomLookupTexture: {fileID: 2800000, guid: 7b33afdc611934ab8a6dd0e54fbaf283, type: 3}
-  doorLocations: []
 --- !u!114 &2072452944
 MonoBehaviour:
   m_ObjectHideFlags: 0
