@@ -9,6 +9,6 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition += walkSpeed * (Vector3) Random.insideUnitCircle;
+        transform.localPosition += Time.deltaTime * walkSpeed * (Vector3) Random.insideUnitCircle;
     }
 }
