@@ -13,29 +13,50 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         var oldPos = transform.localPosition;
-        var walkDir = UnityEngine.Vector2.zero;
+        UnityEngine.Vector2 horizontalWalkDir;
         if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
-            walkDir += UnityEngine.Vector2.left;
+            horizontalWalkDir = UnityEngine.Vector2.left;
         }
-        if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
-            walkDir += UnityEngine.Vector2.right;
+            horizontalWalkDir = UnityEngine.Vector2.right;
         }
+        else
+        {
+            horizontalWalkDir = UnityEngine.Vector2.zero;
+        }
+
+        // if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * horizontalWalkDir)))
+        // {
+        //     horizontalWalkDir = UnityEngine.Vector2.zero;
+        // }
+        
+        UnityEngine.Vector2 verticalWalkDir;
         if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
         {
-            walkDir += UnityEngine.Vector2.up;
+            verticalWalkDir = UnityEngine.Vector2.up;
         }
-        if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
         {
-            walkDir += UnityEngine.Vector2.down;
+            verticalWalkDir = UnityEngine.Vector2.down;
+        }
+        else
+        {
+            verticalWalkDir = UnityEngine.Vector2.zero;
         }
         
+        // if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * verticalWalkDir)))
+        // {
+        //     verticalWalkDir = UnityEngine.Vector2.zero;
+        // }
+        
         // check if we would hit a wall
-        var newPos = oldPos + (Vector3) (Time.deltaTime * walkSpeed * walkDir);
-        if (this.office.CanWalkTo(newPos) && this.office.CanWalkTo(newPos + (Vector3) (this.transform.localScale * walkDir)))
-        {
+        var newPos = oldPos + (Vector3) (Time.deltaTime * walkSpeed * (horizontalWalkDir + verticalWalkDir));
+        // if (this.office.CanWalkTo(newPos))
+        // {
+            //  && this.office.CanWalkTo(newPos + (Vector3) (this.transform.localScale * walkDir))
             this.transform.localPosition = newPos;
-        }
+        // }
     }
 }
