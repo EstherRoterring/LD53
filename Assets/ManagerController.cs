@@ -49,6 +49,7 @@ public class ManagerController : MonoBehaviour
     
     IState currentState;
     private Animator anim;
+    public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
 
 
     void Start()
