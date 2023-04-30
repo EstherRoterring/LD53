@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour
         if(standingStill==true){anim.SetBool("standingStill",true);}
 
         var closestStationDist = Mathf.Infinity;
+        var lastClosestStation = closestStation;
         closestStation = null;
         foreach (var task in office.activeTaskSequences)
         {
@@ -122,6 +123,10 @@ public class PlayerController : MonoBehaviour
             {
                 closestStation.UpdateWithoutInteraction();
             }
+        }
+        if (lastClosestStation != closestStation && lastClosestStation != null)
+        {
+            lastClosestStation.UpdateWithoutInteraction();
         }
     }
 
