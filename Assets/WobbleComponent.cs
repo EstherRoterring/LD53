@@ -17,6 +17,7 @@ public class WobbleComponent : MonoBehaviour
     void Update()
     {
         var t = wobbleSpeed * Time.time;
-        transform.localPosition = origin + Mathf.Sin(t) * new Vector3(wobbleX, wobbleY, 0);
+        var v = origin + Mathf.Sin(t) * new Vector3(wobbleX, wobbleY, 0);
+        transform.localPosition = new Vector3(v.x, v.y, transform.localPosition.z);
     }
 }

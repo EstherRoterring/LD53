@@ -378,6 +378,7 @@ public class RageFollowPlayerState : IState
     public void OnEnter(ManagerController manager)
     {
         manager.GoTo(manager.office.player.transform);
+        manager.angry = true;
     }
 
     public void UpdateState(ManagerController manager)
@@ -398,6 +399,7 @@ public class RageFollowPlayerState : IState
 
     public void OnExit(ManagerController manager)
     {
+        manager.angry = false;
         manager.visitLocations.Clear();
         manager.followPath = null;
     }

@@ -7074,7 +7074,7 @@ MonoBehaviour:
   currentStation: -1
   bonus: 0
   spawnsCoffeeInKitchen: 0
-  callsTelephone: 0
+  callsTelephone: 1
 --- !u!1001 &708917515
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12604,6 +12604,8 @@ MonoBehaviour:
   room: {fileID: 4332524246549929658}
   nextWaypointDistance: 0.1
   visitLocations: []
+  angry: 0
+  totalManagerTime: 0
 --- !u!114 &1842295091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14079,7 +14081,7 @@ MonoBehaviour:
   taskTimerPrefab: {fileID: 1228709073738126988, guid: 0e27f4cfd7d7c4f41a5760d9ba750f9d, type: 3}
   textbox: {fileID: 1079222778}
   coffee: {fileID: 224540924}
-  ringingPhone: {fileID: 639849170}
+  ringingPhone: {fileID: 1512564938}
 --- !u!114 &2072452944
 MonoBehaviour:
   m_ObjectHideFlags: 0
