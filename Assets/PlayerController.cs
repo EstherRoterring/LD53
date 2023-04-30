@@ -141,7 +141,6 @@ public class PlayerController : MonoBehaviour
         other.gameObject.TryGetComponent<RoomController>(out nextRoom);
         if (nextRoom != null)
         {
-            Debug.Log($"player is its a rooM!!!!! {nextRoom}");
             room = nextRoom;
         }
     }
