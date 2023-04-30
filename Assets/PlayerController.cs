@@ -112,14 +112,21 @@ public class PlayerController : MonoBehaviour
         {
             closestStation = null;
         }
+        if (!(Input.GetKey("e") || Input.GetKey(KeyCode.Space)))
+        {
+            closestStation = null;
+        }
+        if (closestStation != null && closestStation.limitAccessFromRoom != null &&
+            closestStation.limitAccessFromRoom != room)
+        {
+            closestStation = null;
+        }
 
         foreach (var task in new List<TaskSequence>(office.activeTaskSequences))
         {
             foreach (var station in task.stations)
             {
-                bool interacting = (Input.GetKey("e") || Input.GetKey(KeyCode.Space)) && station == closestStation;
-                interacting &= (station.limitAccessFromRoom == null || station.limitAccessFromRoom == room);
-                if (interacting) {
+                if (station == closestStation) {
                     station.UpdateWithInteraction();
                 }
                 else
