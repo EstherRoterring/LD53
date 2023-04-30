@@ -15,7 +15,8 @@ public class TaskSequence : MonoBehaviour
 
     public int currentStation = -1;
 
-    public bool bonus;
+    public bool bonus = false;
+    public bool spawnsCoffeeInKitchen = false;
     
     public void SpawnSequence()
     {
@@ -29,7 +30,10 @@ public class TaskSequence : MonoBehaviour
         if (currentStation >= stations.Length)
         {
             // task sequence is done, what now?
-            // todo, reward?
+            if (spawnsCoffeeInKitchen)
+            {
+                OfficeController.INSTANCE.SpawnCoffeeInKitchen();
+            }
             OfficeController.INSTANCE.activeTaskSequences.Remove(this);
             return;
         }

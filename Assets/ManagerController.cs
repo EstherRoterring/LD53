@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Pathfinding;
+using Unity.VisualScripting;
 using UnityEditor.UI;
 using Random = UnityEngine.Random;
 
@@ -45,7 +46,7 @@ public class ManagerController : MonoBehaviour
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
 
-    private List<DoorController> visitDoors = new List<DoorController>();
+    private List<Transform> visitLocations = new List<Transform>();
     
     IState currentState;
     private Animator anim;
@@ -60,6 +61,11 @@ public class ManagerController : MonoBehaviour
     {
         if (currentState != null)
         {
+            Debug.Log($"{office.coffee.activeSelf} and {room == office.coffeeRoom}");
+            if (office.coffee.activeSelf && room == office.coffeeRoom)
+            {
+                ChangeState(new DrinkCoffeeState(10f));
+            }
             currentState.UpdateState(this);
         }
 
@@ -100,13 +106,17 @@ public class ManagerController : MonoBehaviour
                 currentWaypoint = 0;
             }
         }
+        else
+        {
+            UpdateAnimationDirection(Vector3.zero);
+        }
         if (followPath == null) {
-            if (visitDoors.Count > 0)
+            if (visitLocations.Count > 0)
             {
-                var visitDoor = visitDoors[0];
-                visitDoors.RemoveAt(0);
+                var visitDoor = visitLocations[0];
+                visitLocations.RemoveAt(0);
                 Seeker seeker = GetComponent<Seeker>();
-                seeker.StartPath(transform.position, visitDoor.transform.position, SetFollowPath);
+                seeker.StartPath(transform.position, visitDoor.position, SetFollowPath);
             }
         }
     }
@@ -151,7 +161,7 @@ public class ManagerController : MonoBehaviour
     {
         if (currentState is ChasePlayerState)
         {
-            ChangeState(new ReturnToOfficeState(5f, room));
+            ChangeState(new ReturnToOfficeState(5f, office.managerRoom));
         }
         else
         {
@@ -162,16 +172,26 @@ public class ManagerController : MonoBehaviour
     public void GoToRoom(RoomController newRoom)
     {
         // todo, implement search
-        visitDoors.Add(newRoom.doors.Keys.First());
+        visitLocations.Add(newRoom.roomCenter);
+    }
+
+    public void GoTo(Transform transform)
+    {
+        visitLocations.Add(transform);
     }
     
-    public void OnCollisionStay2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        RoomController room = null;
-        other.gameObject.TryGetComponent<RoomController>(out room);
-        if (room != null)
+        OnTriggerStay2D(other);
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        RoomController nextRoom = null;
+        other.gameObject.TryGetComponent<RoomController>(out nextRoom);
+        if (nextRoom != null)
         {
-            this.room = room;
+            room = nextRoom;
         }
     }
 }
@@ -232,6 +252,40 @@ public class ReturnToOfficeState : IState
     public void OnEnter(ManagerController manager)
     {
         manager.GoToRoom(targetRoom);
+    }
+
+    public void UpdateState(ManagerController manager)
+    {
+        bool arrived = manager.followPath == null;
+        if (arrived)
+        {
+            timeLeft -= Time.deltaTime;
+        }
+
+        if (timeLeft <= 0)
+        {
+            manager.FindNewState();
+        }
+    }
+
+    public void OnExit(ManagerController manager)
+    {
+        
+    }
+}
+
+public class DrinkCoffeeState : IState
+{
+    private float timeLeft;
+
+    public DrinkCoffeeState(float totalTime)
+    {
+        timeLeft = totalTime;
+    }
+
+    public void OnEnter(ManagerController manager)
+    {
+        manager.GoTo(manager.office.coffee.transform);
     }
 
     public void UpdateState(ManagerController manager)
