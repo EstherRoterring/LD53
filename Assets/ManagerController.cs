@@ -50,6 +50,7 @@ public class ManagerController : MonoBehaviour
     
     IState currentState;
     private Animator anim;
+    public bool angry=false;
 
     void Start()
     {
@@ -141,6 +142,9 @@ public class ManagerController : MonoBehaviour
             anim.SetBool("moveLeft",xMax && velocity.x <= 0);
             anim.SetBool("moveRight",xMax && velocity.x >= 0);
         }
+
+        if (angry==true){anim.SetBool("angry",true);}
+        else{anim.SetBool("angry",false);}
     }
 
     public void SetFollowPath(Path p)
