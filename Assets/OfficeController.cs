@@ -20,8 +20,12 @@ public class OfficeController : MonoBehaviour
     public GameObject roomGraph;
     private List<RoomController> rooms = new List<RoomController>();
 
-    public GameObject tasksContainer;
-    private List<SimpleTaskController> tasks = new List<SimpleTaskController>();
+    public TaskSequence[] allDutySmallTaskSequences;
+    public TaskSequence[] allDutyBigTaskSequences;
+    public TaskSequence[] allBonusTaskSequences;
+
+    public List<TaskSequence> activeTaskSequences = new List<TaskSequence>();
+    
     public GameObject taskExclamationPrefab;
     public GameObject taskTimerPrefab;
 
@@ -46,16 +50,18 @@ public class OfficeController : MonoBehaviour
         // manager
         manager.ChangeState(new ChasePlayerState(5f));
         
-        // tasks
-        foreach (var task in tasksContainer.transform.GetComponentsInChildren<SimpleTaskController>())
-        {
-            tasks.Add(task);
-        }
-
         var rnd = new System.Random();
-        foreach (var simpleTask in tasks.OrderBy(x => rnd.Next()).Take(player.numTasks))
+        foreach (var sequence in allDutySmallTaskSequences.OrderBy(x => rnd.Next()).Take(player.numSmallTasks))
         {
-            simpleTask.SetActive();
+            sequence.SpawnSequence();
+        }
+        foreach (var sequence in allDutyBigTaskSequences.OrderBy(x => rnd.Next()).Take(player.numBigTasks))
+        {
+            sequence.SpawnSequence();
+        }
+        foreach (var sequence in allBonusTaskSequences.OrderBy(x => rnd.Next()).Take(player.numBonusTasks))
+        {
+            sequence.SpawnSequence();
         }
     }
 
