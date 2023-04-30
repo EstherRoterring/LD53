@@ -46,7 +46,7 @@ public class ManagerController : MonoBehaviour
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
 
-    private List<Transform> visitLocations = new List<Transform>();
+    public List<Transform> visitLocations = new List<Transform>();
     
     IState currentState;
     private Animator anim;
@@ -233,7 +233,8 @@ public class ChasePlayerState : IState
 
     public void OnExit(ManagerController manager)
     {
-        
+        manager.visitLocations.Clear();
+        manager.followPath = null;
     }
 }
 
@@ -270,7 +271,8 @@ public class ReturnToOfficeState : IState
 
     public void OnExit(ManagerController manager)
     {
-        
+        manager.visitLocations.Clear();
+        manager.followPath = null;
     }
 }
 
@@ -304,6 +306,8 @@ public class DrinkCoffeeState : IState
 
     public void OnExit(ManagerController manager)
     {
-        
+        manager.office.coffee.SetActive(false);
+        manager.visitLocations.Clear();
+        manager.followPath = null;
     }
 }

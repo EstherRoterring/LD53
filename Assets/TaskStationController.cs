@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class TaskStationController : MonoBehaviour
 {
@@ -83,6 +84,16 @@ public class TaskStationController : MonoBehaviour
                 taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskTimerPrefab, markerPosition);
                 progressAnimator = taskActiveMarker.GetComponent<Animator>();
                 progressAnimator.speed = 1.4f / maxProgress;
+                
+                //Textbox ploep
+                String text = currentActiveTask.stationTexts[currentActiveTask.currentStation];
+                Sprite image = currentActiveTask.stationImages[currentActiveTask.currentStation];
+                int position = 1;
+                if (OfficeController.INSTANCE.player.transform.localPosition.y < 0)
+                {
+                    position = 2;
+                }
+                OfficeController.INSTANCE.textbox.setTextBox(text, image, position);
             }
 
             progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
@@ -97,6 +108,8 @@ public class TaskStationController : MonoBehaviour
                 Destroy(taskActiveMarker);
                 taskActiveMarker = null;
                 progress = 0f;
+                //macht Textbox weg
+                OfficeController.INSTANCE.textbox.Visible(false);
             }
         }
     }

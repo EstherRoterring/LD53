@@ -31,6 +31,9 @@ public class OfficeController : MonoBehaviour
     public GameObject taskExclamationPrefab;
     public GameObject taskBonusExclamationPrefab;
     public GameObject taskTimerPrefab;
+    
+    //Textbox starter
+    public TextBoxController textbox;
 
     public GameObject coffee;
     

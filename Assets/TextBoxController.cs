@@ -17,13 +17,12 @@ public class TextBoxController : MonoBehaviour
     //set Methode umkomplette Box richtig zu konfigurieren
     public void setTextBox(string text, Sprite imageSprite, int position){
         //text
-        this.text = text;
         textMeshPro.text = text;
         //Bild
         if (image != null) {
             image.sprite = imageSprite;
         }
-        //sichbarkeit
+        //Sichbarkeit
         Visible(true);
 
         if(position==2){
@@ -57,16 +56,16 @@ public class TextBoxController : MonoBehaviour
     void Position1()
     {
         //unten links -3,-3
-        transform.localPosition = rechtsOben;
+        transform.localPosition = linksUnten;
     }
 
     void Position2()
     {
         //oben rechts 3,3
-        transform.localPosition = linksUnten;
+        transform.localPosition = rechtsOben;
     }
 
-    void Visible(bool visible){
+    public void Visible(bool visible){
         gameObject.SetActive(visible);
     }
 
