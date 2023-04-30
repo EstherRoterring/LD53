@@ -62,11 +62,6 @@ public class PlayerController : MonoBehaviour
         {
             horizontalWalkDir = UnityEngine.Vector2.zero;
         }
-
-        // if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * horizontalWalkDir)))
-        // {
-        //     horizontalWalkDir = UnityEngine.Vector2.zero;
-        // }
         
         UnityEngine.Vector2 verticalWalkDir;
         if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
@@ -100,6 +95,7 @@ public class PlayerController : MonoBehaviour
         if(standingStill==true){anim.SetBool("standingStill",true);}
 
         var closestStationDist = Mathf.Infinity;
+        var lastClosestStation = closestStation;
         closestStation = null;
         foreach (var task in office.activeTaskSequences)
         {
@@ -127,6 +123,10 @@ public class PlayerController : MonoBehaviour
             {
                 closestStation.UpdateWithoutInteraction();
             }
+        }
+        if (lastClosestStation != closestStation && lastClosestStation != null)
+        {
+            lastClosestStation.UpdateWithoutInteraction();
         }
     }
 
