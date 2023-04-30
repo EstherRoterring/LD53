@@ -64,11 +64,7 @@ public class TaskStationController : MonoBehaviour
                     {
                         prefab = OfficeController.INSTANCE.taskBonusExclamationPrefab;
                     }
-                    taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskExclamationPrefab, markerPosition);
-                    
-
-
-
+                    taskActiveMarker = Instantiate(prefab, markerPosition);
                 }
             }
         }

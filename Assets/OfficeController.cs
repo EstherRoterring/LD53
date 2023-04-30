@@ -19,6 +19,8 @@ public class OfficeController : MonoBehaviour
 
     public GameObject roomGraph;
     private List<RoomController> rooms = new List<RoomController>();
+    public RoomController managerRoom;
+    public RoomController coffeeRoom;
 
     public TaskSequence[] allDutySmallTaskSequences;
     public TaskSequence[] allDutyBigTaskSequences;
@@ -33,6 +35,8 @@ public class OfficeController : MonoBehaviour
     //Textbox starter
     public TextBoxController textbox;
 
+    public GameObject coffee;
+    
     public OfficeController()
     {
         INSTANCE = this;
@@ -89,5 +93,9 @@ public class OfficeController : MonoBehaviour
             Debug.Log("YOU DIE!");
         }
     }
-    
+
+    public void SpawnCoffeeInKitchen()
+    {
+        coffee.SetActive(true);
+    }
 }
