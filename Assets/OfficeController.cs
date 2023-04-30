@@ -1,12 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
 
+
 public class OfficeController : MonoBehaviour
 {
+    public static OfficeController INSTANCE;
+    
     public PlayerController player;
     public ManagerController manager;
 
@@ -16,8 +20,19 @@ public class OfficeController : MonoBehaviour
     public GameObject roomGraph;
     private List<RoomController> rooms = new List<RoomController>();
 
+    public GameObject tasksContainer;
+    private List<SimpleTaskController> tasks = new List<SimpleTaskController>();
+    public GameObject taskExclamationPrefab;
+    public GameObject taskTimerPrefab;
+
+    public OfficeController()
+    {
+        INSTANCE = this;
+    }
+    
     void Start()
     {
+        // room layout
         foreach (var room in roomGraph.transform.GetComponentsInChildren<RoomController>())
         {
             rooms.Add(room);
@@ -28,7 +43,20 @@ public class OfficeController : MonoBehaviour
             door.toRoom.doors.Add(door, door.fromRoom);
         }
         
+        // manager
         manager.ChangeState(new ChasePlayerState(5f));
+        
+        // tasks
+        foreach (var task in tasksContainer.transform.GetComponentsInChildren<SimpleTaskController>())
+        {
+            tasks.Add(task);
+        }
+
+        var rnd = new System.Random();
+        foreach (var simpleTask in tasks.OrderBy(x => rnd.Next()).Take(player.numTasks))
+        {
+            simpleTask.SetActive();
+        }
     }
 
     private Color LookupRoomColor(Vector2 pos)
@@ -51,10 +79,4 @@ public class OfficeController : MonoBehaviour
             Debug.Log("YOU DIE!");
         }
     }
-}
-
-
-public enum Room
-{
-    ManagerRoom, OFFICE_1, OFFICE_2, OFFICE_3, PRINTER, STORAGE, HALL_LEFT, PARK, HALL_RIGHT, TOILET, COFFEE, OFFICE_4, JANITOR, FOYER, OWN_OFFICE
 }

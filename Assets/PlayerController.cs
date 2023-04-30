@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
+using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 using UnityEditor.UI;
 using UnityEngine;
 using Vector3 = UnityEngine.Vector3;
@@ -15,15 +17,15 @@ public class PlayerController : MonoBehaviour
     public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
     private Animator anim;
     
+    public int numTasks;
+    public float interactDistance;
+
+    public SimpleTaskController closestTaskController = null;
+
     void Start()
     {
         anim=GetComponent<Animator>();
     }
-
-
-
-
-
     void Update()
     {
         moveAway=false;
@@ -36,9 +38,6 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("moveRight",false);
         anim.SetBool("moveLeft",false);
         anim.SetBool("moveAway",false);
-
-
-
 
         var oldPos = transform.localPosition;
         UnityEngine.Vector2 horizontalWalkDir;
@@ -87,27 +86,35 @@ public class PlayerController : MonoBehaviour
             verticalWalkDir = UnityEngine.Vector2.zero;
         }
         
-        // if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * verticalWalkDir)))
-        // {
-        //     verticalWalkDir = UnityEngine.Vector2.zero;
-        // }
-        
-        // check if we would hit a wall
         var newPos = oldPos + (Vector3) (Time.deltaTime * walkSpeed * (horizontalWalkDir + verticalWalkDir));
-        // if (this.office.CanWalkTo(newPos))
-        // {
-            //  && this.office.CanWalkTo(newPos + (Vector3) (this.transform.localScale * walkDir))
-            this.transform.localPosition = newPos;
-        // }
-
+        this.transform.localPosition = newPos;
+        
         if (moveAway==true){anim.SetBool("moveAway",true);}        
         if(moveLeft==true){anim.SetBool("moveLeft",true);}
         if(moveRight==true){anim.SetBool("moveRight",true);}
         if(moveTowards==true){anim.SetBool("moveTowards",true);}
         if(standingStill==true){anim.SetBool("standingStill",true);}
 
+        var closestTaskDist = Mathf.Infinity;
+        closestTaskController = null;
+        foreach (var task in office.tasksContainer.GetComponentsInChildren<SimpleTaskController>())
+        {
+            var dist = Vector3.Distance(task.interactObject.transform.position, transform.position);
+            if (dist < closestTaskDist)
+            {
+                closestTaskController = task;
+                closestTaskDist = dist;
+            }
+        }
+        if (closestTaskDist > interactDistance)
+        {
+            closestTaskController = null;
+        }
 
-
+        if (Input.GetKey("e") && closestTaskController != null)
+        {
+            closestTaskController.UpdateWithInteraction();
+        }
     }
 
     public void OnCollisionStay2D(Collision2D other)
@@ -116,6 +123,7 @@ public class PlayerController : MonoBehaviour
         other.gameObject.TryGetComponent<RoomController>(out room);
         if (room != null)
         {
+            // oh oh da kommt jemand rein
             this.room = room;
         }
     }

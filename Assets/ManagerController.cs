@@ -51,7 +51,10 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
-        currentState.UpdateState(this);
+        if (currentState != null)
+        {
+            currentState.UpdateState(this);
+        }
 
         if (followPath != null)
         {
