@@ -111,9 +111,16 @@ public class PlayerController : MonoBehaviour
             closestTaskController = null;
         }
 
-        if (Input.GetKey("e") && closestTaskController != null)
+        if (closestTaskController != null)
         {
-            closestTaskController.UpdateWithInteraction();
+            if (Input.GetKey("e"))
+            {
+                closestTaskController.UpdateWithInteraction();
+            }
+            else
+            {
+                closestTaskController.UpdateWithoutInteraction();
+            }
         }
     }
 
