@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
         {
             verticalWalkDir = UnityEngine.Vector2.up;
-            moveAway=ture;
+            moveAway=true;
             standingStill=false;
             moveLeft=false;
             moveRight=false;
@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
         {
             verticalWalkDir = UnityEngine.Vector2.down;
-            moveTowards=True;
+            moveTowards=true;
             standingStill=false;
             moveLeft=false;
             moveRight=false;
