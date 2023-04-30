@@ -12,18 +12,36 @@ public class PlayerController : MonoBehaviour
     public OfficeController office;
 
     public RoomController room;
-    
+    public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
+
+
+
+
+
+
+
     void Update()
     {
+        moveAway=false;
+        moveLeft=false;
+        moveRight=false;
+        moveTowards =false;
+        standingStill=true;
+
         var oldPos = transform.localPosition;
         UnityEngine.Vector2 horizontalWalkDir;
         if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
         {
             horizontalWalkDir = UnityEngine.Vector2.left;
+            moveLeft=true;
+            standingStill=false;
+
         }
         else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
         {
             horizontalWalkDir = UnityEngine.Vector2.right;
+            moveRight=true;
+            standingStill=false;
         }
         else
         {
@@ -39,10 +57,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
         {
             verticalWalkDir = UnityEngine.Vector2.up;
+            moveAway=ture;
+            standingStill=false;
+            moveLeft=false;
+            moveRight=false;
         }
         else if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
         {
             verticalWalkDir = UnityEngine.Vector2.down;
+            moveTowards=True;
+            standingStill=false;
+            moveLeft=false;
+            moveRight=false;
         }
         else
         {
