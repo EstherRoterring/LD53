@@ -247,7 +247,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 1
+  bonus: 0
 --- !u!1001 &98157214
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -854,7 +854,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 0
+  bonus: 0
 --- !u!4 &334514468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 565060761573551675, guid: a3079e53e5ee6455eb6c7eeb77ca7755, type: 3}
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 1
+  bonus: 0
 --- !u!1 &565043337
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1557,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 1
+  bonus: 0
 --- !u!1001 &595858466
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1913,7 +1913,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 0
+  bonus: 0
 --- !u!4 &656129530 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
@@ -4183,7 +4183,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 0
+  bonus: 0
 --- !u!1001 &1331719995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6535,7 +6535,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 0
+  bonus: 0
 --- !u!1001 &1864034444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7270,7 +7270,7 @@ MonoBehaviour:
   stationTexts: []
   stationDurations: 
   currentStation: -1
-  extra: 0
+  bonus: 0
 --- !u!1001 &2042693705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7503,6 +7503,7 @@ MonoBehaviour:
   - {fileID: 517245036}
   activeTaskSequences: []
   taskExclamationPrefab: {fileID: 1228709073738126988, guid: 8e41bf0dac9db4b10a9253bd31dfb488, type: 3}
+  taskBonusExclamationPrefab: {fileID: 0}
   taskTimerPrefab: {fileID: 1228709073738126988, guid: 0e27f4cfd7d7c4f41a5760d9ba750f9d, type: 3}
 --- !u!114 &2072452944
 MonoBehaviour:
