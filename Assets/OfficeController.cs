@@ -27,6 +27,7 @@ public class OfficeController : MonoBehaviour
     public List<TaskSequence> activeTaskSequences = new List<TaskSequence>();
     
     public GameObject taskExclamationPrefab;
+    public GameObject taskBonusExclamationPrefab;
     public GameObject taskTimerPrefab;
 
     public OfficeController()

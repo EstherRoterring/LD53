@@ -124,7 +124,6 @@ public class ManagerController : MonoBehaviour
         {
             anim.SetBool("standingStill", false);
             var xMax = Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y);
-            var eps = 0.00001f;
             anim.SetBool("moveTowards",!xMax && velocity.y <= 0);
             anim.SetBool("moveAway",!xMax && velocity.y >= 0);
             anim.SetBool("moveLeft",xMax && velocity.x <= 0);

@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     public int numBonusTasks;
     public float interactDistance;
 
-    [FormerlySerializedAs("closestTaskController")]
     public TaskStationController closestStation = null;
 
     void Start()

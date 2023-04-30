@@ -14,6 +14,8 @@ public class TaskSequence : MonoBehaviour
     public int[] stationDurations;
 
     public int currentStation = -1;
+
+    public bool bonus;
     
     public void SpawnSequence()
     {

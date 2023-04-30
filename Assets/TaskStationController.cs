@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Pathfinding;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -57,6 +58,11 @@ public class TaskStationController : MonoBehaviour
                 {
                     currentActiveTask = taskQueue[0];
                     taskQueue.RemoveAt(0);
+                    var prefab = OfficeController.INSTANCE.taskExclamationPrefab;
+                    if (currentActiveTask.bonus)
+                    {
+                        prefab = OfficeController.INSTANCE.taskBonusExclamationPrefab;
+                    }
                     taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskExclamationPrefab, markerPosition);
                 }
             }
