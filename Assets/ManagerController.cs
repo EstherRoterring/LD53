@@ -6,6 +6,7 @@ using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
 using UnityEditor.UI;
+using UnityEditor.UIElements;
 using Random = UnityEngine.Random;
 
 /**
@@ -52,6 +53,8 @@ public class ManagerController : MonoBehaviour
     private Animator anim;
     public bool angry=false;
 
+    public float totalManagerTime = 0;
+
     void Start()
     {
         anim=GetComponent<Animator>();
@@ -59,13 +62,15 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
+        totalManagerTime += Time.deltaTime;
         if (currentState != null)
         {
+            // override tasks
             if (office.coffee.activeSelf && room == office.coffeeRoom)
             {
                 ChangeState(new DrinkCoffeeState(10f));
             }
-            if (office.ringingPhone.activeSelf && !(currentState is AnswerCallInOfficeState))
+            else if (office.ringingPhone.activeSelf && !(currentState is AnswerCallInOfficeState))
             {
                 ChangeState(new AnswerCallInOfficeState(3f));
             }
@@ -165,14 +170,19 @@ public class ManagerController : MonoBehaviour
 
     public void FindNewState()
     {
-        if (currentState is ChasePlayerState)
+        List<IState> nextStates = new List<IState>();
+        nextStates.Add(new ChasePlayerState(5f));
+        nextStates.Add(new ChasePlayerState(5f));
+        if (totalManagerTime < 60)
         {
-            ChangeState(new ReturnToOfficeState(5f, office.managerRoom));
+            nextStates.Add(new ReturnToOfficeState(5f, office.managerRoom));
         }
-        else
+        if (totalManagerTime > 60)
         {
-            ChangeState(new ChasePlayerState(5f));
+            nextStates.Add(new RageFollowPlayerState(10f, 4f));
         }
+
+        ChangeState(nextStates[Random.Range(0, nextStates.Count)]);
     }
 
     public void GoToRoom(RoomController newRoom)
@@ -349,6 +359,45 @@ public class DrinkCoffeeState : IState
     public void OnExit(ManagerController manager)
     {
         manager.office.coffee.SetActive(false);
+        manager.visitLocations.Clear();
+        manager.followPath = null;
+    }
+}
+
+public class RageFollowPlayerState : IState
+{
+    private float followTime;
+    private float chillTime;
+
+    public RageFollowPlayerState(float totalFollowTime, float totalChillTime)
+    {
+        this.followTime = totalFollowTime;
+        chillTime = totalChillTime;
+    }
+
+    public void OnEnter(ManagerController manager)
+    {
+        manager.GoTo(manager.office.player.transform);
+    }
+
+    public void UpdateState(ManagerController manager)
+    {
+        if (followTime >= 0)
+        {
+            followTime -= Time.deltaTime;
+            manager.GoTo(manager.office.player.transform);
+            return;
+        }
+
+        chillTime -= Time.deltaTime;
+        if (chillTime <= 0)
+        {
+            manager.FindNewState();
+        }
+    }
+
+    public void OnExit(ManagerController manager)
+    {
         manager.visitLocations.Clear();
         manager.followPath = null;
     }
