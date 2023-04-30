@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Pathfinding;
 using UnityEditor.UI;
@@ -43,13 +44,10 @@ public class ManagerController : MonoBehaviour
     public Path followPath = null;
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
+
+    private List<DoorController> visitDoors = new List<DoorController>();
     
     IState currentState;
-
-    private void Start()
-    {
-        ChangeState(new ChasePlayerState(5f, office.player.transform.position));
-    }
 
     void Update()
     {
@@ -79,11 +77,9 @@ public class ManagerController : MonoBehaviour
                     break;
                 }
             }
-
-            var speedFactor = reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint / nextWaypointDistance) : 1f;
-
+            
             Vector3 dir = (followPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            Vector3 velocity = walkSpeed * speedFactor * dir;
+            Vector3 velocity = walkSpeed * dir;
 
             transform.position += velocity * Time.deltaTime;
 
@@ -91,6 +87,15 @@ public class ManagerController : MonoBehaviour
             {
                 followPath = null;
                 currentWaypoint = 0;
+            }
+        }
+        if (followPath == null) {
+            if (visitDoors.Count > 0)
+            {
+                var visitDoor = visitDoors[0];
+                visitDoors.RemoveAt(0);
+                Seeker seeker = GetComponent<Seeker>();
+                seeker.StartPath(transform.position, visitDoor.transform.position, SetFollowPath);
             }
         }
     }
@@ -119,7 +124,23 @@ public class ManagerController : MonoBehaviour
         }
         else
         {
-            ChangeState(new ChasePlayerState(5f, office.player.transform.position));
+            ChangeState(new ChasePlayerState(5f));
+        }
+    }
+
+    public void GoToRoom(RoomController newRoom)
+    {
+        // todo, implement search
+        visitDoors.Add(newRoom.doors.Keys.First());
+    }
+    
+    public void OnCollisionStay2D(Collision2D other)
+    {
+        RoomController room = null;
+        other.gameObject.TryGetComponent<RoomController>(out room);
+        if (room != null)
+        {
+            this.room = room;
         }
     }
 }
@@ -134,18 +155,15 @@ public interface IState
 public class ChasePlayerState : IState
 {
     private float timeLeft;
-    private Vector3 targetPosition;
 
-    public ChasePlayerState(float totalTime, Vector3 targetPosition)
+    public ChasePlayerState(float totalTime)
     {
         timeLeft = totalTime;
-        this.targetPosition = targetPosition;
     }
 
     public void OnEnter(ManagerController manager)
     {
-        Seeker seeker = manager.GetComponent<Seeker>();
-        seeker.StartPath(manager.transform.position, targetPosition, manager.SetFollowPath);
+        manager.GoToRoom(manager.office.player.room);
     }
 
     public void UpdateState(ManagerController manager)
@@ -182,8 +200,7 @@ public class ReturnToOfficeState : IState
 
     public void OnEnter(ManagerController manager)
     {
-        Seeker seeker = manager.GetComponent<Seeker>();
-        seeker.StartPath(manager.transform.position, targetRoom.transform.position, manager.SetFollowPath);
+        manager.GoToRoom(targetRoom);
     }
 
     public void UpdateState(ManagerController manager)
