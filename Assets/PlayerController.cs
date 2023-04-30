@@ -117,8 +117,9 @@ public class PlayerController : MonoBehaviour
         {
             foreach (var station in task.stations)
             {
-                if ((Input.GetKey("e") || Input.GetKey(KeyCode.Space)) && station == closestStation)
-                {
+                bool interacting = (Input.GetKey("e") || Input.GetKey(KeyCode.Space)) && station == closestStation;
+                interacting &= (station.limitAccessFromRoom == null || station.limitAccessFromRoom == room);
+                if (interacting) {
                     station.UpdateWithInteraction();
                 }
                 else

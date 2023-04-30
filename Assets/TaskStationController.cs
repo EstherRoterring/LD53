@@ -30,6 +30,8 @@ public class TaskStationController : MonoBehaviour
     [FormerlySerializedAs("completionDelay")] public float completionDelayMax = 1f;
     private float completionDelay = 0;
 
+    public RoomController limitAccessFromRoom = null;
+
     public void AddTaskToQueue(TaskSequence taskSequence)
     {
         taskQueue.Add(taskSequence);

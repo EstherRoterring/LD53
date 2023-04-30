@@ -7274,7 +7274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.859
+      value: -3.78
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8325,6 +8325,10 @@ PrefabInstance:
       propertyPath: maxProgress
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
+      propertyPath: limitAccessFromRoom
+      value: 
+      objectReference: {fileID: 1402800855}
     - target: {fileID: 603846396982499747, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Name
       value: CoffeeMachineTask
@@ -13078,6 +13082,10 @@ PrefabInstance:
       propertyPath: maxProgress
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
+      propertyPath: limitAccessFromRoom
+      value: 
+      objectReference: {fileID: 1977132701}
     - target: {fileID: 603846396982499747, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Name
       value: TelephoneBoothTask
