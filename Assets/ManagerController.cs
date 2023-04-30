@@ -48,9 +48,29 @@ public class ManagerController : MonoBehaviour
     private List<DoorController> visitDoors = new List<DoorController>();
     
     IState currentState;
+    private Animator anim;
+    public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
+
+
+    void Start()
+    {
+        anim=GetComponent<Animator>();
+    }
 
     void Update()
     {
+
+        moveAway=false;
+        moveLeft=false;
+        moveRight=false;
+        moveTowards =false;
+        standingStill=false;
+        anim.SetBool("standingStill",false);
+        anim.SetBool("moveTowards",false);
+        anim.SetBool("moveRight",false);
+        anim.SetBool("moveLeft",false);
+        anim.SetBool("moveAway",false);
+
         if (currentState != null)
         {
             currentState.UpdateState(this);
