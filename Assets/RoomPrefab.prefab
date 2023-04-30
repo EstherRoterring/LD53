@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4332524245252653545}
   - component: {fileID: 4332524245252653546}
   - component: {fileID: 3141301370170812577}
+  - component: {fileID: 743385101001281482}
   m_Layer: 7
   m_Name: RoomPrefab
   m_TagString: Untagged
@@ -73,6 +74,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomCenter: {fileID: 1229265783784781719}
+--- !u!50 &743385101001281482
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4332524245252653544}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &4971962853836338835
 GameObject:
   m_ObjectHideFlags: 0

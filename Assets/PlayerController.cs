@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
         if (closestStation != null)
         {
-            if (Input.GetKey("e"))
+            if (Input.GetKey("e") || Input.GetKey(KeyCode.Space))
             {
                 closestStation.UpdateWithInteraction();
             }
@@ -130,14 +130,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnCollisionStay2D(Collision2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        RoomController room = null;
-        other.gameObject.TryGetComponent<RoomController>(out room);
-        if (room != null)
+        OnTriggerStay2D(other);
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        RoomController nextRoom = null;
+        other.gameObject.TryGetComponent<RoomController>(out nextRoom);
+        if (nextRoom != null)
         {
-            // oh oh da kommt jemand rein
-            this.room = room;
+            Debug.Log($"player is its a rooM!!!!! {nextRoom}");
+            room = nextRoom;
         }
     }
 }
