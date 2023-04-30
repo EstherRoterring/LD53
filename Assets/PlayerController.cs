@@ -13,8 +13,12 @@ public class PlayerController : MonoBehaviour
 
     public RoomController room;
     public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
-
-
+    private Animator anim;
+    
+    void Start()
+    {
+        anim=getComponent<Animator>();
+    }
 
 
 
@@ -87,6 +91,15 @@ public class PlayerController : MonoBehaviour
             //  && this.office.CanWalkTo(newPos + (Vector3) (this.transform.localScale * walkDir))
             this.transform.localPosition = newPos;
         // }
+
+        if (moveAway==true){anim.SetBool("moveAway",true);}        
+        if(moveLeft==true){anim.SetBool("moveLeft",true);}
+        if(moveRight==true){anim.SetBool("moveRight",true);}
+        if(moveTowards==true){anim.SetBool("moveTowards",true);}
+        if(standingStill==true){anim.SetBool("standingStill",true);}
+
+
+
     }
 
     public void OnCollisionStay2D(Collision2D other)
