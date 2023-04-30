@@ -2601,6 +2601,11 @@ MonoBehaviour:
   walkSpeed: 1.2
   office: {fileID: 2072452943}
   room: {fileID: 1821855002}
+  moveLeft: 0
+  moveRight: 0
+  moveTowards: 0
+  moveAway: 0
+  standingStill: 0
 --- !u!212 &1025479800
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -31,6 +31,14 @@ public class PlayerController : MonoBehaviour
         moveRight=false;
         moveTowards =false;
         standingStill=true;
+        anim.SetBool("standingStill",false);
+        anim.SetBool("moveTowards",false);
+        anim.SetBool("moveRight",false);
+        anim.SetBool("moveLeft",false);
+        anim.SetBool("moveAway",false);
+
+
+
 
         var oldPos = transform.localPosition;
         UnityEngine.Vector2 horizontalWalkDir;
