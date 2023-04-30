@@ -112,10 +112,6 @@ public class PlayerController : MonoBehaviour
         {
             closestStation = null;
         }
-        if (!(Input.GetKey("e") || Input.GetKey(KeyCode.Space)))
-        {
-            closestStation = null;
-        }
         if (closestStation != null && closestStation.limitAccessFromRoom != null &&
             closestStation.limitAccessFromRoom != room)
         {
@@ -126,7 +122,7 @@ public class PlayerController : MonoBehaviour
         {
             foreach (var station in task.stations)
             {
-                if (station == closestStation) {
+                if (station == closestStation && (Input.GetKey("e") || Input.GetKey(KeyCode.Space))) {
                     station.UpdateWithInteraction();
                 }
                 else
