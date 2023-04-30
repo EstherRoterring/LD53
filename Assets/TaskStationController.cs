@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using Pathfinding;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class SimpleTaskController : MonoBehaviour
+public class TaskStationController : MonoBehaviour
 {
     public GameObject interactObject;
     public GameObject interactObjectHighlight;
     public Transform markerPosition;
     private Animator progressAnimator;
 
-    public bool active;
-    public bool finished;
     private GameObject taskActiveMarker;
 
     public Color interactHighlightColor;
@@ -22,18 +22,23 @@ public class SimpleTaskController : MonoBehaviour
     public float progress = 0f;
     public float maxProgress;
 
-    public void SetActive()
+    private TaskSequence currentActiveTask = null;
+    private List<TaskSequence> taskQueue = new List<TaskSequence>();
+
+    [FormerlySerializedAs("completionDelay")] public float completionDelayMax = 1f;
+    private float completionDelay = 0;
+
+    public void AddTaskToQueue(TaskSequence taskSequence)
     {
-        active = true;
-        taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskExclamationPrefab, markerPosition);
+        taskQueue.Add(taskSequence);
     }
 
     void Update()
     {
         var highlightRenderer = interactObjectHighlight.GetComponent<SpriteRenderer>();
-        if (active)
+        if (currentActiveTask != null)
         {
-            if (OfficeController.INSTANCE.player.closestTaskController == this)
+            if (OfficeController.INSTANCE.player.closestStation == this)
             {
                 highlightRenderer.color = interactHighlightColor;
                 
@@ -44,12 +49,29 @@ public class SimpleTaskController : MonoBehaviour
         else
         {
             highlightRenderer.color = new Color(1, 1, 1, 0);
+            // spawn new task
+            completionDelay += Time.deltaTime;
+            if (completionDelay > completionDelayMax)
+            {
+                completionDelay = 0;
+                if (taskQueue.Count > 0)
+                {
+                    currentActiveTask = taskQueue[0];
+                    taskQueue.RemoveAt(0);
+                    var prefab = OfficeController.INSTANCE.taskExclamationPrefab;
+                    if (currentActiveTask.bonus)
+                    {
+                        prefab = OfficeController.INSTANCE.taskBonusExclamationPrefab;
+                    }
+                    taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskExclamationPrefab, markerPosition);
+                }
+            }
         }
     }
 
     public void UpdateWithInteraction()
     {
-        if (active)
+        if (currentActiveTask != null)
         {
             if (progress == 0f)
             {
@@ -69,17 +91,19 @@ public class SimpleTaskController : MonoBehaviour
             Debug.Log(progress);
             if (progress >= maxProgress)
             {
-                // timer is over
-                finished = true;
-                Destroy(gameObject);
-                // blabla give the player some kudos
+                // timer is over, reset everything
+                currentActiveTask.NotifyTaskCompleted();
+                currentActiveTask = null;
+                Destroy(taskActiveMarker);
+                taskActiveMarker = null;
+                progress = 0f;
             }
         }
     }
 
     public void UpdateWithoutInteraction()
     {
-        if (active && progressAnimator != null)
+        if (currentActiveTask != null && progressAnimator != null)
         {
             progressAnimator.enabled = false;
         }

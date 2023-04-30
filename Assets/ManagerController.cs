@@ -49,7 +49,6 @@ public class ManagerController : MonoBehaviour
     
     IState currentState;
     private Animator anim;
-    public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
 
 
     void Start()
@@ -59,18 +58,6 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
-
-        moveAway=false;
-        moveLeft=false;
-        moveRight=false;
-        moveTowards =false;
-        standingStill=false;
-        anim.SetBool("standingStill",false);
-        anim.SetBool("moveTowards",false);
-        anim.SetBool("moveRight",false);
-        anim.SetBool("moveLeft",false);
-        anim.SetBool("moveAway",false);
-
         if (currentState != null)
         {
             currentState.UpdateState(this);
@@ -103,6 +90,7 @@ public class ManagerController : MonoBehaviour
             
             Vector3 dir = (followPath.vectorPath[currentWaypoint] - transform.position).normalized;
             Vector3 velocity = walkSpeed * dir;
+            UpdateAnimationDirection(velocity);
 
             transform.position += velocity * Time.deltaTime;
 
@@ -120,6 +108,26 @@ public class ManagerController : MonoBehaviour
                 Seeker seeker = GetComponent<Seeker>();
                 seeker.StartPath(transform.position, visitDoor.transform.position, SetFollowPath);
             }
+        }
+    }
+
+    public void UpdateAnimationDirection(Vector3 velocity)
+    {
+        if (velocity.magnitude <= 0.01f)
+        {
+            anim.SetBool("standingStill", true);
+            anim.SetBool("moveTowards",false);
+            anim.SetBool("moveRight",false);
+            anim.SetBool("moveLeft",false);
+            anim.SetBool("moveAway",false);
+        } else
+        {
+            anim.SetBool("standingStill", false);
+            var xMax = Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y);
+            anim.SetBool("moveTowards",!xMax && velocity.y <= 0);
+            anim.SetBool("moveAway",!xMax && velocity.y >= 0);
+            anim.SetBool("moveLeft",xMax && velocity.x <= 0);
+            anim.SetBool("moveRight",xMax && velocity.x >= 0);
         }
     }
 
