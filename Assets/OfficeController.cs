@@ -29,6 +29,9 @@ public class OfficeController : MonoBehaviour
     public GameObject taskExclamationPrefab;
     public GameObject taskBonusExclamationPrefab;
     public GameObject taskTimerPrefab;
+    
+    //Textbox starter
+    public TextBoxController textbox;
 
     public OfficeController()
     {
@@ -86,4 +89,5 @@ public class OfficeController : MonoBehaviour
             Debug.Log("YOU DIE!");
         }
     }
+    
 }

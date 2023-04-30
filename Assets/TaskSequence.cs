@@ -6,11 +6,13 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskSequence : MonoBehaviour
 {
     public TaskStationController[] stations;
     public string[] stationTexts;
+    public Sprite[] stationImages;
     public int[] stationDurations;
 
     public int currentStation = -1;
