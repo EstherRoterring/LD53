@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
@@ -17,10 +18,14 @@ public class PlayerController : MonoBehaviour
     public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
     private Animator anim;
     
-    public int numTasks;
+    [FormerlySerializedAs("numTasks")]
+    public int numSmallTasks;
+    public int numBigTasks;
+    public int numBonusTasks;
     public float interactDistance;
 
-    public SimpleTaskController closestTaskController = null;
+    [FormerlySerializedAs("closestTaskController")]
+    public TaskStationController closestStation = null;
 
     void Start()
     {
@@ -95,31 +100,33 @@ public class PlayerController : MonoBehaviour
         if(moveTowards==true){anim.SetBool("moveTowards",true);}
         if(standingStill==true){anim.SetBool("standingStill",true);}
 
-        var closestTaskDist = Mathf.Infinity;
-        closestTaskController = null;
-        foreach (var task in office.tasksContainer.GetComponentsInChildren<SimpleTaskController>())
+        var closestStationDist = Mathf.Infinity;
+        closestStation = null;
+        foreach (var task in office.activeTaskSequences)
         {
-            var dist = Vector3.Distance(task.interactObject.transform.position, transform.position);
-            if (dist < closestTaskDist)
-            {
-                closestTaskController = task;
-                closestTaskDist = dist;
+            foreach (var station in task.stations) {
+                var dist = Vector3.Distance(station.interactObject.transform.position, transform.position);
+                if (dist < closestStationDist)
+                {
+                    closestStation = station;
+                    closestStationDist = dist;
+                }
             }
         }
-        if (closestTaskDist > interactDistance)
+        if (closestStationDist > interactDistance)
         {
-            closestTaskController = null;
+            closestStation = null;
         }
 
-        if (closestTaskController != null)
+        if (closestStation != null)
         {
             if (Input.GetKey("e"))
             {
-                closestTaskController.UpdateWithInteraction();
+                closestStation.UpdateWithInteraction();
             }
             else
             {
-                closestTaskController.UpdateWithoutInteraction();
+                closestStation.UpdateWithoutInteraction();
             }
         }
     }
