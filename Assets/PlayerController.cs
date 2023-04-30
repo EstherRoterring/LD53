@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
 {
     public float walkSpeed;
     public OfficeController office;
+
+    public RoomController room;
     
     void Update()
     {
@@ -58,5 +61,15 @@ public class PlayerController : MonoBehaviour
             //  && this.office.CanWalkTo(newPos + (Vector3) (this.transform.localScale * walkDir))
             this.transform.localPosition = newPos;
         // }
+    }
+
+    public void OnCollisionStay2D(Collision2D other)
+    {
+        RoomController room = null;
+        other.gameObject.TryGetComponent<RoomController>(out room);
+        if (room != null)
+        {
+            this.room = room;
+        }
     }
 }
