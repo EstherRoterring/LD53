@@ -36,6 +36,7 @@ public class OfficeController : MonoBehaviour
     public TextBoxController textbox;
 
     public GameObject coffee;
+    public GameObject ringingPhone;
     
     public OfficeController()
     {
@@ -97,5 +98,10 @@ public class OfficeController : MonoBehaviour
     public void SpawnCoffeeInKitchen()
     {
         coffee.SetActive(true);
+    }
+    
+    public void CallTelephone()
+    {
+        ringingPhone.SetActive(true);
     }
 }

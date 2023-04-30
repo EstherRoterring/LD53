@@ -19,6 +19,7 @@ public class TaskSequence : MonoBehaviour
 
     public bool bonus = false;
     public bool spawnsCoffeeInKitchen = false;
+    public bool callsTelephone = false;
     
     public void SpawnSequence()
     {
@@ -35,6 +36,11 @@ public class TaskSequence : MonoBehaviour
             if (spawnsCoffeeInKitchen)
             {
                 OfficeController.INSTANCE.SpawnCoffeeInKitchen();
+            }
+
+            if (callsTelephone)
+            {
+                OfficeController.INSTANCE.CallTelephone();
             }
             OfficeController.INSTANCE.activeTaskSequences.Remove(this);
             return;

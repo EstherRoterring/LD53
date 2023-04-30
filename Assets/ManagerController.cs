@@ -51,7 +51,6 @@ public class ManagerController : MonoBehaviour
     IState currentState;
     private Animator anim;
 
-
     void Start()
     {
         anim=GetComponent<Animator>();
@@ -61,10 +60,13 @@ public class ManagerController : MonoBehaviour
     {
         if (currentState != null)
         {
-            Debug.Log($"{office.coffee.activeSelf} and {room == office.coffeeRoom}");
             if (office.coffee.activeSelf && room == office.coffeeRoom)
             {
                 ChangeState(new DrinkCoffeeState(10f));
+            }
+            if (office.ringingPhone.activeSelf && !(currentState is AnswerCallInOfficeState))
+            {
+                ChangeState(new AnswerCallInOfficeState(3f));
             }
             currentState.UpdateState(this);
         }
@@ -260,6 +262,42 @@ public class ReturnToOfficeState : IState
         bool arrived = manager.followPath == null;
         if (arrived)
         {
+            timeLeft -= Time.deltaTime;
+        }
+
+        if (timeLeft <= 0)
+        {
+            manager.FindNewState();
+        }
+    }
+
+    public void OnExit(ManagerController manager)
+    {
+        manager.visitLocations.Clear();
+        manager.followPath = null;
+    }
+}
+
+public class AnswerCallInOfficeState : IState
+{
+    private float timeLeft;
+
+    public AnswerCallInOfficeState(float totalTime)
+    {
+        timeLeft = totalTime;
+    }
+
+    public void OnEnter(ManagerController manager)
+    {
+        manager.GoTo(manager.office.ringingPhone.transform);
+    }
+
+    public void UpdateState(ManagerController manager)
+    {
+        bool arrived = manager.followPath == null;
+        if (arrived)
+        {
+            manager.office.ringingPhone.SetActive(false);
             timeLeft -= Time.deltaTime;
         }
 
