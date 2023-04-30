@@ -44,45 +44,41 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("moveAway",false);
 
         var oldPos = transform.localPosition;
-        UnityEngine.Vector2 horizontalWalkDir;
-        if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
-        {
-            horizontalWalkDir = UnityEngine.Vector2.left;
-            moveLeft=true;
-            standingStill=false;
+        UnityEngine.Vector2 horizontalWalkDir = UnityEngine.Vector2.zero;
+        UnityEngine.Vector2 verticalWalkDir = UnityEngine.Vector2.zero;
 
-        }
-        else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+        if (!office.gameOver)
         {
-            horizontalWalkDir = UnityEngine.Vector2.right;
-            moveRight=true;
-            standingStill=false;
-        }
-        else
-        {
-            horizontalWalkDir = UnityEngine.Vector2.zero;
-        }
-        
-        UnityEngine.Vector2 verticalWalkDir;
-        if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
-        {
-            verticalWalkDir = UnityEngine.Vector2.up;
-            moveAway=true;
-            standingStill=false;
-            moveLeft=false;
-            moveRight=false;
-        }
-        else if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
-        {
-            verticalWalkDir = UnityEngine.Vector2.down;
-            moveTowards=true;
-            standingStill=false;
-            moveLeft=false;
-            moveRight=false;
-        }
-        else
-        {
-            verticalWalkDir = UnityEngine.Vector2.zero;
+            if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
+            {
+                horizontalWalkDir = UnityEngine.Vector2.left;
+                moveLeft=true;
+                standingStill=false;
+
+            }
+            else if (Input.GetKey("d") || Input.GetKey(KeyCode.RightArrow))
+            {
+                horizontalWalkDir = UnityEngine.Vector2.right;
+                moveRight=true;
+                standingStill=false;
+            }
+            
+            if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))
+            {
+                verticalWalkDir = UnityEngine.Vector2.up;
+                moveAway=true;
+                standingStill=false;
+                moveLeft=false;
+                moveRight=false;
+            }
+            else if (Input.GetKey("s") || Input.GetKey(KeyCode.DownArrow))
+            {
+                verticalWalkDir = UnityEngine.Vector2.down;
+                moveTowards=true;
+                standingStill=false;
+                moveLeft=false;
+                moveRight=false;
+            }
         }
         
         var newPos = oldPos + (Vector3) (Time.deltaTime * walkSpeed * (horizontalWalkDir + verticalWalkDir));

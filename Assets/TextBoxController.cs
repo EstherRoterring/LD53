@@ -9,8 +9,7 @@ public class TextBoxController : MonoBehaviour
     public TextMeshProUGUI textMeshPro;
     public Image image;
     private string text;
-
-
+    
     public Transform rechtsOben;
     public Transform linksUnten;
 

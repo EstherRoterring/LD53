@@ -39,6 +39,8 @@ public class OfficeController : MonoBehaviour
     
     public GameObject coffee;
     public GameObject ringingPhone;
+
+    public bool gameOver = false;
     
     public OfficeController()
     {
@@ -59,7 +61,7 @@ public class OfficeController : MonoBehaviour
         }
         
         // manager
-        manager.ChangeState(new ChasePlayerState(5f));
+        manager.ChangeState(new ChasePlayerManagerState(5f));
         
         var rnd = new System.Random();
         foreach (var sequence in allDutySmallTaskSequences.OrderBy(x => rnd.Next()).Take(player.numSmallTasks))
@@ -93,7 +95,7 @@ public class OfficeController : MonoBehaviour
     {
         if (LookupRoomColor(player.transform.localPosition) == LookupRoomColor(manager.transform.localPosition))
         {
-            Debug.Log("YOU DIE!");
+            gameOver = true;
         }
     }
 

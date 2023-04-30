@@ -49,7 +49,7 @@ public class ManagerController : MonoBehaviour
 
     public List<Transform> visitLocations = new List<Transform>();
     
-    IState currentState;
+    IManagerState _currentManagerState;
     private Animator anim;
     public bool angry=false;
 
@@ -63,18 +63,18 @@ public class ManagerController : MonoBehaviour
     void Update()
     {
         totalManagerTime += Time.deltaTime;
-        if (currentState != null)
+        if (_currentManagerState != null)
         {
             // override tasks
             if (office.coffee.activeSelf && room == office.coffeeRoom)
             {
-                ChangeState(new DrinkCoffeeState(10f));
+                ChangeState(new DrinkCoffeeManagerState(10f));
             }
-            else if (office.ringingPhone.activeSelf && !(currentState is AnswerCallInOfficeState))
+            else if (office.ringingPhone.activeSelf && !(_currentManagerState is AnswerCallInOfficeManagerState))
             {
-                ChangeState(new AnswerCallInOfficeState(3f));
+                ChangeState(new AnswerCallInOfficeManagerState(3f));
             }
-            currentState.UpdateState(this);
+            _currentManagerState.UpdateState(this);
         }
 
         if (followPath != null)
@@ -158,28 +158,28 @@ public class ManagerController : MonoBehaviour
         currentWaypoint = 0;
     }
     
-    public void ChangeState(IState newState)
+    public void ChangeState(IManagerState newManagerState)
     {
-        if (currentState != null)
+        if (_currentManagerState != null)
         {
-            currentState.OnExit(this);
+            _currentManagerState.OnExit(this);
         }
-        currentState = newState;
-        currentState.OnEnter(this);
+        _currentManagerState = newManagerState;
+        _currentManagerState.OnEnter(this);
     }
 
     public void FindNewState()
     {
-        List<IState> nextStates = new List<IState>();
-        nextStates.Add(new ChasePlayerState(5f));
-        nextStates.Add(new ChasePlayerState(5f));
+        List<IManagerState> nextStates = new List<IManagerState>();
+        nextStates.Add(new ChasePlayerManagerState(5f));
+        nextStates.Add(new ChasePlayerManagerState(5f));
         if (totalManagerTime < 60)
         {
-            nextStates.Add(new ReturnToOfficeState(5f, office.managerRoom));
+            nextStates.Add(new ReturnToOfficeManagerState(5f, office.managerRoom));
         }
         if (totalManagerTime > 60)
         {
-            nextStates.Add(new RageFollowPlayerState(10f, 4f));
+            nextStates.Add(new RageFollowPlayerManagerState(10f, 4f));
         }
 
         ChangeState(nextStates[Random.Range(0, nextStates.Count)]);
@@ -212,18 +212,18 @@ public class ManagerController : MonoBehaviour
     }
 }
 
-public interface IState
+public interface IManagerState
 {
     public void OnEnter(ManagerController manager);
     public void UpdateState(ManagerController manager);
     public void OnExit(ManagerController manager);
 }
 
-public class ChasePlayerState : IState
+public class ChasePlayerManagerState : IManagerState
 {
     private float timeLeft;
 
-    public ChasePlayerState(float totalTime)
+    public ChasePlayerManagerState(float totalTime)
     {
         timeLeft = totalTime;
     }
@@ -255,12 +255,12 @@ public class ChasePlayerState : IState
 }
 
 
-public class ReturnToOfficeState : IState
+public class ReturnToOfficeManagerState : IManagerState
 {
     private float timeLeft;
     private RoomController targetRoom;
 
-    public ReturnToOfficeState(float totalTime, RoomController room)
+    public ReturnToOfficeManagerState(float totalTime, RoomController room)
     {
         timeLeft = totalTime;
         this.targetRoom = room;
@@ -292,11 +292,11 @@ public class ReturnToOfficeState : IState
     }
 }
 
-public class AnswerCallInOfficeState : IState
+public class AnswerCallInOfficeManagerState : IManagerState
 {
     private float timeLeft;
 
-    public AnswerCallInOfficeState(float totalTime)
+    public AnswerCallInOfficeManagerState(float totalTime)
     {
         timeLeft = totalTime;
     }
@@ -328,11 +328,11 @@ public class AnswerCallInOfficeState : IState
     }
 }
 
-public class DrinkCoffeeState : IState
+public class DrinkCoffeeManagerState : IManagerState
 {
     private float timeLeft;
 
-    public DrinkCoffeeState(float totalTime)
+    public DrinkCoffeeManagerState(float totalTime)
     {
         timeLeft = totalTime;
     }
@@ -364,12 +364,12 @@ public class DrinkCoffeeState : IState
     }
 }
 
-public class RageFollowPlayerState : IState
+public class RageFollowPlayerManagerState : IManagerState
 {
     private float followTime;
     private float chillTime;
 
-    public RageFollowPlayerState(float totalFollowTime, float totalChillTime)
+    public RageFollowPlayerManagerState(float totalFollowTime, float totalChillTime)
     {
         this.followTime = totalFollowTime;
         chillTime = totalChillTime;
