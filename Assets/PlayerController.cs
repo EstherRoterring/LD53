@@ -62,11 +62,6 @@ public class PlayerController : MonoBehaviour
         {
             horizontalWalkDir = UnityEngine.Vector2.zero;
         }
-
-        // if (!this.office.CanWalkTo(oldPos + (Vector3) (Time.deltaTime * walkSpeed * horizontalWalkDir)))
-        // {
-        //     horizontalWalkDir = UnityEngine.Vector2.zero;
-        // }
         
         UnityEngine.Vector2 verticalWalkDir;
         if (Input.GetKey("w") || Input.GetKey(KeyCode.UpArrow))

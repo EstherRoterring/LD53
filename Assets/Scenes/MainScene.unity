@@ -6973,7 +6973,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608858565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7149,7 +7149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 666326867}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.931, z: -3}
+  m_LocalPosition: {x: 0, y: 3.931, z: -10}
   m_LocalScale: {x: 14, y: 7, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8631,12 +8631,12 @@ PrefabInstance:
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
@@ -8713,6 +8713,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 603846397098245413, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
       propertyPath: m_Sprite
@@ -8734,6 +8744,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
@@ -10839,7 +10859,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421542753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.056, z: -3}
+  m_LocalPosition: {x: 0, y: -4.056, z: -10}
   m_LocalScale: {x: 14, y: 7, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13553,12 +13573,12 @@ PrefabInstance:
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
@@ -13635,6 +13655,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 603846397098245413, guid: 524ef0400415d4eeda56d7391fc65919,
         type: 3}
       propertyPath: m_Sprite
@@ -13656,6 +13686,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
