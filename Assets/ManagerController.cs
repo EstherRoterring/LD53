@@ -106,6 +106,10 @@ public class ManagerController : MonoBehaviour
                 currentWaypoint = 0;
             }
         }
+        else
+        {
+            UpdateAnimationDirection(Vector3.zero);
+        }
         if (followPath == null) {
             if (visitLocations.Count > 0)
             {
