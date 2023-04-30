@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Pathfinding;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SimpleTaskController : MonoBehaviour
@@ -9,6 +11,7 @@ public class SimpleTaskController : MonoBehaviour
     public GameObject interactObject;
     public GameObject interactObjectHighlight;
     public Transform markerPosition;
+    private Animator progressAnimator;
 
     public bool active;
     public bool finished;
@@ -56,16 +59,29 @@ public class SimpleTaskController : MonoBehaviour
                     Destroy(taskActiveMarker);
                 }
                 taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskTimerPrefab, markerPosition);
+                progressAnimator = taskActiveMarker.GetComponent<Animator>();
+                progressAnimator.speed = 1.4f / maxProgress;
             }
+
+            progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
+            progressAnimator.enabled = true;
             progress += Time.deltaTime;
+            Debug.Log(progress);
             if (progress >= maxProgress)
             {
                 // timer is over
                 finished = true;
-                Destroy(this);
-                
-                // todo, points, blabla
+                Destroy(gameObject);
+                // blabla give the player some kudos
             }
+        }
+    }
+
+    public void UpdateWithoutInteraction()
+    {
+        if (active && progressAnimator != null)
+        {
+            progressAnimator.enabled = false;
         }
     }
 }
