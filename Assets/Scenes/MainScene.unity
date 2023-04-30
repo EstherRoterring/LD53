@@ -13264,6 +13264,8 @@ MonoBehaviour:
   - {fileID: 327112130}
   allBonusTaskSequences:
   - {fileID: 80861726}
+  - {fileID: 565043339}
+  - {fileID: 704483883}
   activeTaskSequences: []
   taskExclamationPrefab: {fileID: 1228709073738126988, guid: 8e41bf0dac9db4b10a9253bd31dfb488, type: 3}
   taskBonusExclamationPrefab: {fileID: 0}
