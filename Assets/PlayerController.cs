@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-        anim=getComponent<Animator>();
+        anim=GetComponent<Animator>();
     }
 
 
