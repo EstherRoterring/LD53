@@ -63,14 +63,15 @@ public class SimpleTaskController : MonoBehaviour
                 progressAnimator.speed = 1.4f / maxProgress;
             }
 
-            progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress * 1.4f);
+            progressAnimator.Play("TaskProgressTimerAnim", 0, progress / (maxProgress * 1.4f));
             progressAnimator.enabled = true;
             progress += Time.deltaTime;
+            Debug.Log(progress);
             if (progress >= maxProgress)
             {
                 // timer is over
                 finished = true;
-                Destroy(this);
+                Destroy(gameObject);
                 // blabla give the player some kudos
             }
         }
