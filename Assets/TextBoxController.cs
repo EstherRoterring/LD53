@@ -11,8 +11,8 @@ public class TextBoxController : MonoBehaviour
     private string text;
 
 
-    private Vector3 rechtsOben = new Vector3(3, 3, -3);
-    private Vector3 linksUnten = new Vector3(-3, -3, -3);
+    public Transform rechtsOben;
+    public Transform linksUnten;
 
     //set Methode umkomplette Box richtig zu konfigurieren
     public void setTextBox(string text, Sprite imageSprite, int position){
@@ -48,7 +48,7 @@ public class TextBoxController : MonoBehaviour
     }
     
     //aendert den Text
-    public void SetText(string text){
+    public void SetText(string text) {
         this.text = text;
         textMeshPro.text = text;
     }
@@ -56,13 +56,13 @@ public class TextBoxController : MonoBehaviour
     void Position1()
     {
         //unten links -3,-3
-        transform.localPosition = linksUnten;
+        transform.position = linksUnten.position;
     }
 
     void Position2()
     {
         //oben rechts 3,3
-        transform.localPosition = rechtsOben;
+        transform.position = rechtsOben.position;
     }
 
     public void Visible(bool visible){
