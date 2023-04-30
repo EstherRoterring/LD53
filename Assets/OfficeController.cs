@@ -8,20 +8,27 @@ using UnityEngine.Assertions;
 public class OfficeController : MonoBehaviour
 {
     public PlayerController player;
-    public GameObject manager;
+    public ManagerController manager;
 
     public GameObject floorPlan;
     public Texture2D roomLookupTexture;
 
-    // public Transform[] doorLocations;
-
-    private Dictionary<Room, Dictionary<Room, Transform>> roomNeighbors;
+    public GameObject roomGraph;
+    private List<RoomController> rooms = new List<RoomController>();
 
     void Start()
     {
-        // Assert.IsTrue(doorLocations.Length == 17);
+        foreach (var room in roomGraph.transform.GetComponentsInChildren<RoomController>())
+        {
+            rooms.Add(room);
+        }
+        foreach (var door in roomGraph.transform.GetComponentsInChildren<DoorController>())
+        {
+            door.fromRoom.doors.Add(door, door.toRoom);
+            door.toRoom.doors.Add(door, door.fromRoom);
+        }
         
-        
+        manager.ChangeState(new ChasePlayerState(5f));
     }
 
     private Color LookupRoomColor(Vector2 pos)

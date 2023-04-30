@@ -1,29 +1,57 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Pathfinding;
 using UnityEditor.UI;
 using Random = UnityEngine.Random;
 
+/**
+ * states:
+ *
+ * - intro sequence: * spieler bisschen zeit geben damit er nicht gleich gefangen wird. dann chase mode
+ *                   * kontext erklären
+ *
+ * [loop]
+ * - manager sucht spieler: geht direkt zu deinem büro, findet dich nicht
+ *
+ * - manager geht auf die jagdt
+ *
+ * - manager arbeitet in eigenem büro:  kriegt erst anruf, geht dann zu eigenem büro, 5 sek idle
+ *   ggf. auslösbar mittels anruf durch spieler
+ * - manager trinkt kaffee, 5 sek idle
+ *
+ * - manager schlendert durch die gänge, bewegt sich langsamer oder eiert so rum
+ * [/loop]
+ *
+ * spieler kann aktiv beeinflussen:
+ *  - prank call
+ *  - kaffee kochen
+ *
+ * andere sachen die manager beeinflussen:
+ *  - toni
+ *
+ * - outro sequence: gewonnen oder nicht
+ */
+
 public class ManagerController : MonoBehaviour
 {
     public float walkSpeed;
     public OfficeController office;
+    public RoomController room;
 
-    private Path followPath = null;
+    public Path followPath = null;
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
 
-    private void Start()
-    {
-        Seeker seeker = GetComponent<Seeker>();
-        seeker.StartPath(transform.position, office.player.transform.position, OnPathComplete);
-    }
+    private List<DoorController> visitDoors = new List<DoorController>();
+    
+    IState currentState;
 
     void Update()
     {
-        transform.localPosition += Time.deltaTime * walkSpeed * (Vector3) Random.insideUnitCircle;
+        currentState.UpdateState(this);
 
         if (followPath != null)
         {
@@ -49,11 +77,9 @@ public class ManagerController : MonoBehaviour
                     break;
                 }
             }
-
-            var speedFactor = reachedEndOfPath ? Mathf.Sqrt(distanceToWaypoint / nextWaypointDistance) : 1f;
-
+            
             Vector3 dir = (followPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            Vector3 velocity = walkSpeed * speedFactor * dir;
+            Vector3 velocity = walkSpeed * dir;
 
             transform.position += velocity * Time.deltaTime;
 
@@ -63,17 +89,136 @@ public class ManagerController : MonoBehaviour
                 currentWaypoint = 0;
             }
         }
-
-        if (followPath == null)
-        {
-            Seeker seeker = GetComponent<Seeker>();
-            seeker.StartPath(transform.position, office.player.transform.position, OnPathComplete);
+        if (followPath == null) {
+            if (visitDoors.Count > 0)
+            {
+                var visitDoor = visitDoors[0];
+                visitDoors.RemoveAt(0);
+                Seeker seeker = GetComponent<Seeker>();
+                seeker.StartPath(transform.position, visitDoor.transform.position, SetFollowPath);
+            }
         }
     }
 
-    void OnPathComplete(Path p)
+    public void SetFollowPath(Path p)
     {
         followPath = p;
         currentWaypoint = 0;
+    }
+    
+    public void ChangeState(IState newState)
+    {
+        if (currentState != null)
+        {
+            currentState.OnExit(this);
+        }
+        currentState = newState;
+        currentState.OnEnter(this);
+    }
+
+    public void FindNewState()
+    {
+        if (currentState is ChasePlayerState)
+        {
+            ChangeState(new ReturnToOfficeState(5f, room));
+        }
+        else
+        {
+            ChangeState(new ChasePlayerState(5f));
+        }
+    }
+
+    public void GoToRoom(RoomController newRoom)
+    {
+        // todo, implement search
+        visitDoors.Add(newRoom.doors.Keys.First());
+    }
+    
+    public void OnCollisionStay2D(Collision2D other)
+    {
+        RoomController room = null;
+        other.gameObject.TryGetComponent<RoomController>(out room);
+        if (room != null)
+        {
+            this.room = room;
+        }
+    }
+}
+
+public interface IState
+{
+    public void OnEnter(ManagerController manager);
+    public void UpdateState(ManagerController manager);
+    public void OnExit(ManagerController manager);
+}
+
+public class ChasePlayerState : IState
+{
+    private float timeLeft;
+
+    public ChasePlayerState(float totalTime)
+    {
+        timeLeft = totalTime;
+    }
+
+    public void OnEnter(ManagerController manager)
+    {
+        manager.GoToRoom(manager.office.player.room);
+    }
+
+    public void UpdateState(ManagerController manager)
+    {
+        bool arrived = manager.followPath == null;
+        if (arrived)
+        {
+            timeLeft -= Time.deltaTime;
+        }
+
+        if (timeLeft <= 0)
+        {
+            manager.FindNewState();
+        }
+    }
+
+    public void OnExit(ManagerController manager)
+    {
+        
+    }
+}
+
+
+public class ReturnToOfficeState : IState
+{
+    private float timeLeft;
+    private RoomController targetRoom;
+
+    public ReturnToOfficeState(float totalTime, RoomController room)
+    {
+        timeLeft = totalTime;
+        this.targetRoom = room;
+    }
+
+    public void OnEnter(ManagerController manager)
+    {
+        manager.GoToRoom(targetRoom);
+    }
+
+    public void UpdateState(ManagerController manager)
+    {
+        bool arrived = manager.followPath == null;
+        if (arrived)
+        {
+            timeLeft -= Time.deltaTime;
+        }
+
+        if (timeLeft <= 0)
+        {
+            manager.FindNewState();
+        }
+    }
+
+    public void OnExit(ManagerController manager)
+    {
+        
     }
 }
