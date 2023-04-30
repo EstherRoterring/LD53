@@ -12874,7 +12874,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842295086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.94, y: -2.01, z: 0}
+  m_LocalPosition: {x: -4.26, y: 2.78, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14313,7 +14313,7 @@ MonoBehaviour:
   roomLookupTexture: {fileID: 2800000, guid: 7b33afdc611934ab8a6dd0e54fbaf283, type: 3}
   roomGraph: {fileID: 1526385623}
   managerRoom: {fileID: 4332524246549929658}
-  coffeeRoom: {fileID: 0}
+  coffeeRoom: {fileID: 1402800855}
   allDutySmallTaskSequences:
   - {fileID: 1296852417}
   - {fileID: 2033547630}
@@ -14328,8 +14328,7 @@ MonoBehaviour:
   activeTaskSequences: []
   taskExclamationPrefab: {fileID: 1228709073738126988, guid: 8e41bf0dac9db4b10a9253bd31dfb488,
     type: 3}
-  taskBonusExclamationPrefab: {fileID: 0, guid: 8de808cca847441f790d84e6b49d103d,
-    type: 3}
+  taskBonusExclamationPrefab: {fileID: 0}
   taskTimerPrefab: {fileID: 1228709073738126988, guid: 0e27f4cfd7d7c4f41a5760d9ba750f9d,
     type: 3}
   coffee: {fileID: 224540924}
