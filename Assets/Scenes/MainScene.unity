@@ -749,7 +749,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &224540927
 ParticleSystemRenderer:
@@ -5595,7 +5595,7 @@ Transform:
   - {fileID: 1679585830}
   - {fileID: 678445380}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &270050900
 PrefabInstance:
@@ -6091,7 +6091,7 @@ Transform:
   - {fileID: 1438469474}
   - {fileID: 1922736244}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &403011795
 PrefabInstance:
@@ -6298,7 +6298,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &459871296
 MonoBehaviour:
@@ -6815,7 +6815,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &639849172
 SpriteRenderer:
@@ -6874,6 +6874,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
   m_PrefabInstance: {fileID: 7426162123035998896}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &666326867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 666326868}
+  m_Layer: 0
+  m_Name: TextBoxTopPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &666326868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666326867}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 3.931, z: -3}
+  m_LocalScale: {x: 14, y: 7, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2072452942}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &678445379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7179,7 +7210,7 @@ Transform:
   - {fileID: 1108284263}
   - {fileID: 432036217}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &733840089
 PrefabInstance:
@@ -7495,7 +7526,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &782592813
 SpriteRenderer:
@@ -8340,9 +8371,9 @@ MonoBehaviour:
   moveTowards: 0
   moveAway: 0
   standingStill: 0
-  numSmallTasks: 1
+  numSmallTasks: 4
   numBigTasks: 1
-  numBonusTasks: 4
+  numBonusTasks: 3
   interactDistance: 1
   closestStation: {fileID: 0}
 --- !u!212 &1025479800
@@ -8410,7 +8441,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1025479803
 Rigidbody2D:
@@ -8650,7 +8681,7 @@ Transform:
   m_Children:
   - {fileID: 1423743985}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1079222778
 MonoBehaviour:
@@ -8666,6 +8697,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 1629360188}
   image: {fileID: 1158047640}
+  rechtsOben: {fileID: 666326868}
+  linksUnten: {fileID: 1421542754}
 --- !u!212 &1079222779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9995,6 +10028,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fce3fa3c94f540dd89f6b642435a48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1421542753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421542754}
+  m_Layer: 0
+  m_Name: TextBoxBottomPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1421542754
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421542753}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.056, z: -3}
+  m_LocalScale: {x: 14, y: 7, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2072452942}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1423743984
 GameObject:
   m_ObjectHideFlags: 0
@@ -10587,7 +10651,7 @@ Transform:
   - {fileID: 1977132697}
   - {fileID: 1402800853}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1534237369
 PrefabInstance:
@@ -11089,7 +11153,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1663928956
 SpriteRenderer:
@@ -11917,7 +11981,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1842295090
 MonoBehaviour:
@@ -13154,13 +13218,15 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 312996201}
+  - {fileID: 1421542754}
+  - {fileID: 666326868}
   - {fileID: 1079222777}
   - {fileID: 251209526}
   - {fileID: 459871295}
   - {fileID: 782592812}
   - {fileID: 1025479801}
-  - {fileID: 509187545}
   - {fileID: 1842295089}
+  - {fileID: 509187545}
   - {fileID: 1663928955}
   - {fileID: 1526385624}
   - {fileID: 380538305}
@@ -13198,15 +13264,13 @@ MonoBehaviour:
   - {fileID: 327112130}
   allBonusTaskSequences:
   - {fileID: 80861726}
-  - {fileID: 565043339}
-  - {fileID: 0}
   activeTaskSequences: []
   taskExclamationPrefab: {fileID: 1228709073738126988, guid: 8e41bf0dac9db4b10a9253bd31dfb488, type: 3}
   taskBonusExclamationPrefab: {fileID: 0}
   taskTimerPrefab: {fileID: 1228709073738126988, guid: 0e27f4cfd7d7c4f41a5760d9ba750f9d, type: 3}
   textbox: {fileID: 1079222778}
   coffee: {fileID: 224540924}
-  ringingPhone: {fileID: 0}
+  ringingPhone: {fileID: 639849170}
 --- !u!114 &2072452944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13555,7 +13619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8477401171842447785, guid: 21556e6b9ef2da84bba44f0b7e40a1ce, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8477401171842447785, guid: 21556e6b9ef2da84bba44f0b7e40a1ce, type: 3}
       propertyPath: m_LocalPosition.x

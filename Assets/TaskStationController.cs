@@ -99,7 +99,6 @@ public class TaskStationController : MonoBehaviour
             progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
             progressAnimator.enabled = true;
             progress += Time.deltaTime;
-            Debug.Log(progress);
             if (progress >= maxProgress)
             {
                 // timer is over, reset everything
