@@ -113,20 +113,19 @@ public class PlayerController : MonoBehaviour
             closestStation = null;
         }
 
-        if (closestStation != null)
+        foreach (var task in new List<TaskSequence>(office.activeTaskSequences))
         {
-            if (Input.GetKey("e") || Input.GetKey(KeyCode.Space))
+            foreach (var station in task.stations)
             {
-                closestStation.UpdateWithInteraction();
+                if ((Input.GetKey("e") || Input.GetKey(KeyCode.Space)) && station == closestStation)
+                {
+                    station.UpdateWithInteraction();
+                }
+                else
+                {
+                    station.UpdateWithoutInteraction();
+                }
             }
-            else
-            {
-                closestStation.UpdateWithoutInteraction();
-            }
-        }
-        if (lastClosestStation != closestStation && lastClosestStation != null)
-        {
-            lastClosestStation.UpdateWithoutInteraction();
         }
     }
 

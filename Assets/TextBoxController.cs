@@ -33,6 +33,16 @@ public class TextBoxController : MonoBehaviour
         }
     }
 
+    public void SetTextBoxAutoPos(string text, Sprite imageSprite)
+    {
+        int position = 1;
+        if (OfficeController.INSTANCE.player.transform.localPosition.y < 0)
+        {
+            position = 2;
+        }
+        OfficeController.INSTANCE.textbox.setTextBox(text, imageSprite, position);
+    }
+
     void Start(){}
 
     void Update(){}

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Pathfinding;
 using TMPro;
+using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
@@ -59,22 +60,31 @@ public class TaskStationController : MonoBehaviour
                 {
                     currentActiveTask = taskQueue[0];
                     taskQueue.RemoveAt(0);
-                    var prefab = OfficeController.INSTANCE.taskExclamationPrefab;
-                    if (currentActiveTask.bonus)
-                    {
-                        prefab = OfficeController.INSTANCE.taskBonusExclamationPrefab;
-                    }
-                    taskActiveMarker = Instantiate(prefab, markerPosition);
+                    SpawnExclamationMark();
                 }
             }
         }
     }
 
+    public void SpawnExclamationMark()
+    {
+        if (taskActiveMarker != null)
+        {
+            Destroy(taskActiveMarker);
+        }
+        var prefab = OfficeController.INSTANCE.taskExclamationPrefab;
+        if (currentActiveTask.bonus)
+        {
+            prefab = OfficeController.INSTANCE.taskBonusExclamationPrefab;
+        }
+        taskActiveMarker = Instantiate(prefab, markerPosition);
+    }
+    
     public void UpdateWithInteraction()
     {
         if (currentActiveTask != null)
         {
-            if (progress == 0f)
+            if (progress <= 0f)
             {
                 // spawn the timer!!!
                 if (taskActiveMarker != null)
@@ -88,13 +98,8 @@ public class TaskStationController : MonoBehaviour
                 //Textbox ploep
                 String text = currentActiveTask.stationTexts[currentActiveTask.currentStation];
                 Sprite image = currentActiveTask.stationImages[currentActiveTask.currentStation];
-                int position = 1;
-                if (OfficeController.INSTANCE.player.transform.localPosition.y < 0)
-                {
-                    position = 2;
-                }
-                OfficeController.INSTANCE.textbox.setTextBox(text, image, position);
-            }
+                OfficeController.INSTANCE.textbox.SetTextBoxAutoPos(text, image);
+             }
 
             progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
             progressAnimator.enabled = true;
@@ -115,9 +120,23 @@ public class TaskStationController : MonoBehaviour
 
     public void UpdateWithoutInteraction()
     {
-        if (currentActiveTask != null && progressAnimator != null)
+        if (currentActiveTask != null && progress > 0)
         {
-            progressAnimator.enabled = false;
+            if (progressAnimator != null)
+            {
+                progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
+                progressAnimator.enabled = true;
+            }
+
+            progress -= 0.2f * Time.deltaTime;
+            if (progress <= 0)
+            {
+                progress = 0;
+                progressAnimator = null;
+                SpawnExclamationMark();
+                //macht Textbox weg
+                OfficeController.INSTANCE.textbox.Visible(false);
+            }
         }
     }
 }
