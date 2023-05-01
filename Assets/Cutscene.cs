@@ -93,8 +93,8 @@ public class Cutscene : MonoBehaviour
             Debug.Log($"move {moveChar} to {whereTo.position}");
             
             Seeker seeker = GetComponent<Seeker>();
-            seeker.StartPath(moveChar.transform.position, whereTo.position, SetMoveToPath);
             waitForPathfinding = true;
+            seeker.StartPath(moveChar.transform.position, whereTo.position, SetMoveToPath);
         }
         
         // find char
@@ -114,6 +114,8 @@ public class Cutscene : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown("space"))
+            Debug.Log($"completed {completed}, waiting {waitForPathfinding}, movechar {moveChar}");
         if (OfficeController.INSTANCE.cutscenePlaying != this)
         {
             return;
@@ -124,19 +126,18 @@ public class Cutscene : MonoBehaviour
             return;
         if (waitForPathfinding)
             return;
+
+        currentMessageProgress += Time.deltaTime * charTime;
         if (moveChar != null)
         {
+            if (Input.GetKeyDown("space"))
+                Debug.Log($"doooo itt");
             MoveChars();
             if (Input.GetKeyDown("space") || (currentMessage == "" && followPath == null))
             {
                 MouseDown();
             }
             return;
-        }
-
-        if (currentMessageProgress < currentMessage.Length)
-        {
-            currentMessageProgress += Time.deltaTime * charTime;
         }
 
         textBox.SetText(currentMessage.Substring(0, Math.Min((int)currentMessageProgress, currentMessage.Length)));
@@ -157,20 +158,30 @@ public class Cutscene : MonoBehaviour
     
     public void MouseDown()
     {
-        if (moveChar != null && currentMessageProgress >= 0.1f)
+        if (moveChar != null)
         {
-            // teleport the guy
-            currentWalkSpeed = 10f;
+            if (currentMessageProgress >= 0.1f)
+            {
+                // teleport the guy
+                currentWalkSpeed = 10f;
+                Debug.Log("{currentLine} MouseDown, moveChar != null, increasing walk speed");
+            }
             return;
         }
         if (currentMessageProgress < currentMessage.Length)
         {
+            Debug.Log($"{currentLine} MouseDown, setting message length to full");
             currentMessageProgress = currentMessage.Length;
             return;
         }
 
         if (currentLine + 1 < textSequence.Length)
         {
+            if (currentLine == 4)
+            {
+                Debug.Log("LINE 4");
+            }
+            Debug.Log($"{currentLine} Skipping to next message");
             currentLine += 1;
             ShowCurrentLine();
         }
@@ -239,6 +250,7 @@ public class Cutscene : MonoBehaviour
 
             if (reachedEndOfPath)
             {
+                Debug.Log($"{currentLine} -> reached end of path");
                 followPath = null;
                 currentWaypoint = 0;
                 moveChar = null;
