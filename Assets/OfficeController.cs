@@ -119,7 +119,7 @@ public class OfficeController : MonoBehaviour
 
     public bool HasFreeControlflow()
     {
-        return cutscenePlaying == null;
+        return cutscenePlaying == null && !gameOver;
     }
 
     public void StartGameAfterIntro()
