@@ -13699,7 +13699,7 @@ MonoBehaviour:
   duckTaskCompleted: 0
   flirtTaskCompleted: 0
   walkSoundPlaying: 0
-  audiosource: {fileID: 0}
+  audiosource: {fileID: 1025479806}
   closestStation: {fileID: 0}
 --- !u!212 &1025479800
 SpriteRenderer:
@@ -21000,11 +21000,7 @@ MonoBehaviour:
   showHighlight: 1
   allTasksDoneExclamationMark: {fileID: 1586595204}
   showExclamationMark: 1
-  goodDangerHighlightColor:
-    r: 0.14814222
-    g: 0.6415094
-    b: 0
-    a: 0.36862746
+  goodDangerHighlightColor: {r: 0.14814222, g: 0.6415094, b: 0, a: 0.36862746}
 --- !u!114 &1842295091
 MonoBehaviour:
   m_ObjectHideFlags: 0
