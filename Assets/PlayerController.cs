@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
         if (!standingStill)
         {
             if (!walkSoundPlaying){
-                audiosource.Play(office.audio_walk_floor, 0.5f);
+                audiosource.Play();
                 walkSoundPlaying = true;
             }
         }
@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour
         {
             //audiosource.Play(office.audio_walk_floor, 1.0f);
             walkSoundPlaying = false;
+            audiosource.Stop();
         }
 
         var closestStationDist = Mathf.Infinity;
