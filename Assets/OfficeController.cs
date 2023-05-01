@@ -137,9 +137,10 @@ public class OfficeController : MonoBehaviour
             showingTaskBoard = false;
         }
 
-        if (Input.GetKey(KeyCode.Escape) && showingTaskBoard)
+        if ((Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Space)) && showingTaskBoard)
         {
             showingTaskBoard = false;
+            taskBoardStuckOpen = false;
         }
         taskBoard.gameObject.SetActive(showingTaskBoard);
     }

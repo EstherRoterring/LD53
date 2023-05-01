@@ -23292,7 +23292,7 @@ MonoBehaviour:
     type: 3}
   taskTimerPrefab: {fileID: 1228709073738126988, guid: 0e27f4cfd7d7c4f41a5760d9ba750f9d,
     type: 3}
-  taskBoard: {fileID: 0}
+  taskBoard: {fileID: 1363542764}
   showingTaskBoard: 0
   taskBoardStuckOpen: 0
   textbox: {fileID: 1079222778}
