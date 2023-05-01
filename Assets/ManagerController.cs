@@ -314,6 +314,7 @@ public class ReturnToOfficeManagerState : IManagerState
 
 public class AnswerCallInOfficeManagerState : IManagerState
 {
+    private bool startedWalking = false;
     private float timeLeft;
 
     public AnswerCallInOfficeManagerState(float totalTime)
@@ -328,6 +329,12 @@ public class AnswerCallInOfficeManagerState : IManagerState
 
     public void UpdateState(ManagerController manager)
     {
+        if (!startedWalking)
+        {
+            if (manager.followPath != null)
+                startedWalking = true;
+            return;
+        }
         bool arrived = manager.followPath == null;
         if (arrived)
         {

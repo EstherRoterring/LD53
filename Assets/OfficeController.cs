@@ -42,7 +42,9 @@ public class OfficeController : MonoBehaviour
     public GameObject managerPhone;
 
     public Cutscene introCutscene;
+    public Cutscene outroCutscene;
     public bool gameOver = false;
+    public bool debugSkipIntro = false;
     
     public Cutscene cutscenePlaying = null;
     
@@ -69,7 +71,14 @@ public class OfficeController : MonoBehaviour
         
         // intro
         cutscenePlaying = introCutscene;
-        cutscenePlaying = null;
+
+        if (debugSkipIntro)
+        {
+            cutscenePlaying.gameObject.SetActive(false);
+            cutscenePlaying = null;
+            StartGameAfterIntro();
+        }
+        
         //worloadBar auf 0
         workloadbar.Add(0);
     }
@@ -89,20 +98,20 @@ public class OfficeController : MonoBehaviour
 
     void Update()
     {
-        if (LookupRoomColor(player.transform.localPosition) == LookupRoomColor(manager.transform.localPosition)
-            && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
+        if (HasFreeControlflow())
         {
-            gameOver = true;
-            Debug.Log("You dieee!!!");
-        } else
-        {
-            Debug.Log("You dont dieee!");
-        }
+            if (LookupRoomColor(player.transform.localPosition) == LookupRoomColor(manager.transform.localPosition)
+                && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
+            {
+                gameOver = true;
+                cutscenePlaying = outroCutscene;
+            }
         
-        // update sprite masks
-        foreach (var room in rooms)
-        {
-            room.spriteMasks.gameObject.SetActive(manager.room == room);
+            // update sprite masks
+            foreach (var room in rooms)
+            {
+                room.spriteMasks.gameObject.SetActive(manager.room == room);
+            }
         }
     }
 
@@ -115,7 +124,6 @@ public class OfficeController : MonoBehaviour
     {
         ringingPhone.SetActive(true);
         managerPhone.SetActive(false);
-        print("jz active");
     }
 
     public bool HasFreeControlflow()
