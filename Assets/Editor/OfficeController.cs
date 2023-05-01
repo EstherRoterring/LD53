@@ -28,7 +28,6 @@ public class OfficeController : MonoBehaviour
     public TaskSequence[] allDutyBigTaskSequences;
     public TaskSequence[] allBonusTaskSequences;
     
-    
     public AudioClip audio_walk_floor;
 
     public List<TaskSequence> activeTaskSequences = new List<TaskSequence>();
@@ -145,6 +144,7 @@ public class OfficeController : MonoBehaviour
                 }
                 cutscenePlaying.gameObject.SetActive(true);
             }
+            textbox.Visible(false);
         
             // update sprite masks
             foreach (var room in rooms)

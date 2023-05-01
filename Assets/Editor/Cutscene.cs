@@ -64,7 +64,6 @@ public class Cutscene : MonoBehaviour
         followPath = p;
         currentWaypoint = 0;
         waitForPathfinding = false;
-        Debug.Log("set follow path");
     }
     
     public void ShowCurrentLine()
@@ -92,7 +91,6 @@ public class Cutscene : MonoBehaviour
             moveChar = charMoveWhoSequence[currentLine];
             currentWalkSpeed = walkSpeed;
             var whereTo = charMoveToSequence[currentLine];
-            Debug.Log($"move {moveChar} to {whereTo.position}");
             
             Seeker seeker = GetComponent<Seeker>();
             waitForPathfinding = true;
@@ -116,8 +114,6 @@ public class Cutscene : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
-            Debug.Log($"completed {completed}, waiting {waitForPathfinding}, movechar {moveChar}");
         if (OfficeController.INSTANCE.cutscenePlaying != this)
         {
             return;
@@ -132,8 +128,6 @@ public class Cutscene : MonoBehaviour
         currentMessageProgress += Time.deltaTime * charTime;
         if (moveChar != null)
         {
-            if (Input.GetKeyDown("space"))
-                Debug.Log($"doooo itt");
             MoveChars();
             if (Input.GetKeyDown("space") || (currentMessage == "" && followPath == null))
             {
@@ -166,24 +160,17 @@ public class Cutscene : MonoBehaviour
             {
                 // teleport the guy
                 currentWalkSpeed = 10f;
-                Debug.Log("{currentLine} MouseDown, moveChar != null, increasing walk speed");
             }
             return;
         }
         if (currentMessageProgress < currentMessage.Length)
         {
-            Debug.Log($"{currentLine} MouseDown, setting message length to full");
             currentMessageProgress = currentMessage.Length;
             return;
         }
 
         if (currentLine + 1 < textSequence.Length)
         {
-            if (currentLine == 4)
-            {
-                Debug.Log("LINE 4");
-            }
-            Debug.Log($"{currentLine} Skipping to next message");
             currentLine += 1;
             ShowCurrentLine();
         }
@@ -252,7 +239,6 @@ public class Cutscene : MonoBehaviour
 
             if (reachedEndOfPath)
             {
-                Debug.Log($"{currentLine} -> reached end of path");
                 followPath = null;
                 currentWaypoint = 0;
                 moveChar = null;
