@@ -42,6 +42,7 @@ public class OfficeController : MonoBehaviour
     public GameObject managerPhone;
 
     public Cutscene introCutscene;
+    public Cutscene outroCutscene;
     public bool gameOver = false;
     public bool debugSkipIntro = false;
     
@@ -97,17 +98,20 @@ public class OfficeController : MonoBehaviour
 
     void Update()
     {
-        if (LookupRoomColor(player.transform.localPosition) == LookupRoomColor(manager.transform.localPosition)
-            && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
+        if (HasFreeControlflow())
         {
-            gameOver = true;
-            Debug.Log("You dieee!!!");
-        }
+            if (LookupRoomColor(player.transform.localPosition) == LookupRoomColor(manager.transform.localPosition)
+                && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
+            {
+                gameOver = true;
+                cutscenePlaying = outroCutscene;
+            }
         
-        // update sprite masks
-        foreach (var room in rooms)
-        {
-            room.spriteMasks.gameObject.SetActive(manager.room == room);
+            // update sprite masks
+            foreach (var room in rooms)
+            {
+                room.spriteMasks.gameObject.SetActive(manager.room == room);
+            }
         }
     }
 

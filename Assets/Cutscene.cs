@@ -93,6 +93,10 @@ public class Cutscene : MonoBehaviour
 
     private void Update()
     {
+        if (OfficeController.INSTANCE.cutscenePlaying != this)
+        {
+            return;
+        }
         if (completed)
             return;
         if (currentMessage == null)
