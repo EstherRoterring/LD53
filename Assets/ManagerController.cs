@@ -52,9 +52,10 @@ public class ManagerController : MonoBehaviour
     
     IManagerState _currentManagerState;
     private Animator anim;
-    public bool angry=false;
+    public bool angry = false;
 
     public float totalManagerTime = 0;
+    public float dangerLevel = 0;
 
     public GameObject dangerHighlight;
 
@@ -65,9 +66,18 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
+        dangerHighlight.transform.localScale = new Vector3(viewDistance / 2f, viewDistance / 2f, 1);
         if (office.HasFreeControlflow())
         {
             totalManagerTime += Time.deltaTime;
+
+            if (office.player.didAnyTask)
+            {
+                dangerLevel += Time.deltaTime;
+            }
+
+            viewDistance = 0.5f + (dangerLevel / 60f);
+            
             if (_currentManagerState != null)
             {
                 // override tasks
@@ -179,11 +189,11 @@ public class ManagerController : MonoBehaviour
         List<IManagerState> nextStates = new List<IManagerState>();
         nextStates.Add(new ChasePlayerManagerState(5f));
         nextStates.Add(new ChasePlayerManagerState(5f));
-        if (totalManagerTime < 60)
+        if (dangerLevel < 60)
         {
             nextStates.Add(new ReturnToOfficeManagerState(5f, office.managerRoom));
         }
-        if (totalManagerTime > 60)
+        if (dangerLevel > 60)
         {
             nextStates.Add(new RageFollowPlayerManagerState(10f, 4f));
         }

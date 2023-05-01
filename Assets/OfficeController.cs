@@ -92,6 +92,10 @@ public class OfficeController : MonoBehaviour
             && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
         {
             gameOver = true;
+            Debug.Log("You dieee!!!");
+        } else
+        {
+            Debug.Log("You dont dieee!");
         }
         
         // update sprite masks

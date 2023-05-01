@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public int numBigTasks;
     public int numBonusTasks;
     public float interactDistance;
+    public bool didAnyTask = false;
 
     public TaskStationController closestStation = null;
 

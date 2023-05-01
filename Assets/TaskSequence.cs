@@ -33,6 +33,8 @@ public class TaskSequence : MonoBehaviour
         if (currentStation >= stations.Length)
         {
             // task sequence is done, what now?
+            OfficeController.INSTANCE.player.didAnyTask = true;
+            OfficeController.INSTANCE.manager.dangerLevel += 5f;
             if (!bonus)
             {
                 OfficeController.INSTANCE.workloadbar.Add(stations.Length);
