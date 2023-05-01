@@ -31,6 +31,9 @@ public class OfficeController : MonoBehaviour
     public GameObject taskExclamationPrefab;
     public GameObject taskBonusExclamationPrefab;
     public GameObject taskTimerPrefab;
+
+    public TaskBoardController taskBoard;
+    public bool showingTaskBoard = false;
     
     //Textbox starter
     public TextBoxController textbox;
@@ -113,6 +116,26 @@ public class OfficeController : MonoBehaviour
                 room.spriteMasks.gameObject.SetActive(manager.room == room);
             }
         }
+
+    }
+
+    public void FixedUpdate()
+    {
+        Debug.Log($"{Input.GetKeyDown(KeyCode.A)}");
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            showingTaskBoard = true;
+        }
+        else
+        {
+            showingTaskBoard = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && showingTaskBoard)
+        {
+            showingTaskBoard = false;
+        }
+        taskBoard.gameObject.SetActive(showingTaskBoard);
     }
 
     public void SpawnCoffeeInKitchen()
@@ -128,7 +151,7 @@ public class OfficeController : MonoBehaviour
 
     public bool HasFreeControlflow()
     {
-        return cutscenePlaying == null && !gameOver;
+        return cutscenePlaying == null && !gameOver && !showingTaskBoard;
     }
 
     public void StartGameAfterIntro()

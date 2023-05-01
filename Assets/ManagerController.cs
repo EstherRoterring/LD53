@@ -58,6 +58,7 @@ public class ManagerController : MonoBehaviour
     public float dangerLevel = 0;
 
     public GameObject dangerHighlight;
+    public bool showHighlight = true;
 
     void Start()
     {
@@ -66,7 +67,9 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
+        dangerHighlight.SetActive(showHighlight);
         dangerHighlight.transform.localScale = new Vector3(viewDistance / 4f, viewDistance / 4f, 1);
+
         if (office.HasFreeControlflow())
         {
             totalManagerTime += Time.deltaTime;
