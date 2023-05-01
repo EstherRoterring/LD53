@@ -6917,6 +6917,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.31, y: 0.13}
   m_EdgeRadius: 0
+--- !u!1 &258692864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258692865}
+  m_Layer: 0
+  m_Name: timmyInDoor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &258692865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258692864}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5, y: -3.93, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1358798061}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &270050900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13440,7 +13471,7 @@ MonoBehaviour:
   duckTaskCompleted: 0
   flirtTaskCompleted: 0
   walkSoundPlaying: 0
-  audiosource: {fileID: 1025479806}
+  audiosource: {fileID: 0}
   closestStation: {fileID: 0}
 --- !u!212 &1025479800
 SpriteRenderer:
@@ -14557,7 +14588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135146628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.36, y: 2.67, z: 0}
+  m_LocalPosition: {x: -0.95, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15908,6 +15939,7 @@ Transform:
   - {fileID: 500645293}
   - {fileID: 1952376661}
   - {fileID: 1135146629}
+  - {fileID: 258692865}
   m_Father: {fileID: 2072452942}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15965,6 +15997,7 @@ MonoBehaviour:
   - 'Manager: You''re right.'
   - 'Manager: Ok, you''re not fired this time, but I''m looking for you!'
   - 'None:'
+  - 'None:'
   - 'Timmy: YEAY! YOU GOT IT BRO!'
   charMoveToSequence:
   - {fileID: 0}
@@ -15979,6 +16012,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 1135146629}
+  - {fileID: 258692865}
   - {fileID: 0}
   charMoveWhoSequence:
   - {fileID: 0}
@@ -15993,6 +16027,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 1842295086}
+  - {fileID: 524518259}
   - {fileID: 0}
   currentLine: 0
   currentMessageProgress: 0
@@ -18409,7 +18444,6 @@ Transform:
   - {fileID: 619573492}
   - {fileID: 1289506006}
   - {fileID: 662220877}
-  - {fileID: 1641681427}
   m_Father: {fileID: 2072452942}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18810,37 +18844,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629360186}
   m_CullTransparentMesh: 1
---- !u!1 &1641681426
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1641681427}
-  m_Layer: 0
-  m_Name: 'foyer pos 2 '
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1641681427
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641681426}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.65, y: -3.76, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1578584007}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1642042770
 GameObject:
   m_ObjectHideFlags: 0
@@ -19388,7 +19391,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705058761}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.36, y: 2.67, z: 0}
+  m_LocalPosition: {x: -0.92, y: -0.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23350,7 +23353,7 @@ MonoBehaviour:
   - {fileID: 565043339}
   - {fileID: 704483883}
   - {fileID: 1880504690}
-  audio_walk_floor: {fileID: 8300000, guid: 994679fff6d55854c80fbbe6900aa46d, type: 3}
+  audio_walk_floor: {fileID: 0}
   activeTaskSequences: []
   taskExclamationPrefab: {fileID: 1228709073738126988, guid: 8e41bf0dac9db4b10a9253bd31dfb488, type: 3}
   taskBonusExclamationPrefab: {fileID: 1228709073738126988, guid: 8de808cca847441f790d84e6b49d103d, type: 3}
