@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public int numBigTasks;
     public int numBonusTasks;
     public float interactDistance;
+    public bool didAnyTask = false;
 
     public TaskStationController closestStation = null;
 
@@ -80,8 +81,13 @@ public class PlayerController : MonoBehaviour
                 moveRight=false;
             }
         }
-        
-        var newPos = oldPos + (Vector3) (Time.deltaTime * walkSpeed * (horizontalWalkDir + verticalWalkDir));
+
+        var velocity = (Vector3)(Time.deltaTime * walkSpeed * (horizontalWalkDir + verticalWalkDir).normalized);
+        if (office.manager.angry)
+        {
+            velocity *= 1.2f;
+        }
+        var newPos = oldPos + velocity;
         this.transform.localPosition = newPos;
         
         if (moveAway==true){anim.SetBool("moveAway",true);}        

@@ -26,6 +26,7 @@ public class Cutscene : MonoBehaviour
     private string currentMessage;
     
     public float walkSpeed;
+    private float currentWalkSpeed;
 
     public GameObject moveChar;
     public Path followPath = null;
@@ -49,6 +50,8 @@ public class Cutscene : MonoBehaviour
 
     public void SetMoveToPath(Path p)
     {
+
+        currentWalkSpeed = walkSpeed;
         followPath = p;
         currentWaypoint = 0;
         Debug.Log("set follow path");
@@ -65,6 +68,7 @@ public class Cutscene : MonoBehaviour
         if (charMoveWhoSequence[currentLine] != null)
         {
             moveChar = charMoveWhoSequence[currentLine];
+            currentWalkSpeed = walkSpeed;
             var whereTo = charMoveToSequence[currentLine];
             Debug.Log($"move {moveChar} to {whereTo.position}");
             
@@ -93,6 +97,10 @@ public class Cutscene : MonoBehaviour
         if (moveChar != null)
         {
             MoveChars();
+            if (Input.GetKeyDown("space") || currentMessage == "")
+            {
+                MouseDown();
+            }
             return;
         }
 
@@ -112,6 +120,12 @@ public class Cutscene : MonoBehaviour
     public void MouseDown()
     {
         Debug.Log("click");
+        if (moveChar != null)
+        {
+            // teleport the guy
+            currentWalkSpeed = 10f;
+            return;
+        }
         if (currentMessageProgress < currentMessage.Length)
         {
             currentMessageProgress = currentMessage.Length;
@@ -159,7 +173,7 @@ public class Cutscene : MonoBehaviour
             }
                 
             Vector3 dir = (followPath.vectorPath[currentWaypoint] - moveChar.transform.position).normalized;
-            Vector3 velocity = walkSpeed * dir;
+            Vector3 velocity = currentWalkSpeed * dir;
 
             Debug.Log($"move {moveChar} from {moveChar.transform.position} along {dir} / {velocity}, {currentWaypoint} dist {distanceToWaypoint}");
             moveChar.transform.position += velocity * Time.deltaTime;
@@ -175,6 +189,7 @@ public class Cutscene : MonoBehaviour
                 followPath = null;
                 currentWaypoint = 0;
                 moveChar = null;
+                currentWalkSpeed = walkSpeed;
             }
         }
     }

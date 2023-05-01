@@ -17239,7 +17239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 1
-  viewDistance: 0
+  viewDistance: 1
   office: {fileID: 2072452943}
   room: {fileID: 4332524246549929658}
   nextWaypointDistance: 0.1

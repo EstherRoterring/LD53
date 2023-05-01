@@ -69,6 +69,7 @@ public class OfficeController : MonoBehaviour
         
         // intro
         cutscenePlaying = introCutscene;
+        cutscenePlaying = null;
         //worloadBar auf 0
         workloadbar.Add(0);
     }
@@ -92,6 +93,10 @@ public class OfficeController : MonoBehaviour
             && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
         {
             gameOver = true;
+            Debug.Log("You dieee!!!");
+        } else
+        {
+            Debug.Log("You dont dieee!");
         }
         
         // update sprite masks
@@ -115,7 +120,7 @@ public class OfficeController : MonoBehaviour
 
     public bool HasFreeControlflow()
     {
-        return cutscenePlaying == null;
+        return cutscenePlaying == null && !gameOver;
     }
 
     public void StartGameAfterIntro()
