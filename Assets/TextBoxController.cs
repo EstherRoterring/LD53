@@ -13,6 +13,9 @@ public class TextBoxController : MonoBehaviour
     public Transform rechtsOben;
     public Transform linksUnten;
 
+    public Animator animator;
+    public GameObject holdSpaceWrapper;
+
     //set Methode umkomplette Box richtig zu konfigurieren
     public void setTextBox(string text, Sprite imageSprite, int position){
         //text

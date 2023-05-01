@@ -60,6 +60,7 @@ public class ManagerController : MonoBehaviour
     public GameObject dangerHighlight;
     public bool showHighlight = true;
     public GameObject allTasksDoneExclamationMark;
+    public bool showExclamationMark = true;
     public Color goodDangerHighlightColor;
 
     void Start()
@@ -71,6 +72,8 @@ public class ManagerController : MonoBehaviour
     {
         dangerHighlight.SetActive(showHighlight);
         dangerHighlight.transform.localScale = new Vector3(viewDistance / 4f, viewDistance / 4f, 1);
+        
+        allTasksDoneExclamationMark.SetActive(showExclamationMark);
 
         if (office.HasFreeControlflow())
         {

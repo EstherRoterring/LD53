@@ -17,6 +17,7 @@ public class TaskStationController : MonoBehaviour
     public GameObject spaceBar;
     public Transform markerPosition;
     private Animator progressAnimator;
+    private Animator secondProgressAnimator;
 
     private GameObject taskActiveMarker;
 
@@ -100,6 +101,8 @@ public class TaskStationController : MonoBehaviour
                 taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskTimerPrefab, markerPosition);
                 progressAnimator = taskActiveMarker.GetComponent<Animator>();
                 progressAnimator.speed = 1.4f / maxProgress;
+                secondProgressAnimator = OfficeController.INSTANCE.textbox.animator;
+                secondProgressAnimator.speed = 1.4f / maxProgress;
 
                 if (currentActiveTask.currentStation < currentActiveTask.stationTexts.Length)
                 {
@@ -116,6 +119,8 @@ public class TaskStationController : MonoBehaviour
 
             progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
             progressAnimator.enabled = true;
+            secondProgressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
+            secondProgressAnimator.enabled = true;
             progress += Time.deltaTime;
             if (progress >= maxProgress)
             {
@@ -138,6 +143,8 @@ public class TaskStationController : MonoBehaviour
             {
                 progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
                 progressAnimator.enabled = true;
+                secondProgressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
+                secondProgressAnimator.enabled = true;
             }
 
             progress -= 0.2f * Time.deltaTime;
@@ -145,6 +152,7 @@ public class TaskStationController : MonoBehaviour
             {
                 progress = 0;
                 progressAnimator = null;
+                secondProgressAnimator = null;
                 SpawnExclamationMark();
                 //macht Textbox weg
                 OfficeController.INSTANCE.textbox.Visible(false);
