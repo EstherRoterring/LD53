@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wobbleX: 0
-  wobbleY: 0.2
+  wobbleY: 0.01
   wobbleSpeed: 10

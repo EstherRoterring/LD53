@@ -33,20 +33,23 @@ public class Cutscene : MonoBehaviour
     public Path followPath = null;
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
+    public GameObject continueButton;
+
+    public bool introScene;
+    public bool endScene;
 
     public void Start()
     {
-        
         // disable all at beginning
         foreach (var c in this.charList)
             if (c != null)
                 c.SetActive(false);
 
         textBox.Position2();
+        continueButton.SetActive(false);
 
         currentLine = 0;
         ShowCurrentLine();
-        
     }
 
     public void SetMoveToPath(Path p)
@@ -66,6 +69,18 @@ public class Cutscene : MonoBehaviour
         currentSpeaker = split[0].Trim();
         currentMessage = split[1].Trim();
 
+        if (currentMessage == "[show clipboard]")
+        {
+            currentLine += 1;
+            ShowCurrentLine();
+            textBox.Position1();
+
+            OfficeController.INSTANCE.StartGameAfterIntro();
+            OfficeController.INSTANCE.taskBoardStuckOpen = true;
+
+            return;
+        }
+
         if (charMoveWhoSequence[currentLine] != null)
         {
             moveChar = charMoveWhoSequence[currentLine];
@@ -76,7 +91,7 @@ public class Cutscene : MonoBehaviour
             Seeker seeker = GetComponent<Seeker>();
             seeker.StartPath(moveChar.transform.position, whereTo.position, SetMoveToPath);
         }
-
+        
         // find char
         if (currentChar != null)
             currentChar.SetActive(false);
@@ -87,6 +102,7 @@ public class Cutscene : MonoBehaviour
         }
 
         textBox.Visible(true);
+        continueButton.SetActive(false);
         textBox.SetText("");
         currentMessageProgress = 0;
     }
@@ -117,6 +133,14 @@ public class Cutscene : MonoBehaviour
         }
 
         textBox.SetText(currentMessage.Substring(0, Math.Min((int)currentMessageProgress, currentMessage.Length)));
+        if ((int)currentMessageProgress >= currentMessage.Length)
+        {
+            continueButton.SetActive(true);
+        }
+        else
+        {
+            continueButton.SetActive(false);
+        }
 
         if (Input.GetKeyDown("space") || currentMessage == "")
         {
@@ -127,7 +151,7 @@ public class Cutscene : MonoBehaviour
     public void MouseDown()
     {
         Debug.Log("click");
-        if (moveChar != null)
+        if (moveChar != null && currentMessageProgress >= 0.1f)
         {
             // teleport the guy
             currentWalkSpeed = 10f;
@@ -146,12 +170,21 @@ public class Cutscene : MonoBehaviour
         }
         else
         {
-            completed = true;
-            textBox.Visible(false);
-            OfficeController.INSTANCE.cutscenePlaying = null;
-            OfficeController.INSTANCE.StartGameAfterIntro();
-            gameObject.SetActive(false);
+            DoFinished();
         }
+    }
+
+    private void DoFinished()
+    {
+        completed = true;
+        textBox.Visible(false);
+        OfficeController.INSTANCE.cutscenePlaying = null;
+        if (introScene)
+        {
+        }
+        // todo, end scene
+
+        gameObject.SetActive(false);
     }
 
     private void MoveChars()

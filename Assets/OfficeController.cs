@@ -34,6 +34,7 @@ public class OfficeController : MonoBehaviour
 
     public TaskBoardController taskBoard;
     public bool showingTaskBoard = false;
+    public bool taskBoardStuckOpen = false;
     
     //Textbox starter
     public TextBoxController textbox;
@@ -121,11 +122,16 @@ public class OfficeController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (taskBoardStuckOpen)
         {
             showingTaskBoard = true;
         }
-        else
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            showingTaskBoard = true;
+            taskBoardStuckOpen = false;
+        }
+        else if (!taskBoardStuckOpen)
         {
             showingTaskBoard = false;
         }
