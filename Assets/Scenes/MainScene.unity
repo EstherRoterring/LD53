@@ -8398,17 +8398,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502437889}
-  m_LocalRotation: {x: -0.114171386, y: -0.11868475, z: 0.18001455, w: -0.9697802}
+  m_LocalRotation: {x: -0.11280105, y: -0.11998786, z: 0.19113807, w: -0.9676492}
   m_LocalPosition: {x: 0, y: 0, z: 3}
-  m_LocalScale: {x: 7, y: 9.9909, z: 1}
+  m_LocalScale: {x: 7, y: 7.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1387327881}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 15.318, y: 371.306, z: -19.506}
+  m_LocalEulerAnglesHint: {x: 15.318, y: 371.306, z: -20.822}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.19, y: -0.11}
+  m_AnchoredPosition: {x: -0.57, y: -1.53}
   m_SizeDelta: {x: 1.7136, y: 1.6879}
   m_Pivot: {x: 0.57405114, y: 0.52517676}
 --- !u!114 &502437891
@@ -8433,12 +8433,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Quest A
 
-    Quest B: Rotorblock tauschen
+    Quest B: Test
 
-    Hundekuchen Quest C
+    Hundekuchen Test
 
-    Quest
-    D: Gestern Essen'
+    Quest D: Test'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9bfa7cab50205164c93f10e33624d0bc, type: 2}
   m_sharedMaterial: {fileID: 8047665581674198003, guid: 9bfa7cab50205164c93f10e33624d0bc, type: 2}
@@ -15622,7 +15621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1363542761
 Transform:
   m_ObjectHideFlags: 0
