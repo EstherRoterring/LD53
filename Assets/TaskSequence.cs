@@ -33,6 +33,11 @@ public class TaskSequence : MonoBehaviour
         if (currentStation >= stations.Length)
         {
             // task sequence is done, what now?
+            if (!bonus)
+            {
+                OfficeController.INSTANCE.workloadbar.Add(stations.Length);
+            }
+
             if (spawnsCoffeeInKitchen)
             {
                 OfficeController.INSTANCE.SpawnCoffeeInKitchen();

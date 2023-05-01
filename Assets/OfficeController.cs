@@ -34,7 +34,9 @@ public class OfficeController : MonoBehaviour
     
     //Textbox starter
     public TextBoxController textbox;
-
+    //Punktezaehler
+    public WorkloadBarController workloadbar;
+    
     public GameObject coffee;
     public GameObject ringingPhone;
     

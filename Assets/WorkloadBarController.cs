@@ -15,7 +15,7 @@ public class WorkloadBarController: MonoBehaviour
     public void Add(int points) {
         this.points = this.points + points;
         if (0 > this.points) {
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = progress[0];
+            GetComponent<SpriteRenderer>().sprite = progress[0];
         }
         else if (this.points > 7) {
             GetComponent<SpriteRenderer>().sprite = progress[7];
