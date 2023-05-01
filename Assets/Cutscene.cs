@@ -30,6 +30,7 @@ public class Cutscene : MonoBehaviour
     private float currentWalkSpeed;
 
     public GameObject moveChar;
+    private bool waitForPathfinding = false;
     public Path followPath = null;
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
@@ -60,6 +61,7 @@ public class Cutscene : MonoBehaviour
         currentWalkSpeed = walkSpeed;
         followPath = p;
         currentWaypoint = 0;
+        waitForPathfinding = false;
         Debug.Log("set follow path");
     }
     
@@ -92,6 +94,7 @@ public class Cutscene : MonoBehaviour
             
             Seeker seeker = GetComponent<Seeker>();
             seeker.StartPath(moveChar.transform.position, whereTo.position, SetMoveToPath);
+            waitForPathfinding = true;
         }
         
         // find char
@@ -119,10 +122,12 @@ public class Cutscene : MonoBehaviour
             return;
         if (currentMessage == null)
             return;
+        if (waitForPathfinding)
+            return;
         if (moveChar != null)
         {
             MoveChars();
-            if (Input.GetKeyDown("space") || currentMessage == "")
+            if (Input.GetKeyDown("space") || (currentMessage == "" && followPath == null))
             {
                 MouseDown();
             }
@@ -238,6 +243,11 @@ public class Cutscene : MonoBehaviour
                 currentWaypoint = 0;
                 moveChar = null;
                 currentWalkSpeed = walkSpeed;
+
+                if (maybeIsPlayer != null)
+                {
+                    UpdateAnimationDirection(maybeIsPlayer.anim, Vector3.zero);
+                }
             }
         }
     }
