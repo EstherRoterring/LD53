@@ -14,6 +14,7 @@ public class TaskStationController : MonoBehaviour
 {
     public GameObject interactObject;
     public GameObject interactObjectHighlight;
+    public GameObject spaceBar;
     public Transform markerPosition;
     private Animator progressAnimator;
 
@@ -45,14 +46,17 @@ public class TaskStationController : MonoBehaviour
             if (OfficeController.INSTANCE.player.closestStation == this)
             {
                 highlightRenderer.color = interactHighlightColor;
+                spaceBar.SetActive(true);
                 
             } else {
                 highlightRenderer.color = new Color(1, 1, 1, 0.5f + 0.5f * Mathf.Sin(Time.time));
+                spaceBar.SetActive(false);
             }
         }
         else
         {
             highlightRenderer.color = new Color(1, 1, 1, 0);
+            spaceBar.SetActive(false);
             // spawn new task
             completionDelay += Time.deltaTime;
             if (completionDelay > completionDelayMax)
@@ -96,11 +100,18 @@ public class TaskStationController : MonoBehaviour
                 taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskTimerPrefab, markerPosition);
                 progressAnimator = taskActiveMarker.GetComponent<Animator>();
                 progressAnimator.speed = 1.4f / maxProgress;
-                
-                //Textbox ploep
-                String text = currentActiveTask.stationTexts[currentActiveTask.currentStation];
-                Sprite image = currentActiveTask.stationImages[currentActiveTask.currentStation];
-                OfficeController.INSTANCE.textbox.SetTextBoxAutoPos(text, image);
+
+                if (currentActiveTask.currentStation < currentActiveTask.stationTexts.Length)
+                {
+                    //Textbox ploep
+                    String text = currentActiveTask.stationTexts[currentActiveTask.currentStation];
+                    Sprite image = currentActiveTask.stationImages[currentActiveTask.currentStation];
+                    OfficeController.INSTANCE.textbox.SetTextBoxAutoPos(text, image);
+                }
+                else
+                {
+                    Debug.Log($"broken! {this}, currentStation={currentActiveTask.currentStation}");
+                }
              }
 
             progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);
@@ -108,7 +119,6 @@ public class TaskStationController : MonoBehaviour
             progress += Time.deltaTime;
             if (progress >= maxProgress)
             {
-                Debug.Log($"progress = {progress}");
                 // timer is over, reset everything
                 currentActiveTask.NotifyTaskCompleted();
                 currentActiveTask = null;

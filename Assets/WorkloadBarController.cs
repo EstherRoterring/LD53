@@ -9,7 +9,7 @@ public class WorkloadBarController: MonoBehaviour
 {
     //Speichert jeden Bar Status
     public Sprite[] progress;
-    private int points = 0;
+    public int points = 0;
 
     //Workload +x
     public void Add(int points) {
