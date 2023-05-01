@@ -67,20 +67,6 @@ public class OfficeController : MonoBehaviour
         // manager
         manager.ChangeState(new ChasePlayerManagerState(5f));
         
-        var rnd = new System.Random();
-        foreach (var sequence in allDutySmallTaskSequences.OrderBy(x => rnd.Next()).Take(player.numSmallTasks))
-        {
-            sequence.SpawnSequence();
-        }
-        foreach (var sequence in allDutyBigTaskSequences.OrderBy(x => rnd.Next()).Take(player.numBigTasks))
-        {
-            sequence.SpawnSequence();
-        }
-        foreach (var sequence in allBonusTaskSequences.OrderBy(x => rnd.Next()).Take(player.numBonusTasks))
-        {
-            sequence.SpawnSequence();
-        }
-        
         // intro
         cutscenePlaying = introCutscene;
         //worloadBar auf 0
@@ -106,6 +92,12 @@ public class OfficeController : MonoBehaviour
         {
             gameOver = true;
         }
+        
+        // update sprite masks
+        foreach (var room in rooms)
+        {
+            room.spriteMasks.gameObject.SetActive(manager.room == room);
+        }
     }
 
     public void SpawnCoffeeInKitchen()
@@ -123,5 +115,23 @@ public class OfficeController : MonoBehaviour
     public bool HasFreeControlflow()
     {
         return cutscenePlaying == null;
+    }
+
+    public void StartGameAfterIntro()
+    {
+        var rnd = new System.Random();
+        foreach (var sequence in allDutySmallTaskSequences.OrderBy(x => rnd.Next()).Take(player.numSmallTasks))
+        {
+            sequence.SpawnSequence();
+        }
+        foreach (var sequence in allDutyBigTaskSequences.OrderBy(x => rnd.Next()).Take(player.numBigTasks))
+        {
+            sequence.SpawnSequence();
+        }
+        foreach (var sequence in allBonusTaskSequences.OrderBy(x => rnd.Next()).Take(player.numBonusTasks))
+        {
+            sequence.SpawnSequence();
+        }
+        // todo, show flip chart now
     }
 }

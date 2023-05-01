@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     public RoomController room;
     public bool moveLeft, moveRight, moveTowards, moveAway, standingStill;
-    private Animator anim;
+    public Animator anim;
     
     [FormerlySerializedAs("numTasks")]
     public int numSmallTasks;

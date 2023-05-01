@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoomController : MonoBehaviour
 {
     public Transform roomCenter;
+    public Transform spriteMasks;
 
     public Dictionary<DoorController, RoomController> doors = new Dictionary<DoorController, RoomController>();
 }
