@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
 
     public bool duckTaskCompleted = false;
     public bool flirtTaskCompleted = false;
+    public bool walkSoundPlaying = false;
+    
+    public AudioSource audiosource;
 
     public TaskStationController closestStation = null;
 
@@ -102,6 +105,19 @@ public class PlayerController : MonoBehaviour
         if(moveRight==true){anim.SetBool("moveRight",true);}
         if(moveTowards==true){anim.SetBool("moveTowards",true);}
         if(standingStill==true){anim.SetBool("standingStill",true);}
+
+        if (!standingStill)
+        {
+            if (!walkSoundPlaying){
+                audiosource.Play(office.audio_walk_floor, 0.5f);
+                walkSoundPlaying = true;
+            }
+        }
+        else
+        {
+            //audiosource.Play(office.audio_walk_floor, 1.0f);
+            walkSoundPlaying = false;
+        }
 
         var closestStationDist = Mathf.Infinity;
         var lastClosestStation = closestStation;
