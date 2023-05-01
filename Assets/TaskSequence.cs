@@ -73,6 +73,11 @@ public class TaskSequence : MonoBehaviour
                 audioSource.PlayOneShot(audio_quack,1.0f);
             }
 
+            if (mariageEnabled)
+            {
+                OfficeController.INSTANCE.player.flirtTaskCompleted = true;
+            }
+
             if (callsTelephone)
             {
                 OfficeController.INSTANCE.CallTelephone();

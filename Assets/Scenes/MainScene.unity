@@ -561,6 +561,8 @@ MonoBehaviour:
   bonus: 1
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: 
@@ -7222,6 +7224,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: Get printer cartridges
@@ -9113,6 +9117,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: 
@@ -9171,6 +9177,8 @@ MonoBehaviour:
   bonus: 1
   spawnsCoffeeInKitchen: 1
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: 
@@ -9717,6 +9725,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: Manipluate work records
@@ -10144,6 +10154,8 @@ MonoBehaviour:
   bonus: 1
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 1
   mariageEnabled: 0
   boardText: 
@@ -12798,6 +12810,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 1
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: Feed the duck
@@ -13286,6 +13300,8 @@ MonoBehaviour:
   numBonusTasks: 3
   interactDistance: 0.6
   didAnyTask: 0
+  duckTaskCompleted: 0
+  flirtTaskCompleted: 0
   closestStation: {fileID: 0}
 --- !u!212 &1025479800
 SpriteRenderer:
@@ -15342,6 +15358,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: Print sheet
@@ -19865,6 +19883,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: Unclock the toilet
@@ -20599,6 +20619,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: Fix IT Problems
@@ -20833,8 +20855,10 @@ MonoBehaviour:
   bonus: 1
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
-  mariageEnabled: 0
+  mariageEnabled: 1
   boardText: 
 --- !u!1 &1890190236
 GameObject:
@@ -22408,6 +22432,8 @@ MonoBehaviour:
   bonus: 0
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
+  audio_quack: {fileID: 0}
+  audioSource: {fileID: 0}
   callsTelephone: 0
   mariageEnabled: 0
   boardText: Update company website
@@ -22894,7 +22920,10 @@ MonoBehaviour:
   ringingPhone: {fileID: 1512564938}
   managerPhone: {fileID: 639849170}
   introCutscene: {fileID: 2006743163}
-  outroCutscene: {fileID: 1724352745}
+  outroCutsceneAllTasksDone: {fileID: 1358798063}
+  outroCutsceneNotAllTasksDone: {fileID: 1724352745}
+  outroCutsceneFlirty: {fileID: 517478531}
+  outroCutscenePromoted: {fileID: 1578584009}
   allTasksDoneCutscene: {fileID: 520838199}
   gameOver: 0
   debugSkipIntro: 0
@@ -22902,6 +22931,7 @@ MonoBehaviour:
   completedBonusTasks: []
   respawnBonusTaskTimer: 0
   respawnBonusTaskTimerMax: 30
+  numTotalTaskToComplete: 7
 --- !u!114 &2072452944
 MonoBehaviour:
   m_ObjectHideFlags: 0
