@@ -14141,7 +14141,7 @@ MonoBehaviour:
   rechtsOben: {fileID: 666326868}
   linksUnten: {fileID: 1421542754}
   animator: {fileID: 786072642}
-  holdSpaceWrapper: {fileID: 1990401287}
+  holdSpaceWrapper: {fileID: 0}
 --- !u!212 &1079222779
 SpriteRenderer:
   m_ObjectHideFlags: 0
