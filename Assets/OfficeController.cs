@@ -48,6 +48,7 @@ public class OfficeController : MonoBehaviour
 
     public Cutscene introCutscene;
     public Cutscene outroCutscene;
+    public Cutscene allTasksDoneCutscene;
     public bool gameOver = false;
     public bool debugSkipIntro = false;
     
@@ -205,9 +206,11 @@ public class OfficeController : MonoBehaviour
 
     public void CheckAllTasksDone()
     {
-        if (workloadbar.points == 7)
+        if (workloadbar.points >= 1)
         {
-            // we did all, what now?
+            cutscenePlaying = allTasksDoneCutscene;
+            cutscenePlaying.gameObject.SetActive(true);
+            manager.dangerHighlight.GetComponent<SpriteRenderer>().color = manager.goodDangerHighlightColor;
         }
     }
 }

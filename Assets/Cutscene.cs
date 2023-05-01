@@ -37,6 +37,7 @@ public class Cutscene : MonoBehaviour
 
     public bool introScene;
     public bool endScene;
+    public bool allTasksDoneScene;
 
     public void Start()
     {
@@ -178,8 +179,9 @@ public class Cutscene : MonoBehaviour
         completed = true;
         textBox.Visible(false);
         OfficeController.INSTANCE.cutscenePlaying = null;
-        if (introScene)
+        if (allTasksDoneScene)
         {
+            OfficeController.INSTANCE.manager.allTasksDoneExclamationMark.SetActive(true);
         }
         // todo, end scene
 

@@ -59,10 +59,12 @@ public class ManagerController : MonoBehaviour
 
     public GameObject dangerHighlight;
     public bool showHighlight = true;
+    public GameObject allTasksDoneExclamationMark;
+    public Color goodDangerHighlightColor;
 
     void Start()
     {
-        anim=GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
