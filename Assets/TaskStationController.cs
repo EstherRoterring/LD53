@@ -108,13 +108,13 @@ public class TaskStationController : MonoBehaviour
             progress += Time.deltaTime;
             if (progress >= maxProgress)
             {
+                Debug.Log($"progress = {progress}");
                 // timer is over, reset everything
                 currentActiveTask.NotifyTaskCompleted();
                 currentActiveTask = null;
                 Destroy(taskActiveMarker);
                 taskActiveMarker = null;
                 progress = 0f;
-                //macht Textbox weg
                 OfficeController.INSTANCE.textbox.Visible(false);
             }
         }

@@ -13,6 +13,7 @@ public class Cutscene : MonoBehaviour
 
     public int currentLine = 0;
     public float currentMessageProgress = 0;
+    public bool completed = false;
 
     public GameObject[] charList;
     private GameObject currentChar = null;
@@ -92,6 +93,8 @@ public class Cutscene : MonoBehaviour
 
     private void Update()
     {
+        if (completed)
+            return;
         if (currentMessage == null)
             return;
         if (moveChar != null)
@@ -139,9 +142,11 @@ public class Cutscene : MonoBehaviour
         }
         else
         {
+            completed = true;
             textBox.Visible(false);
             OfficeController.INSTANCE.cutscenePlaying = null;
             OfficeController.INSTANCE.StartGameAfterIntro();
+            gameObject.SetActive(false);
         }
     }
 
@@ -175,7 +180,6 @@ public class Cutscene : MonoBehaviour
             Vector3 dir = (followPath.vectorPath[currentWaypoint] - moveChar.transform.position).normalized;
             Vector3 velocity = currentWalkSpeed * dir;
 
-            Debug.Log($"move {moveChar} from {moveChar.transform.position} along {dir} / {velocity}, {currentWaypoint} dist {distanceToWaypoint}");
             moveChar.transform.position += velocity * Time.deltaTime;
 
             PlayerController maybeIsPlayer = null;

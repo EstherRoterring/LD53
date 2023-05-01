@@ -32,6 +32,7 @@ public class TaskSequence : MonoBehaviour
         currentStation += 1;
         if (currentStation >= stations.Length)
         {
+            Debug.Log($"{this}: sequence is completed.");
             // task sequence is done, what now?
             OfficeController.INSTANCE.player.didAnyTask = true;
             OfficeController.INSTANCE.manager.dangerLevel += 5f;

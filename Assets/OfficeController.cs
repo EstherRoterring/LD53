@@ -43,6 +43,7 @@ public class OfficeController : MonoBehaviour
 
     public Cutscene introCutscene;
     public bool gameOver = false;
+    public bool debugSkipIntro = false;
     
     public Cutscene cutscenePlaying = null;
     
@@ -69,7 +70,14 @@ public class OfficeController : MonoBehaviour
         
         // intro
         cutscenePlaying = introCutscene;
-        cutscenePlaying = null;
+
+        if (debugSkipIntro)
+        {
+            cutscenePlaying.gameObject.SetActive(false);
+            cutscenePlaying = null;
+            StartGameAfterIntro();
+        }
+        
         //worloadBar auf 0
         workloadbar.Add(0);
     }
@@ -94,9 +102,6 @@ public class OfficeController : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("You dieee!!!");
-        } else
-        {
-            Debug.Log("You dont dieee!");
         }
         
         // update sprite masks
@@ -115,7 +120,6 @@ public class OfficeController : MonoBehaviour
     {
         ringingPhone.SetActive(true);
         managerPhone.SetActive(false);
-        print("jz active");
     }
 
     public bool HasFreeControlflow()

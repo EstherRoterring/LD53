@@ -520,7 +520,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3b05b55afff0a0b44b862b9cb1b18f2f, type: 3}
   stationDurations: 
   currentStation: -1
-  bonus: 0
+  bonus: 1
   spawnsCoffeeInKitchen: 0
   callsTelephone: 0
 --- !u!1 &87099193
@@ -1303,7 +1303,7 @@ Transform:
   - {fileID: 415934195}
   - {fileID: 1042960594}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &224540924
 GameObject:
@@ -1389,7 +1389,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &224540927
 ParticleSystemRenderer:
@@ -6235,7 +6235,7 @@ Transform:
   - {fileID: 1679585830}
   - {fileID: 678445380}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &257633565
 GameObject:
@@ -6730,7 +6730,7 @@ Transform:
   m_Children:
   - {fileID: 1643974452}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &349977674
 MonoBehaviour:
@@ -6746,7 +6746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMeshPro: {fileID: 771767414}
   image: {fileID: 991757587}
-  rechtsOben: {fileID: 666326868}
+  rechtsOben: {fileID: 723787676}
   linksUnten: {fileID: 1421542754}
 --- !u!212 &349977675
 SpriteRenderer:
@@ -7094,7 +7094,7 @@ Transform:
   - {fileID: 1438469474}
   - {fileID: 1922736244}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &403011795
 PrefabInstance:
@@ -7524,7 +7524,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!114 &451092141
 MonoBehaviour:
@@ -7630,7 +7630,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &459871296
 MonoBehaviour:
@@ -8130,7 +8130,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2cd3ddb5a75c9c54aaf1466a03914eb5, type: 3}
   stationDurations: 
   currentStation: -1
-  bonus: 0
+  bonus: 1
   spawnsCoffeeInKitchen: 1
   callsTelephone: 0
 --- !u!1 &578495147
@@ -8582,7 +8582,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &639849172
 SpriteRenderer:
@@ -8942,7 +8942,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b2d381f856f4d334fa66cc0ae70e2f61, type: 3}
   stationDurations: 
   currentStation: -1
-  bonus: 0
+  bonus: 1
   spawnsCoffeeInKitchen: 0
   callsTelephone: 1
 --- !u!1001 &708917515
@@ -9089,6 +9089,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
   m_PrefabInstance: {fileID: 717571365}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &723787675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 723787676}
+  m_Layer: 0
+  m_Name: DialogueBoxTopPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &723787676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723787675}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.681, z: -10}
+  m_LocalScale: {x: 14, y: 7, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2072452942}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724624821
 GameObject:
   m_ObjectHideFlags: 0
@@ -9169,7 +9200,7 @@ Transform:
   - {fileID: 1108284263}
   - {fileID: 432036217}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &733840089
 PrefabInstance:
@@ -9694,7 +9725,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 4.994, y: 5.01, z: 0.149}
 --- !u!212 &782592813
 SpriteRenderer:
@@ -10130,7 +10161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8477401171842447785, guid: 21556e6b9ef2da84bba44f0b7e40a1ce, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8477401171842447785, guid: 21556e6b9ef2da84bba44f0b7e40a1ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11484,7 +11515,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1025479803
 Rigidbody2D:
@@ -12032,7 +12063,7 @@ Transform:
   m_Children:
   - {fileID: 1423743985}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1079222778
 MonoBehaviour:
@@ -13602,7 +13633,7 @@ Transform:
   m_Children:
   - {fileID: 1387327881}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 2.759, y: -0.828, z: 5.13}
 --- !u!114 &1363542762
 MonoBehaviour:
@@ -15121,7 +15152,7 @@ Transform:
   m_Children:
   - {fileID: 1448116344}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!4 &1521276489 stripped
 Transform:
@@ -15189,7 +15220,7 @@ Transform:
   - {fileID: 1977132697}
   - {fileID: 1402800853}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1534237369
 PrefabInstance:
@@ -16139,7 +16170,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1663928956
 SpriteRenderer:
@@ -17225,7 +17256,7 @@ Transform:
   m_Children:
   - {fileID: 1267497343}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1842295090
 MonoBehaviour:
@@ -17827,7 +17858,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1921255465
 MonoBehaviour:
@@ -18572,7 +18603,7 @@ Transform:
   - {fileID: 1841703494}
   - {fileID: 1202630027}
   m_Father: {fileID: 2072452942}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2006743163
 MonoBehaviour:
@@ -18630,6 +18661,7 @@ MonoBehaviour:
   - {fileID: 0}
   currentLine: 0
   currentMessageProgress: 0
+  completed: 0
   charList:
   - {fileID: 1569634605}
   - {fileID: 1557729048}
@@ -19279,6 +19311,7 @@ Transform:
   - {fileID: 312996201}
   - {fileID: 1421542754}
   - {fileID: 666326868}
+  - {fileID: 723787676}
   - {fileID: 1079222777}
   - {fileID: 349977673}
   - {fileID: 251209526}
@@ -19335,7 +19368,7 @@ MonoBehaviour:
   - {fileID: 704483883}
   activeTaskSequences: []
   taskExclamationPrefab: {fileID: 1228709073738126988, guid: 8e41bf0dac9db4b10a9253bd31dfb488, type: 3}
-  taskBonusExclamationPrefab: {fileID: 0}
+  taskBonusExclamationPrefab: {fileID: 1228709073738126988, guid: 8de808cca847441f790d84e6b49d103d, type: 3}
   taskTimerPrefab: {fileID: 1228709073738126988, guid: 0e27f4cfd7d7c4f41a5760d9ba750f9d, type: 3}
   textbox: {fileID: 1079222778}
   workloadbar: {fileID: 451092141}
@@ -19344,6 +19377,7 @@ MonoBehaviour:
   managerPhone: {fileID: 639849170}
   introCutscene: {fileID: 2006743163}
   gameOver: 0
+  debugSkipIntro: 0
   cutscenePlaying: {fileID: 0}
 --- !u!114 &2072452944
 MonoBehaviour:
@@ -19901,7 +19935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8477401171842447785, guid: 21556e6b9ef2da84bba44f0b7e40a1ce, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8477401171842447785, guid: 21556e6b9ef2da84bba44f0b7e40a1ce, type: 3}
       propertyPath: m_LocalPosition.x
