@@ -573,19 +573,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0259
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0921
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 603846396351857501, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Layer
@@ -10388,7 +10388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723787675}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.681, z: 0}
+  m_LocalPosition: {x: 0, y: 2.681, z: -10}
   m_LocalScale: {x: 14, y: 7, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15792,7 +15792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: maxProgress
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 603846396982499747, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Name
@@ -20639,7 +20639,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8ebf994cdff9da54ea0d24ce34b83325, type: 3}
   stationDurations: 
   currentStation: -1
-  bonus: 0
+  bonus: 1
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
@@ -22673,7 +22673,7 @@ MonoBehaviour:
   outroCutscene: {fileID: 1724352745}
   allTasksDoneCutscene: {fileID: 520838199}
   gameOver: 0
-  debugSkipIntro: 0
+  debugSkipIntro: 1
   cutscenePlaying: {fileID: 0}
   completedBonusTasks: []
   respawnBonusTaskTimer: 0
