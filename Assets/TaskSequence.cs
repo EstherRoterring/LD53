@@ -21,6 +21,8 @@ public class TaskSequence : MonoBehaviour
     public bool bonus = false;
     public bool spawnsCoffeeInKitchen = false;
     public bool duckNotHungry = false;
+    public AudioClip audio_quack;
+    public AudioSource audioSource;
     public bool callsTelephone = false;
     public bool mariageEnabled = false;
     
@@ -68,6 +70,12 @@ public class TaskSequence : MonoBehaviour
             if (duckNotHungry)
             {
                 OfficeController.INSTANCE.makeDuckBig();
+                audioSource.PlayOneShot(audio_quack,1.0f);
+            }
+
+            if (mariageEnabled)
+            {
+                OfficeController.INSTANCE.player.flirtTaskCompleted = true;
             }
 
             if (callsTelephone)

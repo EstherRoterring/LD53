@@ -47,7 +47,10 @@ public class OfficeController : MonoBehaviour
     public GameObject managerPhone;
 
     public Cutscene introCutscene;
-    public Cutscene outroCutscene;
+    public Cutscene outroCutsceneAllTasksDone;
+    public Cutscene outroCutsceneNotAllTasksDone;
+    public Cutscene outroCutsceneFlirty;
+    public Cutscene outroCutscenePromoted;
     public Cutscene allTasksDoneCutscene;
     public bool gameOver = false;
     public bool debugSkipIntro = false;
@@ -58,6 +61,8 @@ public class OfficeController : MonoBehaviour
 
     public float respawnBonusTaskTimer = 0f;
     public float respawnBonusTaskTimerMax = 30f;
+    
+    public int numTotalTaskToComplete = 7;
     
     public OfficeController()
     {
@@ -117,7 +122,22 @@ public class OfficeController : MonoBehaviour
                 && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
             {
                 gameOver = true;
-                cutscenePlaying = outroCutscene;
+                if (workloadbar.points >= numTotalTaskToComplete)
+                {
+                    cutscenePlaying = outroCutsceneAllTasksDone;
+                    if (player.duckTaskCompleted)
+                    {
+                        cutscenePlaying = outroCutscenePromoted;
+                    }
+                }
+                else
+                {
+                    cutscenePlaying = outroCutsceneNotAllTasksDone;
+                    if (player.flirtTaskCompleted)
+                    {
+                        cutscenePlaying = outroCutsceneFlirty;
+                    }
+                }
                 cutscenePlaying.gameObject.SetActive(true);
             }
         
@@ -173,6 +193,7 @@ public class OfficeController : MonoBehaviour
     public void makeDuckBig()
     {
         Vector3 newScale = new Vector3(2f, 2f, 1f);
+        player.duckTaskCompleted = true;
         duck.transform.localScale = newScale;
     }
 
@@ -207,7 +228,7 @@ public class OfficeController : MonoBehaviour
 
     public void CheckAllTasksDone()
     {
-        if (workloadbar.points >= 7)
+        if (workloadbar.points >= numTotalTaskToComplete)
         {
             cutscenePlaying = allTasksDoneCutscene;
             cutscenePlaying.gameObject.SetActive(true);

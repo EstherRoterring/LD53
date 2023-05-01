@@ -25,6 +25,9 @@ public class PlayerController : MonoBehaviour
     public float interactDistance;
     public bool didAnyTask = false;
 
+    public bool duckTaskCompleted = false;
+    public bool flirtTaskCompleted = false;
+
     public TaskStationController closestStation = null;
 
     void Start()
