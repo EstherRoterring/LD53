@@ -19,6 +19,7 @@ public class TaskSequence : MonoBehaviour
 
     public bool bonus = false;
     public bool spawnsCoffeeInKitchen = false;
+    public bool duckNotHungry = false;
     public bool callsTelephone = false;
 
     public string boardText = "";
@@ -46,6 +47,11 @@ public class TaskSequence : MonoBehaviour
             if (spawnsCoffeeInKitchen)
             {
                 OfficeController.INSTANCE.SpawnCoffeeInKitchen();
+            }
+
+            if (duckNotHungry)
+            {
+                OfficeController.INSTANCE.makeDuckBig();
             }
 
             if (callsTelephone)

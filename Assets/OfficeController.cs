@@ -42,6 +42,7 @@ public class OfficeController : MonoBehaviour
     public WorkloadBarController workloadbar;
 
     public GameObject coffee;
+    public GameObject duck;
     public GameObject ringingPhone;
     public GameObject managerPhone;
 
@@ -147,7 +148,13 @@ public class OfficeController : MonoBehaviour
     {
         coffee.SetActive(true);
     }
-    
+
+    public void makeDuckBig()
+    {
+        Vector3 newScale = new Vector3(2f, 2f, 1f);
+        duck.transform.localScale = newScale;
+    }
+
     public void CallTelephone()
     {
         ringingPhone.SetActive(true);
