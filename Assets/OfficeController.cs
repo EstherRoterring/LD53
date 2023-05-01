@@ -27,6 +27,9 @@ public class OfficeController : MonoBehaviour
     public TaskSequence[] allDutySmallTaskSequences;
     public TaskSequence[] allDutyBigTaskSequences;
     public TaskSequence[] allBonusTaskSequences;
+    
+    
+    public AudioClip audio_walk_floor;
 
     public List<TaskSequence> activeTaskSequences = new List<TaskSequence>();
     
