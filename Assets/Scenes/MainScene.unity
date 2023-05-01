@@ -19377,7 +19377,7 @@ MonoBehaviour:
   managerPhone: {fileID: 639849170}
   introCutscene: {fileID: 2006743163}
   gameOver: 0
-  debugSkipIntro: 0
+  debugSkipIntro: 1
   cutscenePlaying: {fileID: 0}
 --- !u!114 &2072452944
 MonoBehaviour:
