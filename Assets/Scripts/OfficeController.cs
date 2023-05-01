@@ -67,6 +67,10 @@ public class OfficeController : MonoBehaviour
     public float respawnBonusTaskTimerMax = 30f;
     
     public int numTotalTaskToComplete = 7;
+
+    public Cutscene explainCoffeeCutscene;
+    public Cutscene explainPhoneCutscene;
+    public Cutscene fellForPrankCutscene;
     
     public OfficeController()
     {
@@ -144,7 +148,6 @@ public class OfficeController : MonoBehaviour
                 }
                 cutscenePlaying.gameObject.SetActive(true);
             }
-            textbox.Visible(false);
         
             // update sprite masks
             foreach (var room in rooms)

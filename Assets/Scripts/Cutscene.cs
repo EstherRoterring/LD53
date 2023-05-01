@@ -118,6 +118,7 @@ public class Cutscene : MonoBehaviour
         {
             return;
         }
+        OfficeController.INSTANCE.textbox.Visible(false);
         if (completed)
             return;
         if (currentMessage == null)

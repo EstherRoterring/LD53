@@ -6,7 +6,6 @@ using UnityEngine;
 using Pathfinding;
 using Unity.VisualScripting;
 using Random = UnityEngine.Random;
-using UnityEngine.UI;
 
 
 /**
@@ -346,6 +345,12 @@ public class AnswerCallInOfficeManagerState : IManagerState
         bool arrived = manager.followPath == null;
         if (arrived)
         {
+            if (OfficeController.INSTANCE.fellForPrankCutscene != null)
+            {
+                OfficeController.INSTANCE.cutscenePlaying = OfficeController.INSTANCE.fellForPrankCutscene;
+                OfficeController.INSTANCE.cutscenePlaying.gameObject.SetActive(true);
+                OfficeController.INSTANCE.fellForPrankCutscene = null;
+            }
             manager.office.managerPhone.SetActive(true);
             manager.office.ringingPhone.SetActive(false);
             timeLeft -= Time.deltaTime;
@@ -376,6 +381,13 @@ public class DrinkCoffeeManagerState : IManagerState
     public void OnEnter(ManagerController manager)
     {
         manager.GoTo(manager.office.coffee.transform);
+        
+        if (OfficeController.INSTANCE.explainCoffeeCutscene != null)
+        {
+            OfficeController.INSTANCE.cutscenePlaying = OfficeController.INSTANCE.explainCoffeeCutscene;
+            OfficeController.INSTANCE.cutscenePlaying.gameObject.SetActive(true);
+            OfficeController.INSTANCE.explainCoffeeCutscene = null;
+        }
     }
 
     public void UpdateState(ManagerController manager)

@@ -82,6 +82,12 @@ public class TaskSequence : MonoBehaviour
             if (callsTelephone)
             {
                 OfficeController.INSTANCE.CallTelephone();
+                if (OfficeController.INSTANCE.explainPhoneCutscene != null)
+                {
+                    OfficeController.INSTANCE.cutscenePlaying = OfficeController.INSTANCE.explainPhoneCutscene;
+                    OfficeController.INSTANCE.cutscenePlaying.gameObject.SetActive(true);
+                    OfficeController.INSTANCE.explainPhoneCutscene = null;
+                }
             }
             OfficeController.INSTANCE.activeTaskSequences.Remove(this);
             return;
