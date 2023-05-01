@@ -20,6 +20,8 @@ public class TaskSequence : MonoBehaviour
     public bool bonus = false;
     public bool spawnsCoffeeInKitchen = false;
     public bool callsTelephone = false;
+
+    public string boardText = "";
     
     public void SpawnSequence()
     {
@@ -59,5 +61,10 @@ public class TaskSequence : MonoBehaviour
     public void NotifyTaskCompleted()
     {
         NextStation();
+    }
+
+    public string GetText()
+    {
+        return boardText;
     }
 }
