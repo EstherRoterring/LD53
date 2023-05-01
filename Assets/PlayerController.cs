@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
         if(moveTowards==true){anim.SetBool("moveTowards",true);}
         if(standingStill==true){anim.SetBool("standingStill",true);}
 
-        if (!standingStill)
+        if (!anim.GetBool("standingStill"))
         {
             if (!walkSoundPlaying){
                 audiosource.Play();
@@ -115,7 +115,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            //audiosource.Play(office.audio_walk_floor, 1.0f);
             walkSoundPlaying = false;
             audiosource.Stop();
         }
