@@ -121,8 +121,7 @@ public class OfficeController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        Debug.Log($"{Input.GetKeyDown(KeyCode.A)}");
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab))
         {
             showingTaskBoard = true;
         }
@@ -131,7 +130,7 @@ public class OfficeController : MonoBehaviour
             showingTaskBoard = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && showingTaskBoard)
+        if (Input.GetKey(KeyCode.Escape) && showingTaskBoard)
         {
             showingTaskBoard = false;
         }
