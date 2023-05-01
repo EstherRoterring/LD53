@@ -11417,6 +11417,7 @@ MonoBehaviour:
   numBigTasks: 1
   numBonusTasks: 3
   interactDistance: 0.6
+  didAnyTask: 0
   closestStation: {fileID: 0}
 --- !u!212 &1025479800
 SpriteRenderer:
@@ -17246,6 +17247,7 @@ MonoBehaviour:
   visitLocations: []
   angry: 0
   totalManagerTime: 0
+  dangerLevel: 0
   dangerHighlight: {fileID: 1267497342}
 --- !u!114 &1842295091
 MonoBehaviour:
@@ -17880,7 +17882,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8270966b09891ec4aa9e387873558053, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71d4bfba4c8ff0745a2c7a009a618063, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
