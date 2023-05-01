@@ -8544,9 +8544,9 @@ MonoBehaviour:
   stations:
   - {fileID: 1135813303}
   stationTexts:
-  - manipulating your work progress...
+  - manipulating work records ...
   stationImages:
-  - {fileID: 21300000, guid: 9f7fe040cc3e142b1b30a830c5d58b0a, type: 3}
+  - {fileID: -113035264, guid: f36965d277fb1784185465913ded8b9b, type: 3}
   stationDurations: 
   currentStation: -1
   bonus: 0
