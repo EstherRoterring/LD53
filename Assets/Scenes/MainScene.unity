@@ -1828,7 +1828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &224540925
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14171,7 +14171,7 @@ MonoBehaviour:
   rechtsOben: {fileID: 666326868}
   linksUnten: {fileID: 1421542754}
   animator: {fileID: 786072642}
-  holdSpaceWrapper: {fileID: 0}
+  holdSpaceWrapper: {fileID: 1990401287}
 --- !u!212 &1079222779
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20225,6 +20225,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.0324
       objectReference: {fileID: 0}
+    - target: {fileID: 1229265783784781719, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.152
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229265783784781719, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.13
+      objectReference: {fileID: 0}
     - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: roomCenter
       value: 
@@ -20603,7 +20611,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842295086}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.48, y: 0.31, z: 0}
+  m_LocalPosition: {x: -3.58, y: -0.5, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
