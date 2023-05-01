@@ -41,7 +41,16 @@ public class TaskSequence : MonoBehaviour
             OfficeController.INSTANCE.manager.dangerLevel += 5f;
             if (!bonus)
             {
-                OfficeController.INSTANCE.workloadbar.Add(stations.Length);
+                if (stations.Length >= 2)
+                {
+                    OfficeController.INSTANCE.workloadbar.Add(2);
+                }
+                else
+                {
+                    OfficeController.INSTANCE.workloadbar.Add(1);
+                }
+
+                OfficeController.INSTANCE.CheckAllTasksDone();
             }
 
             if (spawnsCoffeeInKitchen)

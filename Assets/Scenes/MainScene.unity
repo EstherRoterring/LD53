@@ -7372,8 +7372,8 @@ MonoBehaviour:
   - {fileID: 2067693246}
   stationTexts:
   - Printer cartridges empty, get new ones from the warehouse!
-  - serching...
-  - copying...
+  - Getting the cartridges...
+  - Setting up the printer
   stationImages:
   - {fileID: 21300000, guid: 1c3cd2bfa20f942788b30b5f574a067e, type: 3}
   - {fileID: 21300000, guid: 1c3cd2bfa20f942788b30b5f574a067e, type: 3}
@@ -7384,7 +7384,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
-  boardText: 
+  boardText: Get printer cartridges
 --- !u!4 &334514468 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 565060761573551675, guid: a3079e53e5ee6455eb6c7eeb77ca7755,
@@ -8380,6 +8380,7 @@ MonoBehaviour:
   - {fileID: 629066038, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
   - {fileID: 1717676823, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
   - {fileID: 1447116965, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  points: 0
 --- !u!212 &451092142
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9774,7 +9775,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
-  boardText: 
+  boardText: Manipluate work records
 --- !u!1 &639849170
 GameObject:
   m_ObjectHideFlags: 0
@@ -13004,8 +13005,8 @@ MonoBehaviour:
   - {fileID: 1411788540}
   - {fileID: 245704238}
   stationTexts:
-  - Feed me! quack
-  - Serching duck-food
+  - Feed me! Quack
+  - Getting the duck food ...
   - NOM NOM Quak!
   stationImages:
   - {fileID: 21300000, guid: 1c3cd2bfa20f942788b30b5f574a067e, type: 3}
@@ -13017,7 +13018,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 1
   callsTelephone: 0
-  boardText: 
+  boardText: Feed the duck
 --- !u!1 &939258945
 GameObject:
   m_ObjectHideFlags: 0
@@ -15599,7 +15600,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
-  boardText: 
+  boardText: Print sheet
 --- !u!1 &1297729999
 GameObject:
   m_ObjectHideFlags: 0
@@ -20403,7 +20404,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 1
   callsTelephone: 0
-  boardText: 
+  boardText: Unclock the toilet
 --- !u!1001 &1821854999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21186,7 +21187,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
-  boardText: 
+  boardText: Fix IT Problems
 --- !u!1001 &1864034444
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22899,7 +22900,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
-  boardText: 
+  boardText: Update company website
 --- !u!1 &2034768421
 GameObject:
   m_ObjectHideFlags: 0

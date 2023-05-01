@@ -184,4 +184,12 @@ public class OfficeController : MonoBehaviour
         }
         // todo, show flip chart now
     }
+
+    public void CheckAllTasksDone()
+    {
+        if (workloadbar.points == 7)
+        {
+            // we did all, what now?
+        }
+    }
 }
