@@ -7412,14 +7412,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502437889}
-  m_LocalRotation: {x: 0.19163476, y: 0.12141042, z: -0.20144242, w: 0.9528675}
+  m_LocalRotation: {x: -0.114171386, y: -0.11868475, z: 0.18001455, w: -0.9697802}
   m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 7, y: 9.9909, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1387327881}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 24.464, y: 9.752, z: -21.755}
+  m_LocalEulerAnglesHint: {x: 15.318, y: 371.306, z: -19.506}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.19, y: -0.11}
@@ -7445,17 +7445,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Test 123456789
+  m_text: 'Quest A
+
+    Quest B: Rotorblock tauschen
+
+    Hundekuchen Quest C
+
+    Quest
+    D: Gestern Essen'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9bfa7cab50205164c93f10e33624d0bc, type: 2}
+  m_sharedMaterial: {fileID: 8047665581674198003, guid: 9bfa7cab50205164c93f10e33624d0bc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4283703591
+  m_fontColor: {r: 0.15473491, g: 0.12927198, b: 0.3301887, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7478,7 +7485,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7508,7 +7515,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: -0.10039759, z: 0, w: -0.041314065}
+  m_margin: {x: 0, y: 0.022764951, z: 0, w: -0.041314065}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9194,14 +9201,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782592811}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.043583017, y: 0.04360426, z: -0.0006088023, w: 0.9980976}
   m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2072452942}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 4.994, y: 5.01, z: 0.149}
 --- !u!212 &782592813
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12383,7 +12390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1363542761
 Transform:
   m_ObjectHideFlags: 0
@@ -12391,7 +12398,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363542760}
-  m_LocalRotation: {x: -0, y: -0, z: 0.005005215, w: 0.99998754}
+  m_LocalRotation: {x: 0.02372245, y: -0.008293854, z: 0.044914644, w: 0.9986747}
   m_LocalPosition: {x: 0.22, y: -0.36, z: -3}
   m_LocalScale: {x: 3.1936336, y: 2.8006399, z: 0}
   m_ConstrainProportionsScale: 0
@@ -12399,7 +12406,7 @@ Transform:
   - {fileID: 1387327881}
   m_Father: {fileID: 2072452942}
   m_RootOrder: 22
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.574}
+  m_LocalEulerAnglesHint: {x: 2.759, y: -0.828, z: 5.13}
 --- !u!114 &1363542762
 MonoBehaviour:
   m_ObjectHideFlags: 0
