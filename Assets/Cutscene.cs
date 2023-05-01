@@ -34,6 +34,9 @@ public class Cutscene : MonoBehaviour
     private int currentWaypoint = 0;
     public float nextWaypointDistance;
 
+    public bool introScene;
+    public bool endScene;
+
     public void Start()
     {
         
@@ -146,12 +149,23 @@ public class Cutscene : MonoBehaviour
         }
         else
         {
-            completed = true;
-            textBox.Visible(false);
-            OfficeController.INSTANCE.cutscenePlaying = null;
-            OfficeController.INSTANCE.StartGameAfterIntro();
-            gameObject.SetActive(false);
+            DoFinished();
         }
+    }
+
+    private void DoFinished()
+    {
+        completed = true;
+        textBox.Visible(false);
+        OfficeController.INSTANCE.cutscenePlaying = null;
+        if (introScene)
+        {
+            OfficeController.INSTANCE.StartGameAfterIntro();
+            OfficeController.INSTANCE.taskBoardStuckOpen = true;
+        }
+        // todo, end scene
+
+        gameObject.SetActive(false);
     }
 
     private void MoveChars()

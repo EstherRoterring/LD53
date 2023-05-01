@@ -563,8 +563,10 @@ MonoBehaviour:
   - {fileID: 1438469475}
   stationTexts:
   - Hello World
+  - Hello World
   stationImages:
   - {fileID: 21300000, guid: 3b05b55afff0a0b44b862b9cb1b18f2f, type: 3}
+  - {fileID: 0}
   stationDurations: 
   currentStation: -1
   bonus: 1
@@ -8634,6 +8636,8 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
+  introScene: 0
+  endScene: 1
 --- !u!1 &517921297
 GameObject:
   m_ObjectHideFlags: 0
@@ -15448,6 +15452,8 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
+  introScene: 0
+  endScene: 1
 --- !u!1 &1363542760
 GameObject:
   m_ObjectHideFlags: 0
@@ -18082,6 +18088,8 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
+  introScene: 0
+  endScene: 1
 --- !u!1001 &1609974503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19111,6 +19119,8 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
+  introScene: 0
+  endScene: 1
 --- !u!4 &1724352746
 Transform:
   m_ObjectHideFlags: 0
@@ -21842,6 +21852,8 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
+  introScene: 1
+  endScene: 0
 --- !u!114 &2006743164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22713,6 +22725,7 @@ MonoBehaviour:
     type: 3}
   taskBoard: {fileID: 0}
   showingTaskBoard: 0
+  taskBoardStuckOpen: 0
   textbox: {fileID: 1079222778}
   workloadbar: {fileID: 451092141}
   coffee: {fileID: 224540924}
@@ -22721,7 +22734,7 @@ MonoBehaviour:
   introCutscene: {fileID: 2006743163}
   outroCutscene: {fileID: 1724352745}
   gameOver: 0
-  debugSkipIntro: 1
+  debugSkipIntro: 0
   cutscenePlaying: {fileID: 0}
 --- !u!114 &2072452944
 MonoBehaviour:
