@@ -66,7 +66,7 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
-        dangerHighlight.transform.localScale = new Vector3(viewDistance / 2f, viewDistance / 2f, 1);
+        dangerHighlight.transform.localScale = new Vector3(viewDistance / 4f, viewDistance / 4f, 1);
         if (office.HasFreeControlflow())
         {
             totalManagerTime += Time.deltaTime;
@@ -76,7 +76,7 @@ public class ManagerController : MonoBehaviour
                 dangerLevel += Time.deltaTime;
             }
 
-            viewDistance = 0.5f + (dangerLevel / 60f);
+            viewDistance = 0.4f + (0.3f / 60f * dangerLevel);
             
             if (_currentManagerState != null)
             {
@@ -119,6 +119,10 @@ public class ManagerController : MonoBehaviour
                 
                 Vector3 dir = (followPath.vectorPath[currentWaypoint] - transform.position).normalized;
                 Vector3 velocity = walkSpeed * dir;
+                if (angry)
+                {
+                    velocity *= 1.2f;
+                }
                 UpdateAnimationDirection(velocity);
 
                 transform.position += velocity * Time.deltaTime;
