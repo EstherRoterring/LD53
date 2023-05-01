@@ -180,9 +180,14 @@ public class Cutscene : MonoBehaviour
         completed = true;
         textBox.Visible(false);
         OfficeController.INSTANCE.cutscenePlaying = null;
+
+        if (introScene)
+        {
+            OfficeController.INSTANCE.manager.showExclamationMark = false;
+        }
         if (allTasksDoneScene)
         {
-            OfficeController.INSTANCE.manager.allTasksDoneExclamationMark.SetActive(true);
+            OfficeController.INSTANCE.manager.showExclamationMark = true;
         }
         // todo, end scene
 

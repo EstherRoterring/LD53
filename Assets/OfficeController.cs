@@ -88,6 +88,7 @@ public class OfficeController : MonoBehaviour
         {
             cutscenePlaying.gameObject.SetActive(false);
             cutscenePlaying = null;
+            manager.showExclamationMark = false;
             StartGameAfterIntro();
         }
         
