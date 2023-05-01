@@ -36,9 +36,10 @@ public class OfficeController : MonoBehaviour
     public TextBoxController textbox;
     //Punktezaehler
     public WorkloadBarController workloadbar;
-    
+
     public GameObject coffee;
     public GameObject ringingPhone;
+    public GameObject managerPhone;
 
     public Cutscene introCutscene;
     public bool gameOver = false;
@@ -82,6 +83,8 @@ public class OfficeController : MonoBehaviour
         
         // intro
         cutscenePlaying = introCutscene;
+        //worloadBar auf 0
+        workloadbar.Add(0);
     }
 
     private Color LookupRoomColor(Vector2 pos)
@@ -113,6 +116,8 @@ public class OfficeController : MonoBehaviour
     public void CallTelephone()
     {
         ringingPhone.SetActive(true);
+        managerPhone.SetActive(false);
+        print("jz active");
     }
 
     public bool HasFreeControlflow()
