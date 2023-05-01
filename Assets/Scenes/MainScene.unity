@@ -23955,7 +23955,7 @@ MonoBehaviour:
   outroCutscene: {fileID: 1724352745}
   allTasksDoneCutscene: {fileID: 520838199}
   gameOver: 0
-  debugSkipIntro: 1
+  debugSkipIntro: 0
   cutscenePlaying: {fileID: 0}
   completedBonusTasks: []
   respawnBonusTaskTimer: 0
