@@ -127,6 +127,7 @@ public class Cutscene : MonoBehaviour
         {
             textBox.Visible(false);
             OfficeController.INSTANCE.cutscenePlaying = null;
+            OfficeController.INSTANCE.StartGameAfterIntro();
         }
     }
 
