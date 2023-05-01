@@ -11417,6 +11417,7 @@ MonoBehaviour:
   numBigTasks: 1
   numBonusTasks: 3
   interactDistance: 0.6
+  didAnyTask: 0
   closestStation: {fileID: 0}
 --- !u!212 &1025479800
 SpriteRenderer:
@@ -17246,6 +17247,7 @@ MonoBehaviour:
   visitLocations: []
   angry: 0
   totalManagerTime: 0
+  dangerLevel: 0
   dangerHighlight: {fileID: 1267497342}
 --- !u!114 &1842295091
 MonoBehaviour:
@@ -18593,7 +18595,8 @@ MonoBehaviour:
   - 'Timmy: Hey mate! Watch out!'
   - 'TimmyAlert: The boss is super mad at you for slacking off all the time.'
   - 'Timmy: If he finds you, he will fire you.'
-  - 'Timmy: Run!'
+  - 'Timmy: If you work enough before he can catches you, he might change his mind.'
+  - 'TimmyAlert: Run and do your work!'
   - 'None:'
   - 'Manager: Hey you! I need to talk to you!'
   - 'Manager: I will come get you!'
@@ -18607,6 +18610,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 1841703494}
   - {fileID: 0}
   - {fileID: 0}
@@ -18617,6 +18621,7 @@ MonoBehaviour:
   - {fileID: 839329977}
   - {fileID: 1025479798}
   - {fileID: 524518259}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
