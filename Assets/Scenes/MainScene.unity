@@ -6894,6 +6894,112 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
   m_PrefabInstance: {fileID: 435549959}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &451092139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451092140}
+  - component: {fileID: 451092142}
+  - component: {fileID: 451092141}
+  m_Layer: 0
+  m_Name: WorkloadBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &451092140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451092139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21, y: -3.21, z: -2}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2072452942}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &451092141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451092139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbf4062da0c42f1816ffcd801020f94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  progress:
+  - {fileID: 1090105575, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  - {fileID: -572879789, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  - {fileID: -1423248657, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  - {fileID: 1627404681, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  - {fileID: 184060351, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  - {fileID: 629066038, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  - {fileID: 1717676823, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  - {fileID: 1447116965, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+--- !u!212 &451092142
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451092139}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 1627404681, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &459871294
 GameObject:
   m_ObjectHideFlags: 0
@@ -10276,7 +10382,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079222776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 3, z: -3}
+  m_LocalPosition: {x: 3, y: 3, z: 100}
   m_LocalScale: {x: 14, y: 7, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14795,7 +14901,7 @@ MonoBehaviour:
   stationTexts:
   - fixing dumb IT problems...
   stationImages:
-  - {fileID: 21300000, guid: c0a8f0cf3104143d9be14eb111594b7c, type: 3}
+  - {fileID: 21300000, guid: 0fa8787e317d7a24681105060a375dc6, type: 3}
   stationDurations: 
   currentStation: -1
   bonus: 0
@@ -15790,7 +15896,7 @@ MonoBehaviour:
   stationTexts:
   - working...
   stationImages:
-  - {fileID: 21300000, guid: c0a8f0cf3104143d9be14eb111594b7c, type: 3}
+  - {fileID: 21300000, guid: 78b511d1be206e240b4b60893a65f2fb, type: 3}
   stationDurations: 
   currentStation: -1
   bonus: 0
@@ -16004,6 +16110,7 @@ Transform:
   - {fileID: 639849171}
   - {fileID: 1512564939}
   - {fileID: 187823555}
+  - {fileID: 451092140}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16042,6 +16149,7 @@ MonoBehaviour:
   taskBonusExclamationPrefab: {fileID: 0}
   taskTimerPrefab: {fileID: 1228709073738126988, guid: 0e27f4cfd7d7c4f41a5760d9ba750f9d, type: 3}
   textbox: {fileID: 1079222778}
+  workloadbar: {fileID: 451092141}
   coffee: {fileID: 224540924}
   ringingPhone: {fileID: 1512564938}
 --- !u!114 &2072452944
