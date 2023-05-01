@@ -241,8 +241,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!1 &47228057 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 603846397629956588, guid: 524ef0400415d4eeda56d7391fc65919,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 603846397629956588, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
   m_PrefabInstance: {fileID: 1934341870}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &51463486
@@ -563,6 +562,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: 
 --- !u!1001 &84712174
 PrefabInstance:
@@ -1329,13 +1329,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
@@ -7141,9 +7139,10 @@ MonoBehaviour:
   - {fileID: 1411788540}
   - {fileID: 2067693246}
   stationTexts:
-  - Printer cartridges empty, get new ones from the warehouse!
-  - Getting the cartridges...
-  - Setting up the printer
+  - "Hmm, the Printer cartridges are  empty, I\xB4ll have to get new ones from the
+    warehouse!"
+  - Where are those cartridges... Ah, here they are!
+  - Setting up the printer now.
   stationImages:
   - {fileID: 21300000, guid: 1c3cd2bfa20f942788b30b5f574a067e, type: 3}
   - {fileID: 21300000, guid: 1c3cd2bfa20f942788b30b5f574a067e, type: 3}
@@ -7154,6 +7153,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: Get printer cartridges
 --- !u!4 &334514468 stripped
 Transform:
@@ -9034,7 +9034,7 @@ MonoBehaviour:
   stations:
   - {fileID: 1450263985}
   stationTexts:
-  - Timmz has deleted the internet again...how!?
+  - Timmy has deleted the internet again...how!?
   stationImages:
   - {fileID: 21300000, guid: efcd23656a09b004297c17a0e09fe2d1, type: 3}
   stationDurations: 
@@ -9043,6 +9043,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: 
 --- !u!1 &565043337
 GameObject:
@@ -9091,7 +9092,7 @@ MonoBehaviour:
   stations:
   - {fileID: 899965462}
   stationTexts:
-  - brewing coffee...
+  - brewing some coffee ...
   stationImages:
   - {fileID: 21300000, guid: 2cd3ddb5a75c9c54aaf1466a03914eb5, type: 3}
   stationDurations: 
@@ -9100,6 +9101,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 1
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: 
 --- !u!1 &568464859
 GameObject:
@@ -9645,6 +9647,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: Manipluate work records
 --- !u!1 &639849170
 GameObject:
@@ -10071,6 +10074,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 1
+  mariageEnabled: 0
   boardText: 
 --- !u!1001 &708434912
 PrefabInstance:
@@ -10584,8 +10588,8 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.075
       objectReference: {fileID: 0}
-    m_RemovedComponents: [{fileID: 603846397629956579, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}]
+    m_RemovedComponents:
+    - {fileID: 603846397629956579, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
 --- !u!4 &733840090 stripped
 Transform:
@@ -12617,7 +12621,7 @@ MonoBehaviour:
   - {fileID: 245704238}
   stationTexts:
   - Feed me! Quack
-  - Getting the duck food ...
+  - "Let\xB4s find the duck food ..."
   - NOM NOM Quak!
   stationImages:
   - {fileID: 21300000, guid: 1c3cd2bfa20f942788b30b5f574a067e, type: 3}
@@ -12629,6 +12633,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 1
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: Feed the duck
 --- !u!1 &919150891
 GameObject:
@@ -15169,6 +15174,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: Print sheet
 --- !u!1 &1297729999
 GameObject:
@@ -15685,6 +15691,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1363542764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363542760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c1a8b4b54a4d15bd26ac54793439df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 502437891}
 --- !u!1 &1369980685
 GameObject:
   m_ObjectHideFlags: 0
@@ -15716,19 +15735,6 @@ Transform:
   m_Father: {fileID: 517478529}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1363542764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363542760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33c1a8b4b54a4d15bd26ac54793439df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 502437891}
 --- !u!1001 &1370638256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19670,6 +19676,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: Unclock the toilet
 --- !u!1001 &1821854999
 PrefabInstance:
@@ -20393,7 +20400,7 @@ MonoBehaviour:
   stations:
   - {fileID: 1616770797}
   stationTexts:
-  - fixing dumb IT problems...
+  - fixing dumb IT problems... again...
   stationImages:
   - {fileID: 21300000, guid: 0fa8787e317d7a24681105060a375dc6, type: 3}
   stationDurations: 
@@ -20402,6 +20409,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: Fix IT Problems
 --- !u!1001 &1864034444
 PrefabInstance:
@@ -20635,6 +20643,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: 
 --- !u!1 &1890190236
 GameObject:
@@ -21004,153 +21013,123 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 380538305}
     m_Modifications:
-    - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.217
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396351857490, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.26
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396351857501, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396351857501, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.66
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: maxProgress
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: interactObject
       value: 
       objectReference: {fileID: 47228057}
-    - target: {fileID: 603846396982499747, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499747, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Name
       value: Flirting Task
       objectReference: {fileID: 0}
-    - target: {fileID: 603846396982499747, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846396982499747, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.038
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397098245412, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.089
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397098245415, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397098245415, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956578, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956578, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956578, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956578, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956579, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956579, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.48
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956579, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956579, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.48
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956588, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956588, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0012
       objectReference: {fileID: 0}
-    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919,
-        type: 3}
+    - target: {fileID: 603846397629956589, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.0002
       objectReference: {fileID: 0}
@@ -21158,14 +21137,12 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
 --- !u!4 &1934341871 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 603846396982499744, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
   m_PrefabInstance: {fileID: 1934341870}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1934341872 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 603846396982499745, guid: 524ef0400415d4eeda56d7391fc65919, type: 3}
   m_PrefabInstance: {fileID: 1934341870}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -22207,6 +22184,7 @@ MonoBehaviour:
   spawnsCoffeeInKitchen: 0
   duckNotHungry: 0
   callsTelephone: 0
+  mariageEnabled: 0
   boardText: Update company website
 --- !u!1 &2034768421
 GameObject:
