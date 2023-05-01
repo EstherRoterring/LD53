@@ -36,8 +36,9 @@ public class Cutscene : MonoBehaviour
     {
         
         // disable all at beginning
-        // foreach (var c in this.charList)
-        //     c.SetActive(false);
+        foreach (var c in this.charList)
+            if (c != null)
+                c.SetActive(false);
 
         textBox.Position2();
 
@@ -74,8 +75,11 @@ public class Cutscene : MonoBehaviour
         // find char
         if (currentChar != null)
             currentChar.SetActive(false);
-        // currentChar = charList[Array.IndexOf(this.charNames, this.currentSpeaker)];
-        // currentChar.SetActive(true);
+        currentChar = charList[Array.IndexOf(this.charNames, this.currentSpeaker)];
+        if (currentChar != null)
+        {
+            currentChar.SetActive(true);
+        }
 
         textBox.Visible(true);
         textBox.SetText("");
