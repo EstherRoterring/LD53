@@ -13224,7 +13224,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.092
 --- !u!95 &1025479805
 Animator:
   serializedVersion: 5
@@ -13360,7 +13360,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.16}
+  m_Size: {x: 0.3, y: 0.19}
   m_EdgeRadius: 0
 --- !u!1001 &1052745298
 PrefabInstance:
