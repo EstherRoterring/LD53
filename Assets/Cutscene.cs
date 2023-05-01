@@ -159,10 +159,15 @@ public class Cutscene : MonoBehaviour
                 
             Vector3 dir = (followPath.vectorPath[currentWaypoint] - moveChar.transform.position).normalized;
             Vector3 velocity = walkSpeed * dir;
-            // UpdateAnimationDirection(velocity);
 
             Debug.Log($"move {moveChar} from {moveChar.transform.position} along {dir} / {velocity}, {currentWaypoint} dist {distanceToWaypoint}");
             moveChar.transform.position += velocity * Time.deltaTime;
+
+            PlayerController maybeIsPlayer = null;
+            if (moveChar.TryGetComponent(out maybeIsPlayer))
+            {
+                UpdateAnimationDirection(maybeIsPlayer.anim, velocity);
+            }
 
             if (reachedEndOfPath)
             {
@@ -170,6 +175,26 @@ public class Cutscene : MonoBehaviour
                 currentWaypoint = 0;
                 moveChar = null;
             }
+        }
+    }
+    
+    public void UpdateAnimationDirection(Animator anim, Vector3 velocity)
+    {
+        if (velocity.magnitude <= 0.01f)
+        {
+            anim.SetBool("standingStill", true);
+            anim.SetBool("moveTowards",false);
+            anim.SetBool("moveRight",false);
+            anim.SetBool("moveLeft",false);
+            anim.SetBool("moveAway",false);
+        } else
+        {
+            anim.SetBool("standingStill", false);
+            var xMax = Mathf.Abs(velocity.x) > Mathf.Abs(velocity.y);
+            anim.SetBool("moveTowards",!xMax && velocity.y <= 0);
+            anim.SetBool("moveAway",!xMax && velocity.y >= 0);
+            anim.SetBool("moveLeft",xMax && velocity.x <= 0);
+            anim.SetBool("moveRight",xMax && velocity.x >= 0);
         }
     }
 }
