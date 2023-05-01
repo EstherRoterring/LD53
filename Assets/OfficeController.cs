@@ -40,7 +40,7 @@ public class OfficeController : MonoBehaviour
     public TextBoxController textbox;
     //Punktezaehler
     public WorkloadBarController workloadbar;
-
+    
     public GameObject coffee;
     public GameObject duck;
     public GameObject ringingPhone;

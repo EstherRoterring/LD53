@@ -16,12 +16,14 @@ public class TaskSequence : MonoBehaviour
     public int[] stationDurations;
 
     public int currentStation = -1;
-
+    
+    //Task Attribute
     public bool bonus = false;
     public bool spawnsCoffeeInKitchen = false;
     public bool duckNotHungry = false;
     public bool callsTelephone = false;
-
+    public bool mariageEnabled = false;
+    
     public string boardText = "";
     
     public void SpawnSequence()
