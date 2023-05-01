@@ -137,6 +137,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        office.textbox.holdSpaceWrapper.SetActive(closestStation != null);
     }
 
     public void OnTriggerEnter2D(Collider2D other)
