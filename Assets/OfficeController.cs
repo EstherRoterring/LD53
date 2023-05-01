@@ -206,7 +206,7 @@ public class OfficeController : MonoBehaviour
 
     public void CheckAllTasksDone()
     {
-        if (workloadbar.points >= 1)
+        if (workloadbar.points >= 7)
         {
             cutscenePlaying = allTasksDoneCutscene;
             cutscenePlaying.gameObject.SetActive(true);

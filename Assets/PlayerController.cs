@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if (!office.HasFreeControlflow())
+        {
+            return;
+        }
         moveAway=false;
         moveLeft=false;
         moveRight=false;

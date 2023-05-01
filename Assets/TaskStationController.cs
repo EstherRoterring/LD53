@@ -14,6 +14,7 @@ public class TaskStationController : MonoBehaviour
 {
     public GameObject interactObject;
     public GameObject interactObjectHighlight;
+    public GameObject spaceBar;
     public Transform markerPosition;
     private Animator progressAnimator;
 
@@ -45,14 +46,17 @@ public class TaskStationController : MonoBehaviour
             if (OfficeController.INSTANCE.player.closestStation == this)
             {
                 highlightRenderer.color = interactHighlightColor;
+                spaceBar.SetActive(true);
                 
             } else {
                 highlightRenderer.color = new Color(1, 1, 1, 0.5f + 0.5f * Mathf.Sin(Time.time));
+                spaceBar.SetActive(false);
             }
         }
         else
         {
             highlightRenderer.color = new Color(1, 1, 1, 0);
+            spaceBar.SetActive(false);
             // spawn new task
             completionDelay += Time.deltaTime;
             if (completionDelay > completionDelayMax)
