@@ -40,6 +40,7 @@ using Random = UnityEngine.Random;
 public class ManagerController : MonoBehaviour
 {
     public float walkSpeed;
+    public float viewDistance;
     public OfficeController office;
     public RoomController room;
 
@@ -54,6 +55,8 @@ public class ManagerController : MonoBehaviour
     public bool angry=false;
 
     public float totalManagerTime = 0;
+
+    public GameObject dangerHighlight;
 
     void Start()
     {

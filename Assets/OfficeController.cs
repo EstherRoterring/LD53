@@ -88,7 +88,8 @@ public class OfficeController : MonoBehaviour
 
     void Update()
     {
-        if (LookupRoomColor(player.transform.localPosition) == LookupRoomColor(manager.transform.localPosition))
+        if (LookupRoomColor(player.transform.localPosition) == LookupRoomColor(manager.transform.localPosition)
+            && Vector2.Distance(player.transform.position, manager.transform.position) <= manager.viewDistance)
         {
             gameOver = true;
         }
