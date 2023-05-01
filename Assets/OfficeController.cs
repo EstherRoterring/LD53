@@ -69,6 +69,7 @@ public class OfficeController : MonoBehaviour
         
         // intro
         cutscenePlaying = introCutscene;
+        cutscenePlaying = null;
         //worloadBar auf 0
         workloadbar.Add(0);
     }

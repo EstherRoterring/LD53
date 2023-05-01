@@ -76,7 +76,7 @@ public class ManagerController : MonoBehaviour
                 dangerLevel += Time.deltaTime;
             }
 
-            viewDistance = 0.4f + (0.3f / 60f * dangerLevel);
+            viewDistance = 1f + (0.5f / 60f * dangerLevel);
             
             if (_currentManagerState != null)
             {
