@@ -150,7 +150,6 @@ public class Cutscene : MonoBehaviour
     
     public void MouseDown()
     {
-        Debug.Log("click");
         if (moveChar != null && currentMessageProgress >= 0.1f)
         {
             // teleport the guy

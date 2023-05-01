@@ -16,7 +16,7 @@ public class TaskBoardController : MonoBehaviour
     
     private void Start()
     {
-        this.transform.localPosition = new Vector3(0, 0.3f, -3);
+        this.transform.localPosition = new Vector3(0, 0.3f, -12);
     }
 
     private void Update()

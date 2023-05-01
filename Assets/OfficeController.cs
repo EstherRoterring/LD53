@@ -52,6 +52,11 @@ public class OfficeController : MonoBehaviour
     public bool debugSkipIntro = false;
     
     public Cutscene cutscenePlaying = null;
+
+    public List<TaskSequence> completedBonusTasks = new List<TaskSequence>();
+
+    public float respawnBonusTaskTimer = 0f;
+    public float respawnBonusTaskTimerMax = 30f;
     
     public OfficeController()
     {
@@ -76,6 +81,7 @@ public class OfficeController : MonoBehaviour
         
         // intro
         cutscenePlaying = introCutscene;
+        introCutscene.gameObject.SetActive(true);
 
         if (debugSkipIntro)
         {
@@ -110,6 +116,7 @@ public class OfficeController : MonoBehaviour
             {
                 gameOver = true;
                 cutscenePlaying = outroCutscene;
+                cutscenePlaying.gameObject.SetActive(true);
             }
         
             // update sprite masks
@@ -119,6 +126,17 @@ public class OfficeController : MonoBehaviour
             }
         }
 
+        if (completedBonusTasks.Count > 0)
+        {
+            respawnBonusTaskTimer += Time.deltaTime;
+            if (respawnBonusTaskTimer >= respawnBonusTaskTimerMax)
+            {
+                respawnBonusTaskTimer = 0f;
+                var respawnTask = completedBonusTasks[0];
+                respawnTask.SpawnSequence();
+                completedBonusTasks.RemoveAt(0);
+            }
+        }
     }
 
     public void FixedUpdate()
@@ -137,7 +155,7 @@ public class OfficeController : MonoBehaviour
             showingTaskBoard = false;
         }
 
-        if ((Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Space)) && showingTaskBoard)
+        if ((Input.GetKey(KeyCode.Escape) || Input.GetKey(KeyCode.Space)) && showingTaskBoard && cutscenePlaying == null)
         {
             showingTaskBoard = false;
             taskBoardStuckOpen = false;

@@ -8939,7 +8939,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &517478529
 Transform:
   m_ObjectHideFlags: 0
@@ -9074,7 +9074,7 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 297455210}
   introScene: 0
   endScene: 1
 --- !u!1 &517921297
@@ -15877,7 +15877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1358798061
 Transform:
   m_ObjectHideFlags: 0
@@ -16009,7 +16009,7 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 297455210}
   introScene: 0
   endScene: 1
 --- !u!1 &1363542760
@@ -16098,6 +16098,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1363542764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363542760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c1a8b4b54a4d15bd26ac54793439df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 502437891}
 --- !u!1 &1369980685
 GameObject:
   m_ObjectHideFlags: 0
@@ -16129,19 +16142,6 @@ Transform:
   m_Father: {fileID: 517478529}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1363542764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1363542760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33c1a8b4b54a4d15bd26ac54793439df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
 --- !u!1001 &1370638256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18532,7 +18532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1578584007
 Transform:
   m_ObjectHideFlags: 0
@@ -18658,7 +18658,7 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 297455210}
   introScene: 0
   endScene: 1
 --- !u!1001 &1609974503
@@ -19601,7 +19601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1724352744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19690,7 +19690,7 @@ MonoBehaviour:
   walkSpeed: 1
   moveChar: {fileID: 0}
   nextWaypointDistance: 0.1
-  continueButton: {fileID: 0}
+  continueButton: {fileID: 297455210}
   introScene: 0
   endScene: 1
 --- !u!4 &1724352746
@@ -22404,7 +22404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2006743162
 Transform:
   m_ObjectHideFlags: 0
@@ -23424,6 +23424,9 @@ MonoBehaviour:
   gameOver: 0
   debugSkipIntro: 1
   cutscenePlaying: {fileID: 0}
+  completedBonusTasks: []
+  respawnBonusTaskTimer: 0
+  respawnBonusTaskTimerMax: 30
 --- !u!114 &2072452944
 MonoBehaviour:
   m_ObjectHideFlags: 0

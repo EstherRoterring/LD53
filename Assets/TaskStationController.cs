@@ -96,11 +96,18 @@ public class TaskStationController : MonoBehaviour
                 taskActiveMarker = Instantiate(OfficeController.INSTANCE.taskTimerPrefab, markerPosition);
                 progressAnimator = taskActiveMarker.GetComponent<Animator>();
                 progressAnimator.speed = 1.4f / maxProgress;
-                
-                //Textbox ploep
-                String text = currentActiveTask.stationTexts[currentActiveTask.currentStation];
-                Sprite image = currentActiveTask.stationImages[currentActiveTask.currentStation];
-                OfficeController.INSTANCE.textbox.SetTextBoxAutoPos(text, image);
+
+                if (currentActiveTask.currentStation < currentActiveTask.stationTexts.Length)
+                {
+                    //Textbox ploep
+                    String text = currentActiveTask.stationTexts[currentActiveTask.currentStation];
+                    Sprite image = currentActiveTask.stationImages[currentActiveTask.currentStation];
+                    OfficeController.INSTANCE.textbox.SetTextBoxAutoPos(text, image);
+                }
+                else
+                {
+                    Debug.Log($"broken! {this}, currentStation={currentActiveTask.currentStation}");
+                }
              }
 
             progressAnimator.Play("TaskProgressTimerAnim", 0, progress / maxProgress);

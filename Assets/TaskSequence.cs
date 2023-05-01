@@ -27,6 +27,7 @@ public class TaskSequence : MonoBehaviour
     public void SpawnSequence()
     {
         OfficeController.INSTANCE.activeTaskSequences.Add(this);
+        currentStation = -1;
         NextStation();
     }
 
@@ -51,6 +52,10 @@ public class TaskSequence : MonoBehaviour
                 }
 
                 OfficeController.INSTANCE.CheckAllTasksDone();
+            }
+            else
+            {
+                OfficeController.INSTANCE.completedBonusTasks.Add(this);
             }
 
             if (spawnsCoffeeInKitchen)
