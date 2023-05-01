@@ -62,69 +62,72 @@ public class ManagerController : MonoBehaviour
 
     void Update()
     {
-        totalManagerTime += Time.deltaTime;
-        if (_currentManagerState != null)
+        if (office.HasFreeControlflow())
         {
-            // override tasks
-            if (office.coffee.activeSelf && room == office.coffeeRoom)
+            totalManagerTime += Time.deltaTime;
+            if (_currentManagerState != null)
             {
-                ChangeState(new DrinkCoffeeManagerState(10f));
-            }
-            else if (office.ringingPhone.activeSelf && !(_currentManagerState is AnswerCallInOfficeManagerState))
-            {
-                ChangeState(new AnswerCallInOfficeManagerState(3f));
-            }
-            _currentManagerState.UpdateState(this);
-        }
-
-        if (followPath != null)
-        {
-            bool reachedEndOfPath = false;
-            float distanceToWaypoint;
-            while (true)
-            {
-                distanceToWaypoint = Vector3.Distance(transform.position, followPath.vectorPath[currentWaypoint]);
-                if (distanceToWaypoint < nextWaypointDistance)
+                // override tasks
+                if (office.coffee.activeSelf && room == office.coffeeRoom)
                 {
-                    if (currentWaypoint + 1 < followPath.vectorPath.Count)
+                    ChangeState(new DrinkCoffeeManagerState(10f));
+                }
+                else if (office.ringingPhone.activeSelf && !(_currentManagerState is AnswerCallInOfficeManagerState))
+                {
+                    ChangeState(new AnswerCallInOfficeManagerState(3f));
+                }
+                _currentManagerState.UpdateState(this);
+            }
+
+            if (followPath != null)
+            {
+                bool reachedEndOfPath = false;
+                float distanceToWaypoint;
+                while (true)
+                {
+                    distanceToWaypoint = Vector3.Distance(transform.position, followPath.vectorPath[currentWaypoint]);
+                    if (distanceToWaypoint < nextWaypointDistance)
                     {
-                        currentWaypoint++;
+                        if (currentWaypoint + 1 < followPath.vectorPath.Count)
+                        {
+                            currentWaypoint++;
+                        }
+                        else
+                        {
+                            reachedEndOfPath = true;
+                            break;
+                        }
                     }
                     else
                     {
-                        reachedEndOfPath = true;
                         break;
                     }
                 }
-                else
+                
+                Vector3 dir = (followPath.vectorPath[currentWaypoint] - transform.position).normalized;
+                Vector3 velocity = walkSpeed * dir;
+                UpdateAnimationDirection(velocity);
+
+                transform.position += velocity * Time.deltaTime;
+
+                if (reachedEndOfPath)
                 {
-                    break;
+                    followPath = null;
+                    currentWaypoint = 0;
                 }
             }
-            
-            Vector3 dir = (followPath.vectorPath[currentWaypoint] - transform.position).normalized;
-            Vector3 velocity = walkSpeed * dir;
-            UpdateAnimationDirection(velocity);
-
-            transform.position += velocity * Time.deltaTime;
-
-            if (reachedEndOfPath)
+            else
             {
-                followPath = null;
-                currentWaypoint = 0;
+                UpdateAnimationDirection(Vector3.zero);
             }
-        }
-        else
-        {
-            UpdateAnimationDirection(Vector3.zero);
-        }
-        if (followPath == null) {
-            if (visitLocations.Count > 0)
-            {
-                var visitDoor = visitLocations[0];
-                visitLocations.RemoveAt(0);
-                Seeker seeker = GetComponent<Seeker>();
-                seeker.StartPath(transform.position, visitDoor.position, SetFollowPath);
+            if (followPath == null) {
+                if (visitLocations.Count > 0)
+                {
+                    var visitDoor = visitLocations[0];
+                    visitLocations.RemoveAt(0);
+                    Seeker seeker = GetComponent<Seeker>();
+                    seeker.StartPath(transform.position, visitDoor.position, SetFollowPath);
+                }
             }
         }
     }

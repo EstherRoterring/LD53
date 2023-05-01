@@ -62,13 +62,13 @@ public class TextBoxController : MonoBehaviour
         textMeshPro.text = text;
     }
     
-    void Position1()
+    public void Position1()
     {
         //unten links -3,-3
         transform.position = linksUnten.position;
     }
 
-    void Position2()
+    public void Position2()
     {
         //oben rechts 3,3
         transform.position = rechtsOben.position;

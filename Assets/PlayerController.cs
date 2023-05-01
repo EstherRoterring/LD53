@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
         UnityEngine.Vector2 horizontalWalkDir = UnityEngine.Vector2.zero;
         UnityEngine.Vector2 verticalWalkDir = UnityEngine.Vector2.zero;
 
-        if (!office.gameOver)
+        if (office.HasFreeControlflow())
         {
             if (Input.GetKey("a") || Input.GetKey(KeyCode.LeftArrow))
             {

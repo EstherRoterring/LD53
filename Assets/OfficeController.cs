@@ -40,7 +40,10 @@ public class OfficeController : MonoBehaviour
     public GameObject coffee;
     public GameObject ringingPhone;
 
+    public Cutscene introCutscene;
     public bool gameOver = false;
+    
+    public Cutscene cutscenePlaying = null;
     
     public OfficeController()
     {
@@ -76,6 +79,9 @@ public class OfficeController : MonoBehaviour
         {
             sequence.SpawnSequence();
         }
+        
+        // intro
+        cutscenePlaying = introCutscene;
     }
 
     private Color LookupRoomColor(Vector2 pos)
@@ -107,5 +113,10 @@ public class OfficeController : MonoBehaviour
     public void CallTelephone()
     {
         ringingPhone.SetActive(true);
+    }
+
+    public bool HasFreeControlflow()
+    {
+        return cutscenePlaying == null;
     }
 }
