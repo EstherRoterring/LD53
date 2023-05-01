@@ -905,6 +905,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 98157216}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 837564335}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: Office1Room
@@ -1229,6 +1233,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 132108304}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1780213745}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: StorageRoom
@@ -1515,6 +1523,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 157242365}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1006821982}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: Hall2Room
@@ -7671,6 +7683,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 369724539}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1416221863}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: ToniRoom
@@ -10946,6 +10962,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 744094001}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1998674127}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: Office2Room
@@ -11928,6 +11948,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 565060761573551675, guid: a3079e53e5ee6455eb6c7eeb77ca7755, type: 3}
   m_PrefabInstance: {fileID: 819639255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &837564335 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 98157214}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &839329975
 PrefabInstance:
@@ -13648,6 +13673,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.07
+--- !u!4 &1006821982 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 157242363}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1012089123 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 1953274757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1025479798
 GameObject:
   m_ObjectHideFlags: 0
@@ -15679,6 +15714,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!4 &1280922803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 1556879841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1287536099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16610,6 +16650,11 @@ Transform:
   m_Father: {fileID: 994670601}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1376070836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 1402800852}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1387327880
 GameObject:
   m_ObjectHideFlags: 0
@@ -16866,6 +16911,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1402800854}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1376070836}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: CoffeeRoom
@@ -16980,6 +17029,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1408199919}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1793099531}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: ParkRoom
@@ -17188,6 +17241,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fce3fa3c94f540dd89f6b642435a48c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1416221863 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 369724537}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1420934033
 GameObject:
   m_ObjectHideFlags: 0
@@ -17837,6 +17895,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7426162122484008778, guid: 3ebe2903a89a94248a1eba1bedd4d793, type: 3}
   m_PrefabInstance: {fileID: 1450330940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1450751391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 1821854999}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1454208203
 GameObject:
@@ -18496,6 +18559,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1556879843}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1280922803}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: Office3Room
@@ -18940,6 +19007,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1609974505}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1825127537}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: ToiletRoom
@@ -20057,6 +20128,11 @@ Transform:
   m_Father: {fileID: 517478529}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1780213745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 132108302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1783842521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20092,6 +20168,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1783842523}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 915408439}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: Hall1Room
@@ -20420,6 +20500,11 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.05
+--- !u!4 &1793099531 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 1408199917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1803065970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20592,6 +20677,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1821855001}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1450751391}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: PlayerRoom
@@ -20747,6 +20836,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822399030}
   m_CullTransparentMesh: 1
+--- !u!4 &1825127537 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 1609974503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1827819618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21398,6 +21492,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1873462766}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 2108131931}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: JanitorRoom
@@ -22132,6 +22230,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1953274759}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 1012089123}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: PrinterRoom
@@ -22487,6 +22589,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 1977132698}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 303687993}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: EntryRoom
@@ -22770,6 +22876,11 @@ Transform:
   m_Father: {fileID: 1423743985}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1998674127 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 744093999}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2002798862
 GameObject:
   m_ObjectHideFlags: 0
@@ -23064,6 +23175,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 565060761573551675, guid: a3079e53e5ee6455eb6c7eeb77ca7755, type: 3}
   m_PrefabInstance: {fileID: 2019061208}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2021908614 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 4332524246549929656}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2022199942
 PrefabInstance:
@@ -24010,6 +24126,11 @@ Transform:
   m_Father: {fileID: 1358798061}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2108131931 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8300645406969592661, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+  m_PrefabInstance: {fileID: 1873462764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2120775105
 GameObject:
   m_ObjectHideFlags: 0
@@ -24410,6 +24531,10 @@ PrefabInstance:
       propertyPath: roomCenter
       value: 
       objectReference: {fileID: 4332524246549929657}
+    - target: {fileID: 3141301370170812577, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
+      propertyPath: spriteMasks
+      value: 
+      objectReference: {fileID: 2021908614}
     - target: {fileID: 4332524245252653544, guid: f3a7e10d582954bb6a437fd6f78a839f, type: 3}
       propertyPath: m_Name
       value: ManagerRoom
