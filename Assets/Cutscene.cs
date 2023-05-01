@@ -46,6 +46,7 @@ public class Cutscene : MonoBehaviour
             if (c != null)
                 c.SetActive(false);
 
+        textBox.gameObject.SetActive(true);
         textBox.Position2();
         continueButton.SetActive(false);
 
