@@ -314,6 +314,7 @@ public class AnswerCallInOfficeManagerState : IManagerState
         bool arrived = manager.followPath == null;
         if (arrived)
         {
+            manager.office.managerPhone.SetActive(true);
             manager.office.ringingPhone.SetActive(false);
             timeLeft -= Time.deltaTime;
         }
