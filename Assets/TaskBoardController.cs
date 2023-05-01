@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
+
 public class TaskBoardController : MonoBehaviour
 {
     public TextMeshProUGUI text;

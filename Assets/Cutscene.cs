@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Pathfinding;
+using UnityEngine.UI;
+
 
 public class Cutscene : MonoBehaviour
 {
