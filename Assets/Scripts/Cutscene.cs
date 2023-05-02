@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Pathfinding;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -196,6 +197,10 @@ public class Cutscene : MonoBehaviour
             OfficeController.INSTANCE.manager.showExclamationMark = true;
         }
         // todo, end scene
+        if (endScene)
+        {
+            SceneManager.LoadScene("Scenes/FiredScene");
+        }
 
         gameObject.SetActive(false);
     }
