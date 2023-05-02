@@ -75,6 +75,8 @@ public class OfficeController : MonoBehaviour
     public Cutscene fellForPrankCutscene;
 
     public string afterEndScene;
+
+    public bool winTriggered = false;
     
     public OfficeController()
     {
@@ -242,13 +244,13 @@ public class OfficeController : MonoBehaviour
         {
             sequence.SpawnSequence();
         }
-        // todo, show flip chart now
     }
 
     public void CheckAllTasksDone()
     {
-        if (workloadbar.points >= numTotalTaskToComplete)
+        if (workloadbar.points >= numTotalTaskToComplete && !winTriggered)
         {
+            winTriggered = true;
             cutscenePlaying = allTasksDoneCutscene;
             cutscenePlaying.gameObject.SetActive(true);
             manager.dangerHighlight.GetComponent<SpriteRenderer>().color = manager.goodDangerHighlightColor;
