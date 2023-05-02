@@ -196,10 +196,10 @@ public class Cutscene : MonoBehaviour
         {
             OfficeController.INSTANCE.manager.showExclamationMark = true;
         }
-        // todo, end scene
+        // end scene
         if (endScene)
         {
-            SceneManager.LoadScene("Scenes/FiredScene");
+            SceneManager.LoadScene(OfficeController.INSTANCE.afterEndScene);
         }
 
         gameObject.SetActive(false);

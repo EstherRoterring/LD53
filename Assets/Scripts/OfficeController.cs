@@ -5,6 +5,8 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
@@ -71,6 +73,8 @@ public class OfficeController : MonoBehaviour
     public Cutscene explainCoffeeCutscene;
     public Cutscene explainPhoneCutscene;
     public Cutscene fellForPrankCutscene;
+
+    public string afterEndScene;
     
     public OfficeController()
     {
@@ -136,7 +140,9 @@ public class OfficeController : MonoBehaviour
                     if (player.duckTaskCompleted)
                     {
                         cutscenePlaying = outroCutscenePromoted;
+                        
                     }
+                    afterEndScene = "Scenes/CongratsScene";
                 }
                 else
                 {
@@ -144,6 +150,11 @@ public class OfficeController : MonoBehaviour
                     if (player.flirtTaskCompleted)
                     {
                         cutscenePlaying = outroCutsceneFlirty;
+                        afterEndScene = "Scenes/LoveScene";
+                    }
+                    else
+                    {
+                        afterEndScene = "Scenes/FiredScene";
                     }
                 }
                 cutscenePlaying.gameObject.SetActive(true);
