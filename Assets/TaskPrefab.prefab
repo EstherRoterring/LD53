@@ -88,6 +88,7 @@ MonoBehaviour:
   maxProgress: 5
   completionDelayMax: 1
   limitAccessFromRoom: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!1 &603846397098245415
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8662422695510896016, guid: 60dee8944f274415690c72dd14f4147e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8662422695510896016, guid: 60dee8944f274415690c72dd14f4147e, type: 3}
       propertyPath: m_LocalRotation.w
