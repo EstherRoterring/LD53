@@ -50,7 +50,7 @@ public class ManagerController : MonoBehaviour
     public List<Transform> visitLocations = new List<Transform>();
     
     IManagerState _currentManagerState;
-    private Animator anim;
+    public Animator anim;
     public bool angry = false;
 
     public float totalManagerTime = 0;

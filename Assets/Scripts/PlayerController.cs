@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         foreach (var task in office.activeTaskSequences)
         {
             foreach (var station in task.stations) {
-                var dist = Vector3.Distance(station.interactObject.transform.position, transform.position);
+                var dist = UnityEngine.Vector2.Distance(station.interactObject.transform.position, transform.position);
                 if (dist < closestStationDist)
                 {
                     closestStation = station;

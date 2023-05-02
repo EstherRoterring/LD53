@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Pathfinding;
+using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -243,6 +244,18 @@ public class Cutscene : MonoBehaviour
                 UpdateAnimationDirection(maybeIsPlayer.anim, velocity);
             }
 
+            ManagerController maybeIsManager = null;
+            if (moveChar.TryGetComponent(out maybeIsManager))
+            {
+                UpdateAnimationDirection(maybeIsManager.anim, velocity);
+            }
+
+            MonicaController maybeIsMonica = null;
+            if (moveChar.TryGetComponent(out maybeIsMonica))
+            {
+                UpdateAnimationDirectionMonica(maybeIsMonica.GetComponent<Animator>(), velocity);
+            }
+
             if (reachedEndOfPath)
             {
                 followPath = null;
@@ -253,6 +266,15 @@ public class Cutscene : MonoBehaviour
                 if (maybeIsPlayer != null)
                 {
                     UpdateAnimationDirection(maybeIsPlayer.anim, Vector3.zero);
+                }
+                if (maybeIsManager != null)
+                {
+                    UpdateAnimationDirection(maybeIsManager.anim, Vector3.zero);
+                }
+
+                if (maybeIsMonica != null)
+                {
+                    UpdateAnimationDirectionMonica(maybeIsMonica.GetComponent<Animator>(), Vector3.zero);
                 }
             }
         }
@@ -275,6 +297,19 @@ public class Cutscene : MonoBehaviour
             anim.SetBool("moveAway",!xMax && velocity.y >= 0);
             anim.SetBool("moveLeft",xMax && velocity.x <= 0);
             anim.SetBool("moveRight",xMax && velocity.x >= 0);
+        }
+    }
+    
+    public void UpdateAnimationDirectionMonica(Animator anim, Vector3 velocity)
+    {
+        if (velocity.magnitude <= 0.01f)
+        {
+            anim.SetBool("sitzen", true);
+            anim.SetBool("walking",false);
+        } else
+        {
+            anim.SetBool("sitzen", false);
+            anim.SetBool("walking",true);
         }
     }
 }
