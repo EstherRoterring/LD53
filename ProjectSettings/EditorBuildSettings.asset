@@ -8,13 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 0e577ada92c364c9683f09cf8cfe5051
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/FiredScene.unity
     guid: 0f8d0f98fcaa52e479664312b9d07ac4
   - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: fff949343fff24941b46a722de92853b
+  - enabled: 1
+    path: Assets/Scenes/LoveScene.unity
+    guid: eb41e09b3e8c5b14681b7ee1a46ee854
+  - enabled: 1
+    path: Assets/Scenes/CongratsScene.unity
+    guid: 32b7afb1ba987f940a13f00fe07895ae
   m_configObjects: {}

@@ -8730,7 +8730,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1627404681, guid: 2653631a091dfda46ae6c22a0f61fd1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -26799,6 +26799,7 @@ MonoBehaviour:
   explainCoffeeCutscene: {fileID: 994670603}
   explainPhoneCutscene: {fileID: 2038452696}
   fellForPrankCutscene: {fileID: 487293390}
+  afterEndScene: 
 --- !u!114 &2072452944
 MonoBehaviour:
   m_ObjectHideFlags: 0
