@@ -24,6 +24,7 @@ public class TaskSequence : MonoBehaviour
     public bool duckNotHungry = false;
     public bool callsTelephone = false;
     public bool mariageEnabled = false;
+    public bool overrideBigTask = false;
     
     public string boardText = "";
     
@@ -45,7 +46,7 @@ public class TaskSequence : MonoBehaviour
             OfficeController.INSTANCE.manager.dangerLevel += 5f;
             if (!bonus)
             {
-                if (stations.Length >= 2)
+                if (stations.Length >= 2 || overrideBigTask)
                 {
                     OfficeController.INSTANCE.workloadbar.Add(2);
                 }
