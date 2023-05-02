@@ -33,6 +33,9 @@ public class TaskStationController : MonoBehaviour
     private float completionDelay = 0;
 
     public RoomController limitAccessFromRoom = null;
+    
+    public AudioSource audio;
+
 
     public void AddTaskToQueue(TaskSequence taskSequence)
     {
@@ -103,6 +106,10 @@ public class TaskStationController : MonoBehaviour
                 progressAnimator.speed = 1.4f / maxProgress;
                 secondProgressAnimator = OfficeController.INSTANCE.textbox.animator;
                 secondProgressAnimator.speed = 1.4f / maxProgress;
+                if (audio != null)
+                {
+                    audio.Play();
+                }
 
                 if (currentActiveTask.currentStation < currentActiveTask.stationTexts.Length)
                 {
